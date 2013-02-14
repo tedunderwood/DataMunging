@@ -1,0 +1,3738 @@
+a-bed	abed
+a-begging	a begging
+a-breast	abreast
+a-day	a day
+a-field	afield
+a-foot	afoot
+a-going	a going
+a-ground	aground
+a-half	a half
+a-head	ahead
+a-kin	akin
+a-lee	alee
+a-long-side	alongside
+a-longside	alongside
+a-mile	a mile
+a-piece	apiece
+a-quarter	a quarter
+a-stern	astern
+a-wash	awash
+a-week	a week
+a-year	a year
+abbey-church	abbey church
+ablebodied	able-bodied
+above-ground	aboveground
+above-mention'd	abovementioned
+above-mentioned	abovementioned
+above-named	above named
+abovemention'd	abovementioned
+ac-the	ac the
+ad-the	ad the
+adjutantgeneral	adjutant-general
+advocate-general	advocate general
+afore-mention'd	aforementioned
+afore-mentioned	aforementioned
+aforemention'd	aforementioned
+after-ages	after ages
+after-dinner	after dinner
+after-life	afterlife
+after-marriages	after marriages
+after-part	after part
+after-piece	after piece
+after-the	after the
+after-thought	afterthought
+after-times	after times
+after-wards	afterwards
+ag-ain	again
+ag-ain't	ag ain't
+ag-e	age
+ah-lady	ah lady
+ai-e	aie
+ai-my	aimy
+aid-de-camp	aide-de-camp
+aid-decamp	aide-de-camp
+aiddecamp	aide-de-camp
+aidedecamp	aide-de-camp
+aidesdecamp	aides-de-camp
+air-bag	air bag
+air-bladder	air bladder
+air-cells	air cells
+air-chamber	air chamber
+air-chambers	air chambers
+air-holes	air holes
+air-pump	air pump
+air-pumps	air pumps
+air-tight	airtight
+air-tubes	air tubes
+air-vessel	air vessel
+air-vessels	air vessels
+aixlachapelle	aix-la-chapelle
+alamode	a-la-mode
+alarm-bell	alarm bell
+albemarle-street	albemarle street
+ale-drinkers	ale drinkers
+ale-house	alehouse
+ale-houses	alehouses
+all-accomplished	all accomplished
+all-comprehensive	all comprehensive
+all-glorious	all glorious
+all-important	all important
+all-pervading	all pervading
+all-powerful	all powerful
+all-seeing	all seeing
+all-sufficient	all sufficient
+all-too	all too
+all-wise	all wise
+alms-giving	almsgiving
+alms-house	almshouse
+alms-houses	almshouses
+along-shore	along shore
+along-side	alongside
+altar-piece	altarpiece
+alto-relieves	alto relieves
+alto-relievo	alto relievo
+ammonia-sulphate	ammonia sulphate
+among-st	amongst
+an-the	an the
+and-the	and the
+anglo-norman	anglo norman
+angloindians	anglo-indians
+anglosaxon	anglo-saxon
+anglosaxons	anglo-saxons
+ankle-deep	ankle deep
+ant-eater	ant eater
+ant-hill	anthill
+ant-hills	anthills
+ant-lion	ant lion
+ante-chamber	antechamber
+ante-diluvian	antediluvian
+ante-room	anteroom
+anti-chamber	antechamber
+anti-christ	antichrist
+anti-christian	antichristian
+anti-jacobin	antijacobin
+anti-scorbutic	antiscorbutic
+anti-slavery	antislavery
+antichamber	antechamber
+antipopulationists	anti-populationists
+any-body	anybody
+any-thing	anything
+any-where	anywhere
+ao-e	aoe
+ap-the	ap the
+apple-tree	apple tree
+apple-trees	apple trees
+arch-formed	arch formed
+arch-way	archway
+arm-chair	armchair
+arm-chairs	armchairs
+armyplot	army-plot
+arrow-root	arrowroot
+artillery-men	artillerymen
+artist-like	artist like
+as-the	as the
+ash-burnham	ashburnham
+ash-coloured	ash coloured
+ash-tree	ash tree
+ash-trees	ash trees
+assistant-preacher	assistant preacher
+assistant-secretary	assistant secretary
+assistant-surgeon	assistant surgeon
+assistant-surveyor	assistant surveyor
+astronomer-royal	astronomer royal
+at-the	at the
+attorneygeneral	attorney-general
+au-dessus	au dessus
+auction-room	auction room
+audit-office	audit office
+autodafe	auto-da-fe
+awe-struck	awestruck
+axle-tree	axletree
+axle-trees	axletrees
+back-bone	backbone
+back-door	back door
+back-ground	background
+back-grounds	backgrounds
+back-plate	back plate
+back-side	backside
+back-stairs	backstairs
+back-woods	backwoods
+baggage-waggons	baggage waggons
+bail-bond	bail bond
+bail-bonds	bail bonds
+bail-piece	bail piece
+bald-head	baldhead
+ball-cartridges	ball cartridges
+ball-room	ballroom
+ball-rooms	ballrooms
+ballad-singer	ballad singer
+ballad-singers	ballad singers
+ballot-box	ballot box
+bang-up	bang up
+bank-note	banknote
+bank-notes	banknotes
+banker-street	banker street
+banking-house	banking house
+banking-houses	banking houses
+banqueting-house	banqueting house
+banqueting-room	banqueting room
+bar-iron	bar iron
+bar-keeper	barkeeper
+bar-room	barroom
+bare-fac'd	barefaced
+bare-faced	barefaced
+bare-footed	barefooted
+bare-headed	bareheaded
+bare-legged	barelegged
+barefac'd	barefaced
+barn-door	barndoor
+bas-relief	bas relief
+basket-work	basketwork
+basreliefs	bas-reliefs
+bass-singer	bass singer
+basso-relievo	basso relievo
+bassorelievos	basso-relievos
+bathing-place	bathing place
+battering-ram	battering ram
+battle-array	battle array
+battle-axes	battle axes
+battle-day	battle day
+battle-field	battlefield
+battle-ground	battleground
+battle-ship	battleship
+battleaxe	battle-axe
+bay-ice	bay ice
+bay-tree	bay tree
+bay-trees	bay trees
+beak-like	beak like
+beam-ends	beam ends
+bear-baiting	bearbaiting
+bear-garden	bear garden
+beau-ideal	beau ideal
+bed-bug	bed bug
+bed-chamber	bedchamber
+bed-cloaths	bedclothes
+bed-clothes	bedclothes
+bed-fellow	bedfellow
+bed-rid	bedrid
+bed-ridden	bedridden
+bed-room	bedroom
+bed-rooms	bedrooms
+bed-side	bedside
+bed-time	bedtime
+bedcloaths	bedclothes
+bee-hive	beehive
+bee-hives	beehives
+beech-tree	beech tree
+beech-trees	beech trees
+beef-steak	beefsteak
+beef-steaks	beefsteaks
+bees-wax	beeswax
+before-hand	beforehand
+before-mentioned	before mentioned
+before-named	before named
+behind-hand	behindhand
+bell-ringing	bell ringing
+belles-lettres	belles lettres
+ben-bowie	benbowie
+best-informed	best informed
+best-natured	best natured
+betel-nut	betel nut
+billetdoux	billet-doux
+billiard-table	billiard table
+bio-bio	biobio
+birch-bark	birch bark
+birch-tree	birch tree
+birch-trees	birch trees
+bird's-eye	bird eye
+bird'seye	bird eye
+bird-cherry	bird cherry
+birth-day	birthday
+birth-days	birthdays
+birth-place	birthplace
+birth-right	birthright
+black-board	blackboard
+black-eyed	black eyed
+black-friars	blackfriars
+black-friers	blackfriars
+black-fryars	blackfriars
+black-fryers	blackfriars
+black-lead	black lead
+black-legs	black legs
+black-letter	black letter
+black-spot	black spot
+blackfriers	blackfriars
+blackfryars	blackfriars
+blackfryers	blackfriars
+blackish-brown	blackish brown
+blade-bone	blade bone
+blast-furnace	blast furnace
+block-book	block book
+block-books	block books
+block-house	blockhouse
+blood-hound	bloodhound
+blood-hounds	bloodhounds
+blood-red	bloodred
+blood-royal	blood royal
+blood-shed	bloodshed
+blood-stain'd	bloodstained
+blood-stained	bloodstained
+blood-suckers	bloodsuckers
+blood-thirsty	bloodthirsty
+blood-vessel	blood vessel
+blood-vessels	blood vessels
+bloodstain'd	bloodstained
+bloody-minded	bloody minded
+bloud-thirstie	bloodthirsty
+bloudthirstie	bloodthirsty
+blow-fly	blowfly
+blow-pipe	blowpipe
+blue-bottle	bluebottle
+blue-coat	bluecoat
+blue-mud	blue mud
+blue-stocking	blue stocking
+blue-stockings	bluestockings
+bluid-red	bloodred
+bluidred	bloodred
+bluish-black	bluish black
+bluish-gray	bluish gray
+bluish-green	bluish green
+bluish-grey	bluish grey
+bluish-white	bluish white
+boarding-house	boardinghouse
+boarding-houses	boardinghouses
+boarding-school	boarding school
+boarding-schools	boarding schools
+boat-building	boat building
+boat-hook	boathook
+bobbin-net	bobbin net
+body-corporate	body corporate
+body-guard	bodyguard
+boling-broke	bolingbroke
+bon-mots	bon mots
+bond-street	bond street
+bonnetmaker	bonnet-maker
+bonton	bon-ton
+book-binder	bookbinder
+book-binders	bookbinders
+book-binding	bookbinding
+book-case	bookcase
+book-cases	bookcases
+book-collector	book collector
+book-keeper	bookkeeper
+book-keepers	book keepers
+book-keeping	bookkeeping
+book-learning	book learning
+book-purchases	book purchases
+book-sales	book sales
+book-shelves	bookshelves
+book-stall	bookstall
+book-trade	book trade
+book-treasures	book treasures
+book-worm	bookworm
+boundary-line	boundary line
+bounty-money	bounty money
+bow-ever	bowever
+bow-shot	bowshot
+bow-string	bowstring
+bower-anchor	bower anchor
+bowling-green	bowling green
+bowstreet	bow-street
+box-hill	boxhill
+box-tree	box tree
+box-wood	boxwood
+bread-corn	bread corn
+bread-dust	bread dust
+bread-fruit	breadfruit
+bread-room	bread room
+breakfast-room	breakfast room
+breakfast-table	breakfast table
+breakfast-time	breakfast time
+breaking-up	breaking up
+breast-bone	breastbone
+breast-plate	breastplate
+breast-plates	breastplates
+breast-work	breastwork
+breast-works	breastworks
+breasthigh	breast-high
+breathing-time	breathing time
+breathing-tubes	breathing tubes
+brest-work	breastwork
+brestwork	breastwork
+brick-dust	brick dust
+brick-red	brick red
+brick-work	brickwork
+brigade-major	brigade major
+brigadiergeneral	brigadier-general
+bright-eyed	bright eyed
+broad-brimmed	broad brimmed
+broad-cloath	broadcloth
+broad-cloth	broadcloth
+broad-street	broad street
+broad-sword	broadsword
+broadcloath	broadcloth
+broken-down	broken down
+broken-hearted	brokenhearted
+broom-field	broomfield
+brother-officer	brother officer
+brother-officers	brother officers
+brotherinlaw	brother-in-law
+brough-ton	broughton
+brought-to	brought to
+brown-coal	brown coal
+brown-coloured	brown coloured
+brownish-black	brownish black
+brownish-red	brownish red
+brush-wood	brushwood
+buck-land	buckland
+bucking-ham	buckingham
+buff-coat	buff coat
+bugle-horn	bugle horn
+building-stone	building stone
+bull-baiting	bullbaiting
+bull-dog	bulldog
+bull-dogs	bulldogs
+bull-fight	bull fight
+burgage-holders	burgage holders
+burgage-tenure	burgage tenure
+burgessship	burgess-ship
+burial-ground	burial ground
+burial-grounds	burial grounds
+burial-place	burial place
+burial-places	burial places
+burial-service	burial service
+burnt-up	burnt up
+burying-ground	burying ground
+burying-grounds	burying grounds
+burying-place	burying place
+business-like	businesslike
+butt-end	butt end
+butter-fly	butterfly
+button-hole	buttonhole
+by-and-by	by and by
+by-gone	bygone
+by-law	bylaw
+by-laws	bylaws
+by-sanders	by sanders
+by-stander	bystander
+by-the-by	by the by
+by-the-way	by the way
+by-way	byway
+by-ways	byways
+by-word	byword
+bye-laws	bylaws
+bye-way	byway
+bye-ways	byways
+byelaw	bye-law
+byelaws	bylaws
+byeway	byway
+byeways	byways
+bythebye	by-the-bye
+cabbage-tree	cabbage tree
+cabin-boy	cabin boy
+cabinet-maker	cabinetmaker
+cabinet-makers	cabinet makers
+calc-sinter	calc sinter
+calc-spar	calc spar
+calcareous-siliceous	calcareous siliceous
+camel-driver	camel driver
+camel-drivers	camel drivers
+camp-followers	camp followers
+canal-boat	canal boat
+candle-light	candlelight
+cane-pieces	cane pieces
+cannon-ball	cannonball
+cannon-balls	cannonballs
+cannon-shot	cannon shot
+captaingeneral	captain-general
+card-parties	card parties
+card-table	card table
+care-worn	careworn
+carlton-house	carlton house
+carriage-road	carriage road
+carriage-way	carriageway
+carrying-place	carrying place
+cart-horse	carthorse
+cart-load	cartload
+cart-loads	cartloads
+cart-whip	cart whip
+cart-whipped	cart whipped
+case-knife	case knife
+cash-payments	cash payments
+cast-away	castaway
+cast-iron	cast iron
+castle-gate	castle gate
+castle-hill	castle hill
+castle-wall	castle wall
+castoff	cast-off
+castor-oil	castor oil
+cat-fish	catfish
+cato-street	cato street
+chafing-dish	chafing dish
+chain-cable	chain cable
+chain-mail	chain mail
+chain-shot	chain shot
+chalk-flints	chalk flints
+chalk-pit	chalk pit
+chalk-pits	chalk pits
+chamber-door	chamber door
+champdears	champ-dears
+chap-	chap
+chap-books	chap books
+chapel-royal	chapel royal
+chapter-house	chapterhouse
+char-ville	charville
+charity-school	charity school
+charity-schools	charity schools
+charles-town	charlestown
+charnel-house	charnel house
+charnel-houses	charnel houses
+charter-house	charterhouse
+charter-party	charter party
+chateau-vieux	chateauvieux
+cheapside-street	cheapside street
+cheek-bones	cheekbones
+cheek-pouches	cheek pouches
+chefd'oeuvre	chef-d'oeuvre
+cherry-tree	cherry tree
+cherry-trees	cherry trees
+chess-board	chessboard
+chess-men	chessmen
+chiar-oscuro	chiaroscuro
+chiaro-scuro	chiaroscuro
+chief-justice	chief justice
+chief-justices	chief justices
+child-bearing	childbearing
+child-bed	childbed
+child-birth	childbirth
+child-like	childlike
+child-murder	child murder
+chimney-corner	chimney corner
+chimney-pieces	chimney pieces
+chimneypiece	chimney-piece
+chin-ch	chinch
+chitchat	chit-chat
+christ's-church	christchurch
+christ'schurch	christchurch
+christ-church	christchurch
+christmas-day	christmas day
+church-bells	church bells
+church-door	church door
+church-doors	church doors
+church-establishment	church establishment
+church-government	church government
+church-lands	church lands
+church-patronage	church patronage
+church-preferment	church preferment
+church-property	church property
+church-tower	church tower
+church-wardens	churchwardens
+church-yard	churchyard
+church-yarde	churchyard
+church-yards	churchyards
+churchyarde	churchyard
+cidevant	ci-devant
+cirro-stratus	cirrostratus
+citizen-soldiers	citizen soldiers
+city-gate	city gate
+city-militia	city militia
+civil-list	civil list
+civilwar	civil-war
+clair-obscure	clair obscure
+clark-son	clarkson
+class-room	classroom
+clayslate	clay-slate
+clear-headed	clear headed
+clock-makers	clock makers
+clock-work	clockwork
+close-reefed	close reefed
+club-house	clubhouse
+co-exist	coexist
+co-existence	coexistence
+co-existent	coexistent
+co-existing	coexisting
+co-extensive	coextensive
+co-heir	coheir
+co-heiress	coheiress
+co-operate	cooperate
+co-operated	cooperated
+co-operating	cooperating
+co-operation	cooperation
+co-ordinate	coordinate
+co-ordinates	coordinates
+co-partner	copartner
+co-partnership	copartnership
+coach-house	coach house
+coach-maker	coach maker
+coal-black	coal black
+coal-dust	coal dust
+coal-field	coalfield
+coal-fields	coalfields
+coal-gas	coal gas
+coal-heaver	coalheaver
+coal-measures	coal measures
+coal-mine	coal mine
+coal-mines	coal mines
+coal-pits	coal pits
+coal-sandstone	coal sandstone
+coarse-grained	coarse grained
+coast-line	coastline
+coat-armour	coat armour
+coat-armours	coat armours
+cochin-china	cochinchina
+cock-fighting	cockfighting
+cock-pit	cockpit
+cock-roach	cockroach
+cock-roaches	cockroaches
+cockle-shell	cockleshell
+coco-nut	coconut
+coco-nuts	coconuts
+cocoa-nut	coconut
+cocoa-nuts	coconuts
+cocoanut	coconut
+cocoanuts	coconuts
+cod-fish	codfish
+coffee-house	coffeehouse
+coffee-houses	coffeehouses
+coffee-pot	coffee pot
+coffee-room	coffee room
+col-man	colman
+cold-bath	cold bath
+cold-hearted	coldhearted
+coldblooded	cold-blooded
+collar-bone	collarbone
+color-guard	color guard
+color-rank	color rank
+color-sergeant	color sergeant
+com-the	com the
+commander-in	commander in
+commanderinchief	commander-in-chief
+commanders-in-chief	commanders in chief
+commissary-general	commissary general
+committee-men	committee men
+committee-room	committee room
+common-council	common council
+common-hall	common hall
+common-place	commonplace
+common-places	commonplaces
+common-wealth	commonwealth
+commonlaw	common-law
+commonsense	common-sense
+communion-table	communion table
+compting-houses	counting-houses
+comptinghouses	counting-houses
+con-the	con the
+concert-room	concert room
+conchap	con-chap
+consulgeneral	consul-general
+contra-distinguished	contradistinguished
+cony-beare	conybeare
+copper-colour	copper colour
+copper-coloured	copper coloured
+copper-mine	copper mine
+copper-plate	copperplate
+copper-plates	copperplates
+copse-wood	copse wood
+copy-book	copy book
+cork-screw	corkscrew
+corn-field	cornfield
+corn-fields	cornfields
+corn-laws	corn laws
+corn-market	corn market
+corner-stone	cornerstone
+cottage-door	cottage door
+cotton-mill	cotton mill
+cotton-tree	cotton tree
+council-board	council board
+council-chamber	council chamber
+council-house	council house
+council-room	council room
+council-table	council table
+counter-current	countercurrent
+counter-marching	counter marching
+counter-orders	counter orders
+counting-houses	counting houses
+countinghouse	counting-house
+countinghouses	counting-houses
+country-gentleman	country gentleman
+country-gentlemen	country gentlemen
+country-house	country house
+country-houses	country houses
+country-people	country people
+country-seat	countryseat
+country-seats	country seats
+coup-de-main	coup de main
+cour-tableau	courtableau
+court-day	court day
+court-favour	court favour
+court-house	courthouse
+court-leet	court leet
+court-party	court party
+court-roll	court roll
+court-room	courtroom
+court-yard	courtyard
+court-yards	courtyards
+courtmartial	court-martial
+courts-martial	court-martial
+courtsmartial	court-martial
+coventgarden	covent-garden
+cow-dung	cow dung
+cow-house	cow house
+cow-pox	cowpox
+craw-fish	crawfish
+cray-fish	crayfish
+crest-fallen	crestfallen
+crockery-ware	crockery ware
+cross-bar	cross bar
+cross-bow	crossbow
+cross-bows	crossbows
+cross-legged	cross legged
+cross-purposes	cross purposes
+cross-road	crossroad
+cross-roads	crossroads
+cross-street	cross street
+cross-way	crossway
+crossexamination	cross-examination
+crossexamined	cross-examined
+crown-lands	crown lands
+cumberland-house	cumberland house
+cup-bearer	cupbearer
+cup-like	cup like
+custom-house	customhouse
+custom-houses	customhouses
+cut-glass	cut glass
+cut-throat	cutthroat
+cut-throats	cutthroats
+cuttle-fish	cuttlefish
+dairy-maid	dairymaid
+dancing-master	dancing master
+dare-say	dare say
+dark-blue	dark blue
+dark-brown	dark brown
+dark-coloured	dark coloured
+dark-eyed	dark eyed
+dark-green	dark green
+dark-red	dark red
+date-trees	date trees
+daughter-in-law	daughter in law
+day-break	daybreak
+day-dreams	day dreams
+day-labour	day labour
+day-labourer	day labourer
+day-labourers	day labourers
+day-light	daylight
+day-scholars	day scholars
+day-school	day school
+day-schools	day schools
+day-spring	dayspring
+day-time	daytime
+day-work	day work
+de-cameron	decameron
+de-the	de the
+dead-weight	dead weight
+deaf-mutes	deaf mutes
+dear-bought	dear bought
+death-bed	deathbed
+death-blow	deathblow
+death-like	deathlike
+death-shot	death shot
+death-warrant	death warrant
+death-wound	death wound
+decent-looking	decent looking
+deep-blue	deep blue
+deep-drawn	deep drawn
+deep-laid	deep laid
+deep-rooted	deep rooted
+deep-sea	deep sea
+deep-seated	deep seated
+deep-water	deep water
+deeply-seated	deeply seated
+deer-skin	deerskin
+deer-skins	deerskins
+deer-stealing	deer stealing
+demi-gods	demigods
+demy-gods	demigods
+demygods	demigods
+deputy-chairman	deputy chairman
+deputy-governor	deputy governor
+deputy-lieutenants	deputy lieutenants
+deputy-sheriff	deputy sheriff
+des-borough	desborough
+dew-drop	dewdrop
+dew-drops	dewdrops
+di-y	diy
+dial-plate	dial plate
+dining-room	diningroom
+dinner-hour	dinner hour
+dinner-parties	dinner parties
+dinner-party	dinner party
+dinner-table	dinner table
+dinner-time	dinner time
+dipping-needle	dipping needle
+director-general	director general
+dirty-looking	dirty looking
+dis-the	dis the
+diving-bell	diving bell
+dock-yard	dockyard
+dock-yards	dockyards
+dog-days	dog days
+dog-fish	dogfish
+dog-kennel	dog kennel
+dog-rib	dog rib
+dog-ribs	dog ribs
+dome-like	dome like
+donjon-keep	donjon keep
+door-keeper	doorkeeper
+door-keepers	doorkeepers
+door-posts	doorposts
+door-way	doorway
+door-ways	doorways
+dorset-shire	dorsetshire
+double-barrelled	double barrelled
+double-boats	double boats
+double-dealing	double dealing
+double-reefed	double reefed
+dove-cot	dovecot
+dove-like	dovelike
+dove-tailed	dovetailed
+down-hill	downhill
+down-stairs	downstairs
+dragon-flies	dragonflies
+dragon-fly	dragon fly
+draw-back	drawback
+draw-bridge	drawbridge
+draw-bridges	drawbridges
+draw-well	draw well
+drawing-rooms	drawing rooms
+drawingroom	drawing-room
+dream-like	dreamlike
+dressing-gown	dressing gown
+dressing-table	dressing table
+dressingroom	dressing-room
+drift-ice	drift ice
+drift-timber	drift timber
+drift-wood	driftwood
+drinking-cup	drinking cup
+drinking-cups	drinking cups
+driving-seat	driving seat
+drurylane	drury-lane
+dumb-show	dumb show
+dumfries-shire	dumfriesshire
+dun-combe	duncombe
+dwelling-house	dwelling house
+dwelling-houses	dwelling houses
+dwelling-place	dwelling place
+dwelling-places	dwelling places
+ear-drum	ear drum
+ear-ring	earring
+ear-rings	earrings
+earl-marshal	earl marshal
+early-printed	early printed
+earth-born	earthborn
+earth-worm	earthworm
+earth-worms	earthworms
+earthen-ware	earthenware
+east-bourne	eastbourne
+east-north-east	east northeast
+east-northeast	east northeast
+east-south-east	east southeast
+east-southeast	east southeast
+eastindia	east-india
+eastindies	east-indies
+eastnortheast	east northeast
+eastsoutheast	east southeast
+easy-chair	easy chair
+eating-room	eating room
+ebbtide	ebb-tide
+edge-hill	edgehill
+eg-g-s	eggs
+eg-gs	eggs
+egg-s	eggs
+egg-shell	eggshell
+egg-shells	eggshells
+eight-and-forty	eight and forty
+eight-and-twenty	eight and twenty
+eight-day	eight day
+eight-pence	eight pence
+eighteen-pence	eighteen pence
+eighteen-pounder	eighteen pounder
+eighteen-pounders	eighteen pounders
+eighty-eight	eighty eight
+eighty-nine	eighty nine
+eighty-one	eighty one
+eighty-six	eighty six
+eightyfive	eighty-five
+eightyfour	eighty-four
+eightyseven	eighty-seven
+eightythree	eighty-three
+eightytwo	eighty-two
+elbow-chair	elbow chair
+elefthero-khori	eleftherokhori
+ellen-borough	ellenborough
+elm-tree	elm tree
+elongate-ovate	elongate ovate
+elongate-triangular	elongate triangular
+en-field	enfield
+en-the	en the
+entrance-hall	entrance hall
+equal-sized	equal sized
+equi-distant	equidistant
+errand-boy	errand boy
+est-ce	est ce
+ev'ry-where	everywhere
+ev'rywhere	everywhere
+evei-y	eveiy
+even-handed	even handed
+ever-changing	ever changing
+ever-during	ever during
+ever-flowing	ever flowing
+ever-green	evergreen
+ever-growing	ever growing
+ever-memorable	ever memorable
+ever-moving	ever moving
+ever-present	ever present
+ever-recurring	ever recurring
+ever-restless	ever restless
+ever-shifting	ever shifting
+ever-varying	ever varying
+ever-watchful	ever watchful
+every-body	everybody
+every-day	everyday
+every-thing	everything
+every-where	everywhere
+evil-disposed	evil disposed
+evil-doers	evildoers
+ex-chap	ex chap
+ex-officio	exofficio
+ex-temporal	extemporal
+ex-the	ex the
+exchequer-bills	exchequer bills
+extra-judicial	extrajudicial
+extra-parochial	extra parochial
+extra-tropical	extra tropical
+extraregarding	extra-regarding
+eye-ball	eyeball
+eye-balls	eyeballs
+eye-brows	eyebrows
+eye-glass	eyeglass
+eye-glasses	eyeglasses
+eye-lashes	eyelashes
+eye-lid	eyelid
+eye-lids	eyelids
+eye-like	eye like
+eye-sight	eyesight
+eye-witness	eyewitness
+eye-witnesses	eyewitnesses
+f-^-	f^
+fac-simile	facsimile
+fac-similes	facsimiles
+fairy-land	fairyland
+fairy-lond	fairyland
+fairylond	fairyland
+falling-off	falling off
+fallow-deer	fallow deer
+fan-like	fanlike
+far-distant	far distant
+far-fam'd	far-famed
+far-fetch'd	farfetched
+far-fetched	farfetched
+far-fetcht	farfetched
+far-off	far off
+far-seen	far seen
+far-sighted	farsighted
+far-spread	far spread
+farfam'd	far-famed
+farfamed	far-famed
+farfetch'd	farfetched
+farfetcht	farfetched
+farm-house	farmhouse
+farm-houses	farmhouses
+farm-servants	farm servants
+farm-yard	farmyard
+fast-boat	fast boat
+fast-day	fast day
+fast-fish	fast fish
+fast-sailing	fast sailing
+father-land	fatherland
+fatherin-law	father-in-law
+fatherinlaw	father-in-law
+fee-farme	fee-farm
+fee-simple	fee simple
+feefarm	fee-farm
+feefarme	fee-farm
+fellow-being	fellow being
+fellow-beings	fellow beings
+fellow-citizen	fellow citizen
+fellow-citizens	fellow citizens
+fellow-countrymen	fellow countrymen
+fellow-labourer	fellow labourer
+fellow-labourers	fellow labourers
+fellow-man	fellowman
+fellow-men	fellowmen
+fellow-passengers	fellow passengers
+fellow-prisoner	fellow prisoner
+fellow-prisoners	fellow prisoners
+fellow-servant	fellow servant
+fellow-servants	fellow servants
+fellow-soldier	fellow soldier
+fellow-soldiers	fellow soldiers
+fellow-student	fellow student
+fellow-students	fellow students
+fellow-sufferer	fellow sufferer
+fellow-sufferers	fellow sufferers
+fellow-traveller	fellow traveller
+fellowcreature	fellow-creature
+fellowcreatures	fellow-creatures
+fellowfeeling	fellow-feeling
+fellowsubjects	fellow-subjects
+fellowtravellers	fellow-travellers
+ferry-boat	ferryboat
+fi-end	fiend
+field-ice	field ice
+field-marshal	field marshal
+field-mice	fieldmice
+field-mouse	fieldmouse
+field-officer	field officer
+field-officers	field officers
+field-piece	field piece
+field-pieces	fieldpieces
+field-preaching	field preaching
+field-sports	field sports
+field-work	fieldwork
+fiend-like	fiendlike
+fifth-monarchy	fifth monarchy
+fifty-first	fifty first
+fifty-gun	fifty gun
+fiftyeight	fifty-eight
+fiftyfive	fifty-five
+fiftyfour	fifty-four
+fiftynine	fifty-nine
+fiftyninth	fifty-ninth
+fiftyone	fifty-one
+fiftyseven	fifty-seven
+fiftysix	fifty-six
+fiftythree	fifty-three
+fiftytwo	fifty-two
+fig-	fig
+fig-tree	fig tree
+fig-trees	fig trees
+file-closer	file closer
+fileclosers	file-closers
+fine-looking	fine looking
+fine-spun	finespun
+finegrained	fine-grained
+finger-post	fingerpost
+fiom	fi-om
+fir-tree	fir tree
+fir-trees	fir trees
+fir-wood	fir wood
+fire-arms	firearms
+fire-balls	fireballs
+fire-engine	fire engine
+fire-engines	fire engines
+fire-flies	fireflies
+fire-fly	firefly
+fire-light	firelight
+fire-office	fire office
+fire-place	fireplace
+fire-places	fireplaces
+fire-power	firepower
+fire-proof	fireproof
+fire-ship	fireship
+fire-ships	fire ships
+fire-side	fireside
+fire-sides	firesides
+fire-wood	firewood
+fire-works	fireworks
+first-born	firstborn
+first-floor	first floor
+first-fruits	firstfruits
+first-mentioned	first mentioned
+first-named	first named
+firstrate	first-rate
+fish-hook	fishhook
+fish-hooks	fishhooks
+fish-kill	fishkill
+fish-like	fish like
+fish-market	fish market
+fish-oil	fish oil
+fish-pond	fishpond
+fish-ponds	fishponds
+fishing-boat	fishing boat
+fishing-boats	fishing boats
+fishing-lines	fishing lines
+fishing-nets	fishing nets
+fishing-party	fishing party
+fishing-rod	fishing rod
+fishing-stations	fishing stations
+fishing-tackle	fishing tackle
+fitsroy	fits-roy
+fitzjohn	fitz-john
+five-and-forty	five and forty
+five-and-thirty	five and thirty
+five-and-twenty	five and twenty
+five-eighths	five eighths
+five-fold	fivefold
+five-pence	five pence
+five-sixths	five sixths
+fixed-idea	fixed idea
+flag-ship	flagship
+flag-staff	flagstaff
+flag-stones	flagstones
+flat-bottom'd	flat-bottomed
+flatbottom'd	flat-bottomed
+flatbottomed	flat-bottomed
+flattopped	flat-topped
+fleetstreet	fleet-street
+flesh-coloured	flesh coloured
+flesh-fly	flesh fly
+flesh-pots	fleshpots
+flesh-red	flesh red
+fleur-de-lis	fleur de lis
+fleurdelys	fleur-de-lys
+fleurs-de-lis	fleur-de-lys
+fleursdelis	fleur-de-lys
+flint-glass	flint glass
+flinty-slate	flinty slate
+floe-piece	floe piece
+floe-pieces	floe pieces
+flood-gates	floodgates
+flood-season	flood season
+floodtide	flood-tide
+flower-garden	flower garden
+flower-gardens	flower gardens
+flower-pot	flowerpot
+flower-pots	flowerpots
+fly-leaf	fly leaf
+fly-wheel	flywheel
+flying-fish	flying fish
+fog-bank	fog bank
+fog-bow	fog bow
+fol-mote	fol mote
+folding-doors	folding doors
+fool-hardiness	foolhardiness
+foot-ball	football
+foot-board	footboard
+foot-guards	foot guards
+foot-passengers	foot passengers
+foot-path	footpath
+foot-paths	footpaths
+foot-prints	footprints
+foot-soldier	foot soldier
+foot-soldiers	foot soldiers
+foot-stalk	footstalk
+foot-stalks	footstalks
+foot-stool	footstool
+for-the	for the
+fore-arm	forearm
+fore-chains	fore chains
+fore-feet	forefeet
+fore-finger	forefinger
+fore-fingers	forefingers
+fore-foot	forefoot
+fore-ground	foreground
+fore-leg	foreleg
+fore-legs	forelegs
+fore-mast	foremast
+fore-part	forepart
+fore-sail	foresail
+fore-top	foretop
+fore-wings	fore wings
+forest-trees	forest trees
+forget-me-not	forget me not
+fortune-teller	fortuneteller
+fortune-telling	fortunetelling
+forty-fifth	forty fifth
+forty-five	fortyfive
+forty-gun	forty gun
+forty-thousand	forty thousand
+fortyeight	forty-eight
+fortyfour	forty-four
+fortynine	forty-nine
+fortyone	forty-one
+fortyseven	forty-seven
+fortysix	forty-six
+fortythree	forty-three
+fortytwo	forty-two
+fossil-shells	fossil shells
+foster-brother	foster brother
+foster-father	foster father
+foster-mother	foster mother
+foundation-stone	foundation stone
+fountain-head	fountainhead
+four-and-twenty	four and twenty
+four-day	four day
+four-fold	fourfold
+four-in-hand	four in hand
+four-pence	fourpence
+four-pounders	four pounders
+four-score	fourscore
+four-tenths	four tenths
+four-wheeled	four wheeled
+fourfifths	four-fifths
+foursided	four-sided
+fowling-piece	fowling piece
+fowling-pieces	fowling pieces
+fox-chase	fox chase
+fox-glove	foxglove
+fox-hunting	fox hunting
+frame-work	framework
+frank-land	frankland
+frank-pledge	frankpledge
+free-born	freeborn
+free-coloured	free coloured
+free-masonry	freemasonry
+free-masons	freemasons
+free-school	free school
+free-schools	free schools
+free-stone	freestone
+free-thinkers	freethinkers
+free-trade	free trade
+free-will	freewill
+freezing-point	freezing point
+fresh-water	freshwater
+fret-work	fretwork
+frock-coat	frock coat
+frost-bitten	frostbitten
+frost-rime	frost rime
+frost-smoke	frost smoke
+fruit-tree	fruit tree
+fruit-trees	fruit trees
+frying-pan	frying pan
+full-blown	full blown
+full-dress	full dress
+full-dressed	full dressed
+full-fed	full fed
+full-grown	fullgrown
+full-length	full length
+full-pay	full pay
+full-sized	full sized
+fulton-street	fulton street
+funnel-shaped	funnel shaped
+fur-seal	fur seal
+g-ig	gig
+g-ive	give
+g-reen-house	greenhouse
+gall-bladder	gallbladder
+gall-flies	gall flies
+gall-way	gallway
+galley-slave	galley slave
+galley-slaves	galley slaves
+gambling-house	gambling house
+gambling-houses	gambling houses
+game-cock	gamecock
+game-laws	game laws
+gaming-houses	gaming houses
+gaming-table	gaming table
+gaming-tables	gaming tables
+garden-gate	garden gate
+garden-wall	garden wall
+garden-walls	garden walls
+gardesducorps	gardes-du-corps
+gate-house	gatehouse
+gate-way	gateway
+gaylussac	gay-lussac
+general-in-chief	general in chief
+generally-received	generally received
+gentleman-commoner	gentleman commoner
+gentleman-like	gentlemanlike
+gentleman-usher	gentleman usher
+gently-sloping	gently sloping
+ghost-like	ghostlike
+ghyfto-kastro	ghyftokastro
+gi-ant	giant
+gieat	gi-eat
+gill-flap	gill flap
+gill-lid	gill lid
+gill-openings	gill openings
+glass-house	glasshouse
+glass-houses	glasshouses
+glee-maiden	glee maiden
+glee-woman	glee woman
+glen-roy	glenroy
+glo-worm	glowworm
+glo-worms	glowworms
+glow-worm	glowworm
+glow-worms	glowworms
+gloworm	glowworm
+gloworms	glowworms
+goat-skin	goatskin
+goat-skins	goatskins
+gobetween	go-between
+god-like	godlike
+gold-beaters	gold beaters
+gold-dust	gold dust
+gold-laced	gold laced
+gold-leaf	gold leaf
+good-breeding	good breeding
+good-by	goodbye
+good-bye	goodbye
+good-hearted	goodhearted
+good-hope	good hope
+good-humor	good humour
+good-humored	good-humoured
+good-humour'd	good-humoured
+good-morrow	good morrow
+good-natur'd	good-natured
+good-nature	good nature
+good-naturedly	good naturedly
+good-night	goodnight
+good-sized	good sized
+good-tempered	good tempered
+good-wife	goodwife
+good-will	goodwill
+goodby	goodbye
+goodhumor	good-humour
+goodhumored	good-humoured
+goodhumour	good-humour
+goodhumour'd	good-humoured
+goodhumoured	good-humoured
+goodlooking	good-looking
+goodnatur'd	good-natured
+goodnatured	good-natured
+goose-quill	goosequill
+government-house	government house
+governor-in-chief	governor in chief
+governor-inches	governor inches
+governorgeneral	governor-general
+grammar-school	grammar school
+grammar-schools	grammar schools
+grand-children	grandchildren
+grand-daughter	granddaughter
+grand-master	grandmaster
+grape-shot	grapeshot
+grass-plat	grass plat
+grass-plot	grass plot
+grave-digger	grave digger
+grave-stone	gravestone
+grave-stones	gravestones
+grave-yard	graveyard
+gravel-pit	gravel pit
+gravel-pits	gravel pits
+gray-headed	gray headed
+great-coat	greatcoat
+great-grandfather	great grandfather
+great-grandmother	great grandmother
+great-grandson	great grandson
+great-prior	great prior
+greatbritain	great britain
+greatest-happiness	greatest happiness
+green-coloured	green coloured
+green-house	greenhouse
+green-room	green room
+green-sand	greensand
+green-stone	greenstone
+green-sward	greensward
+green-wood	greenwood
+greenish-grey	greenish grey
+grey-beard	greybeard
+grey-headed	grey headed
+greyish-white	greyish white
+grog-shops	grog shops
+grosvenor-square	grosvenor square
+ground-floor	ground floor
+ground-plan	ground plan
+ground-plot	ground plot
+ground-rent	ground rent
+ground-rents	ground rents
+ground-work	groundwork
+grown-up	grownup
+guard-house	guardhouse
+guard-room	guardroom
+guild-merchant	guild merchant
+gulf-stream	gulf stream
+gun-barrels	gun barrels
+gun-boat	gunboat
+gun-boats	gunboats
+gun-brigs	gun brigs
+gun-carriages	gun carriages
+gun-powder	gunpowder
+gun-shot	gunshot
+gun-vessels	gun vessels
+hackney-coach	hackney coach
+hackney-coaches	hackney coaches
+hackney-coachman	hackney coachman
+hail-storm	hailstorm
+hair-breadth	hairbreadth
+hair-cloth	haircloth
+hair-dresser	hairdresser
+hair-like	hairlike
+hair-powder	hair powder
+half-a-crown	half a crown
+half-a-dozen	half a dozen
+half-a-guinea	half a guinea
+half-a-mile	half a mile
+half-an-hour	half an hour
+half-boots	half boots
+half-breed	half breed
+half-breeds	half breeds
+half-brother	half brother
+half-buried	half buried
+half-burnt	half burnt
+half-caste	half caste
+half-century	half century
+half-civilized	half civilized
+half-closed	half closed
+half-clothed	half clothed
+half-covered	half covered
+half-crown	half crown
+half-crowns	half crowns
+half-dozen	half dozen
+half-dressed	half dressed
+half-drowned	half drowned
+half-extinguished	half extinguished
+half-famished	half famished
+half-finished	half finished
+half-formed	half formed
+half-guinea	half guinea
+half-hidden	half hidden
+half-holiday	half holiday
+half-hour	half hour
+half-killed	half killed
+half-length	half length
+half-mile	half mile
+half-moon	half moon
+half-naked	half naked
+half-open	half open
+half-opened	half opened
+half-past	half past
+half-pence	halfpence
+half-penny	halfpenny
+half-peny	halfpenny
+half-pint	half pint
+half-price	half price
+half-round	half round
+half-ruined	half ruined
+half-score	half score
+half-seen	half seen
+half-shut	half shut
+half-smothered	half smothered
+half-starved	half starved
+half-tide	half tide
+half-way	halfway
+half-year	half year
+half-yearly	half yearly
+halfdead	half-dead
+halfpay	half-pay
+halfpeny	halfpenny
+hall-door	hall door
+halting-place	halting place
+hammer-cloth	hammer cloth
+hampton-court	hampton court
+hand-bill	handbill
+hand-bills	handbills
+hand-grenades	hand grenades
+hand-in-hand	hand in hand
+hand-mill	hand mill
+hand-rail	handrail
+hand-writing	handwriting
+handy-work	handy work
+hangeron	hanger-on
+hangers-on	hangers on
+hard-earned	hard earned
+hard-fought	hard fought
+hard-hearted	hardhearted
+hard-wicked	hard wicked
+hard-working	hardworking
+harvest-field	harvest field
+harvest-home	harvest home
+haul-round	haul round
+hawk-moth	hawk moth
+hay-loft	hayloft
+hay-market	haymarket
+hay-stacks	haystacks
+he-was	he was
+head-ach	headache
+head-ache	headache
+head-aches	headaches
+head-achs	headaches
+head-dress	headdress
+head-dresses	headdresses
+head-each	head each
+head-gear	headgear
+head-land	headland
+head-lands	headlands
+head-librarian	head librarian
+head-man	headman
+head-master	headmaster
+head-piece	headpiece
+head-quarters	headquarters
+head-way	headway
+headach	headache
+headachs	headaches
+heart-breaking	heartbreaking
+heart-broken	heartbroken
+heart-burnings	heart burnings
+heart-cheering	heart cheering
+heart-felt	heartfelt
+heart-rending	heartrending
+heart-shaped	heart shaped
+heart-sick	heartsick
+heart-strings	heartstrings
+hearth-stone	hearthstone
+heav'n-ward	heavenward
+heav'nward	heavenward
+heave-to	heave to
+heaven-born	heaven born
+heaven-ward	heavenward
+heavy-armed	heavy armed
+heavy-laden	heavy laden
+hedge-hog	hedgehog
+hedge-row	hedgerow
+hedge-rows	hedgerows
+heir-apparent	heir apparent
+heir-loom	heirloom
+hell-fire	hellfire
+help-mate	helpmate
+hen-roost	hen roost
+her-self	herself
+herring-fishery	herring fishery
+hey-day	heyday
+hiding-places	hiding places
+hidingplace	hiding-place
+high-admiral	high admiral
+high-born	highborn
+high-borne	highborn
+high-bred	highbred
+high-church	high church
+high-commission	high commission
+high-crowned	high crowned
+high-finished	high finished
+high-flown	high flown
+high-handed	high handed
+high-land	highland
+high-lands	highlands
+high-mettled	high mettled
+high-mindedness	high mindedness
+high-pressure	high pressure
+high-priced	high priced
+high-priest	high priest
+high-priests	high priests
+high-road	highroad
+high-school	high school
+high-sheriff	high sheriff
+high-souled	high souled
+high-sounding	high sounding
+high-steward	high steward
+high-street	high street
+high-treason	high treason
+high-water	high water
+high-way	highway
+high-wood	highwood
+highborne	highborn
+highly-esteemed	highly esteemed
+highly-favoured	highly favoured
+highly-finished	highly finished
+highly-gifted	highly gifted
+highly-inclined	highly inclined
+highly-polished	highly polished
+highly-wrought	highly wrought
+highminded	high-minded
+highspirited	high-spirited
+hill-forts	hill forts
+hill-side	hillside
+hill-sides	hillsides
+hill-tops	hilltops
+him-self	himself
+hind-feet	hind feet
+hind-foot	hind foot
+hind-leg	hind leg
+hind-legs	hind legs
+hind-toe	hind toe
+hive-bee	hive bee
+hoar-frost	hoarfrost
+hobby-horse	hobbyhorse
+hold-beams	hold beams
+hold-enough	holdenough
+holding-ground	holding ground
+holly-tree	holly tree
+holy-days	holy days
+home-bred	homebred
+home-made	homemade
+homeward-bound	homeward bound
+honey-comb	honeycomb
+honey-combed	honeycombed
+honey-dew	honey dew
+honey-moon	honeymoon
+honey-suckle	honeysuckle
+hoped-for	hoped for
+hornblende-schist	hornblende schist
+horror-stricken	horror stricken
+horror-struck	horror struck
+horse-back	horseback
+horse-dealers	horse dealers
+horse-flesh	horseflesh
+horse-guards	horse guards
+horse-hair	horsehair
+horse-laugh	horselaugh
+horse-load	horse load
+horse-race	horse race
+horse-races	horse races
+horse-racing	horse racing
+horse-shoe	horseshoe
+horse-shoes	horseshoes
+horse-shooe	horseshoe
+horse-stealing	horse stealing
+horseshooe	horseshoe
+hot-bed	hotbed
+hot-beds	hotbeds
+hot-headed	hotheaded
+hot-house	hothouse
+hot-houses	hothouses
+hotel-keeper	hotel keeper
+hotel-neville	hotel neville
+hour-glass	hourglass
+house-breaking	housebreaking
+house-door	house door
+house-fly	house fly
+house-keeper	housekeeper
+house-keeping	housekeeping
+house-maid	housemaid
+house-rent	house rent
+house-tops	housetops
+hove-to	hove to
+hue-and-cry	hue and cry
+huilli-che	huilliche
+human-kind	humankind
+humannature	human nature
+humble-bees	humble bees
+humbleservant	humble-servant
+humming-bird	hummingbird
+humming-birds	hummingbirds
+hundred-fold	hundredfold
+hundred-weight	hundredweight
+hunting-ground	hunting ground
+hunting-party	hunting party
+hyde-park	hyde park
+hymn-book	hymnbook
+i-i-i	iii
+i-ii	iii
+ice-anchors	ice anchors
+ice-berg	iceberg
+ice-bergs	icebergs
+ice-blink	ice blink
+ice-chisel	ice chisel
+ice-cream	ice cream
+ice-mate	ice mate
+iii-chap	iii chap
+ill-advised	ill advised
+ill-affected	ill affected
+ill-assorted	ill assorted
+ill-blood	ill blood
+ill-breeding	ill breeding
+ill-built	ill built
+ill-chosen	ill chosen
+ill-clothed	ill clothed
+ill-concerted	ill concerted
+ill-conduct	ill conduct
+ill-constructed	ill constructed
+ill-cultivated	ill cultivated
+ill-defined	ill defined
+ill-disposed	ill disposed
+ill-dressed	ill dressed
+ill-fame	ill fame
+ill-favoured	ill favoured
+ill-fed	ill fed
+ill-formed	ill formed
+ill-fortune	ill fortune
+ill-health	ill health
+ill-humor	ill humour
+ill-informed	ill informed
+ill-judged	ill judged
+ill-looking	ill looking
+ill-luck	ill luck
+ill-managed	ill managed
+ill-natur'd	ill natured
+ill-placed	ill placed
+ill-regulated	ill regulated
+ill-starred	ill starred
+ill-success	ill success
+ill-temper	ill temper
+ill-tempered	ill tempered
+ill-tim'd	ill timed
+ill-treat	ill treat
+ill-treating	ill treating
+ill-understood	ill understood
+ill-used	ill-used
+illadapted	ill adapted
+illbred	ill-bred
+illfated	ill-fated
+illfounded	ill-founded
+illgotten	ill-gotten
+illhumor	ill humour
+illhumour	ill humour
+illnatur'd	ill natured
+illnature	ill nature
+illnatured	ill natured
+illsuited	ill suited
+illtim'd	ill timed
+illtimed	ill timed
+illtreated	ill-treated
+illtreatment	ill treatment
+illusage	ill usage
+illwill	ill-will
+im-the	im the
+image-worship	image worship
+in-actual	in actual
+in-annual	in annual
+in-burgesses	in burgesses
+in-chief	in chief
+in-door	indoor
+in-doors	indoors
+in-general	in general
+in-law	inlaw
+in-shore	inshore
+in-the	in the
+income-tax	income tax
+ink-bag	ink bag
+ink-bags	ink bags
+ink-horn	inkhorn
+inn-keeper	innkeeper
+inn-keepers	innkeepers
+inspector-general	inspector general
+instrument-maker	instrument maker
+inter-colonial	intercolonial
+io-o	ioo
+ipsedixit	ipse-dixit
+iron-bound	ironbound
+iron-shot	iron shot
+iron-stone	ironstone
+iron-work	ironwork
+iron-works	ironworks
+it-self	itself
+it-was	it was
+j-^-	j^
+j-ig	jig
+jack-boots	jackboots
+jaw-bone	jawbone
+jaw-bones	jawbones
+jet-black	jet black
+jiff-	jiff
+jig-	jig
+john-stone	johnstone
+john-street	john street
+johns-tone	johnstone
+joint-stock	joint stock
+joint-tenant	joint tenant
+jolly-boat	jolly boat
+judgment-seat	judgment seat
+juxta-position	juxtaposition
+kerne-guy	kerneguy
+kettle-drum	kettledrum
+kettle-drums	kettledrums
+key-hole	keyhole
+key-stone	keystone
+key-stones	key stones
+kind-hearted	kindhearted
+king-craft	kingcraft
+king-fisher	kingfisher
+king-street	king street
+kings-wood	kingswood
+kirk-dale	kirkdale
+kitchen-garden	kitchen garden
+knee-deep	knee deep
+knight-banneret	knight banneret
+knight-errant	knight errant
+knight-errantry	knight errantry
+la-fayette	lafayette
+la-source	lasource
+lace-winged	lace winged
+lack-a-day	lackaday
+lady-bird	ladybird
+lady-birds	ladybirds
+lady-day	ladyday
+lady-like	ladylike
+lady-love	ladylove
+lake-like	lake like
+lamp-black	lampblack
+lamp-light	lamplight
+land-birds	land birds
+land-breeze	land breeze
+land-crab	land crab
+land-floods	land floods
+land-forces	land forces
+land-holders	landholders
+land-ice	land ice
+land-lock'd	landlocked
+land-locked	landlocked
+land-mark	landmark
+land-marks	landmarks
+land-owner	landowner
+land-owners	landowners
+land-revenue	land revenue
+land-shells	land shells
+land-side	landside
+land-wind	land wind
+landing-place	landing place
+landing-places	landing places
+landlock'd	landlocked
+landscape-painting	landscape painting
+landtax	land-tax
+lang-port	langport
+lans-down	lansdown
+lap-dog	lapdog
+large-sized	large sized
+last-mentioned	last mentioned
+last-named	last named
+lattice-work	lattice work
+laughing-stock	laughingstock
+lava-current	lava current
+lava-currents	lava currents
+lava-stream	lava stream
+lava-streams	lava streams
+law-books	law books
+law-courts	law courts
+law-days	law days
+law-expenses	law expenses
+law-giver	lawgiver
+law-givers	lawgivers
+law-makers	lawmakers
+law-making	lawmaking
+law-officers	law officers
+law-suit	lawsuit
+law-suits	lawsuits
+law-worthy	law worthy
+lay-brother	lay brother
+lay-elders	lay elders
+lay-impropriations	lay impropriations
+lay-patrons	lay patrons
+lay-preachers	lay preachers
+lay-preaching	lay preaching
+lay-to	lay to
+leading-strings	leading strings
+leaf-like	leaf like
+lecture-room	lecture room
+lee-bow	lee bow
+lee-shore	lee shore
+lee-side	lee side
+left-about	left about
+left-hand	left hand
+left-handed	lefthanded
+lemon-juice	lemon juice
+letter-book	letter book
+letter-press	letterpress
+letter-writer	letter writer
+letter-writing	letter writing
+letterspatent	letters-patent
+lettredecachet	lettre-de-cachet
+lettresdecachet	lettres-de-cachet
+liberal-minded	liberal minded
+lieut-col	lieut col
+lieut-governor	lieut governor
+lieutcolonel	lieut-colonel
+lieutenant-colonels	lieutenant colonels
+lieutenantcolonel	lieutenant-colonel
+lieutenantgeneral	lieutenant-general
+lieutenantgovernor	lieutenant-governor
+lieutgen	lieut-gen
+life-blood	lifeblood
+life-guards	lifeguards
+life-interest	life interest
+life-long	lifelong
+life-time	lifetime
+light-armed	light armed
+light-coloured	light coloured
+light-hearted	lighthearted
+light-house	lighthouse
+light-houses	lighthouses
+light-infantry	light infantry
+light-red	light red
+lime-kiln	limekiln
+lime-stone	limestone
+lime-water	limewater
+lincoln's-inn	lincoln inn
+lincoln'sinn	lincoln inn
+line-of-battle	line of battle
+linen-draper	linen draper
+live-long	livelong
+live-stock	livestock
+loan-nina	loannina
+loch-leven	lochleven
+lock-up	lock up
+loco-motion	locomotion
+lodging-house	lodging house
+log-book	log book
+log-house	loghouse
+log-hut	log hut
+lombard-street	lombard street
+lombardy-street	lombardy street
+london-bridge	london bridge
+long-boat	longboat
+long-bow	longbow
+long-buried	long buried
+long-cherished	long cherished
+long-continued	long continued
+long-drawn	long drawn
+long-er	longer
+long-established	long established
+long-expected	long expected
+long-flowing	long flowing
+long-island	long island
+long-legged	long legged
+long-legs	long legs
+long-lived	long lived
+long-lost	long lost
+long-neglected	long neglected
+long-past	long past
+long-promised	long promised
+long-protracted	long protracted
+long-sought	long sought
+long-standing	longstanding
+long-suffering	long suffering
+long-tailed	long tailed
+long-temps	longtemps
+long-tems	longtems
+long-tried	long tried
+long-winded	longwinded
+long-wished-for	long wished for
+look-out	lookout
+looker-on	looker on
+lookers-on	lookers on
+looking-glasses	looking glasses
+lookingglass	looking-glass
+loop-hole	loophole
+loop-holes	loopholes
+lord-admiral	lord admiral
+lord-advocate	lord advocate
+lord-chamberlain	lord chamberlain
+lord-chancellor	lord chancellor
+lord-chief-justice	lord chief justice
+lord-general	lord general
+lord-justices	lord justices
+lord-lieutenancy	lord lieutenancy
+lord-lieutenant	lord lieutenant
+lord-lieutenants	lord lieutenants
+lord-mayor	lord mayor
+lord-president	lord president
+lord-privy-seal	lord privy seal
+lord-treasurer	lord treasurer
+lordkeeper	lord-keeper
+lottery-office	lottery office
+love-feasts	love feasts
+love-letter	love letter
+love-letters	love letters
+love-lorn	lovelorn
+love-sick	lovesick
+love-song	love song
+lover-like	lover like
+loving-kindness	loving kindness
+low-born	lowborn
+low-land	lowland
+low-lands	lowlands
+low-spirited	low spirited
+low-water	low water
+lower-case	lower case
+lower-deck	lower deck
+lud-gate	ludgate
+lumber-street	lumber street
+lurking-place	lurking place
+lurking-places	lurking places
+lying-in	lying in
+ma-comb	macomb
+ma-the	ma the
+mac-beth	macbeth
+mac-kenzie	mackenzie
+machine-drawing	machine drawing
+mad-house	madhouse
+maid-servant	maidservant
+maid-servants	maidservants
+mail-coach	mail coach
+mail-coaches	mailcoaches
+main-land	mainland
+main-mast	mainmast
+main-sail	mainsail
+main-spring	mainspring
+main-top	maintop
+main-yard	main yard
+majorgen	major-gen
+majorgeneral	major-general
+majorgenerals	major-generals
+making-off	making off
+mal-administration	maladministration
+male-administration	maladministration
+maleadministration	maladministration
+malt-tax	malt tax
+maltebrun	malte-brun
+man-at-arms	man at arms
+man-servant	manservant
+manderinchief	commander-in-chief
+manofwar	man-of-war
+manor-house	manor house
+mansionhouse	mansion-house
+mantel-piece	mantelpiece
+mantua-maker	mantua maker
+many-coloured	many coloured
+mar-prelate	marprelate
+market-cross	market cross
+market-day	market day
+market-house	market house
+market-people	market people
+market-place	marketplace
+market-places	marketplaces
+market-price	market price
+market-rate	market rate
+market-town	market town
+market-towns	market towns
+marriage-bed	marriage bed
+marriage-feast	marriage feast
+mary-le-bone	marylebone
+mason-work	mason work
+mass-houses	mass houses
+mast-head	masthead
+mast-heads	mast heads
+master-general	master general
+master-hand	master hand
+master-key	master key
+master-manufacturer	master manufacturer
+master-peice	masterpiece
+master-piece	masterpiece
+master-pieces	masterpieces
+master-spirit	master spirit
+master-spirits	master spirits
+master-stroke	masterstroke
+masterpeice	masterpiece
+matter-of-fact	matter of fact
+mavro-dhilissi	mavrodhilissi
+may-be	maybe
+may-fly	may fly
+may-pole	maypole
+mayday	may-day
+me-the	me the
+mean-time	meantime
+mean-while	meanwhile
+meeting-house	meetinghouse
+meeting-houses	meetinghouses
+melo-drama	melodrama
+melo-dramatic	melodramatic
+memorandum-book	memorandum book
+men-servants	menservants
+menatarms	men-at-arms
+menofwar	men-of-war
+mentum-tooth	mentum tooth
+merchant-ship	merchant ship
+merchant-ships	merchant ships
+merchant-vessel	merchant vessel
+merchant-vessels	merchant vessels
+mercy-seat	mercy seat
+merry-making	merrymaking
+meta-thorax	metathorax
+metallic-coloured	metallic coloured
+mica-schist	mica schist
+mica-slate	mica slate
+mid-day	midday
+mid-night	midnight
+mid-way	midway
+midair	mid-air
+midchannel	mid-channel
+middle-ag'd	middle-aged
+middle-men	middlemen
+middle-sized	middle sized
+middle-street	middle street
+middleag'd	middle-aged
+middleaged	middle-aged
+mig-ht	might
+mile-stone	milestone
+militia-man	militiaman
+militia-men	militiamen
+milk-maid	milkmaid
+milk-maids	milkmaids
+milk-white	milk white
+mill-dam	mill dam
+mill-seats	mill seats
+mill-stone	millstone
+mill-stones	millstones
+mill-work	mill work
+mis-government	misgovernment
+mis-seated	mis seated
+mis-shapen	misshapen
+mis-spent	misspent
+mis-statement	misstatement
+mis-statements	misstatements
+miserable-looking	miserable looking
+mizen-mast	mizen mast
+mockheroic	mock-heroic
+mocking-bird	mocking bird
+moderate-sized	moderate sized
+moi-e	moi e
+mole-cricket	mole cricket
+mon-forte	monforte
+money-lenders	money lenders
+money-making	money making
+money-market	money market
+moon-beam	moonbeam
+moon-beams	moonbeams
+moon-light	moonlight
+moon-lit	moonlit
+moon-struck	moonstruck
+moor-croft	moorcroft
+moor-fields	moorfields
+moose-deer	moose deer
+morris-dancers	morris dancers
+mother-church	mother church
+mother-in-law	mother in law
+mother-of-pearl	mother of pearl
+mothercountry	mother-country
+mountain-ash	mountain ash
+mountain-chain	mountain chain
+mountain-chains	mountain chains
+mountain-limestone	mountain limestone
+mountain-side	mountain side
+mountain-stream	mountain stream
+mountain-streams	mountain streams
+mountain-top	mountain top
+mountain-tops	mountain tops
+mouth-piece	mouthpiece
+much-dreaded	much dreaded
+much-injured	much injured
+much-lamented	much lamented
+much-loved	much loved
+mud-bank	mud bank
+mud-banks	mud banks
+multi-articulate	multi articulate
+mus-grave	musgrave
+muschel-kalk	muschelkalk
+muscle-shells	muscle shells
+music-master	music master
+music-meeting	music meeting
+music-room	music room
+musk-ox	musk ox
+musk-oxen	musk oxen
+musket-ball	musket ball
+musket-balls	musket balls
+musket-shot	musket shot
+mustard-seed	mustard seed
+muster-roll	muster roll
+mutton-chop	mutton chop
+my-self	myself
+nag-pore	nagpore
+narrow-minded	narrow minded
+natural-born	natural born
+navy-yard	navy yard
+ne-a	nea
+near-sighted	nearsighted
+needle-work	needlework
+needle-worke	needlework
+needleworke	needlework
+negro-houses	negro houses
+negro-man	negro man
+negro-slaves	negro slaves
+net-work	network
+never-ceasing	never ceasing
+never-ending	never ending
+never-fading	never fading
+never-tiring	never tiring
+neverfailing	never-failing
+new-birth	new birth
+new-born	newborn
+new-built	new built
+new-cast	new cast
+new-comer	newcomer
+new-comers	newcomers
+new-fallen	new fallen
+new-fangled	newfangled
+new-formed	new formed
+new-found	newfound
+new-haven	new haven
+new-laid	new laid
+new-london	new london
+new-made	new made
+new-man	newman
+new-married	new married
+new-model	new model
+new-modelled	new modelled
+new-modelling	new modelling
+new-stead	newstead
+new-street	new street
+new-streets	new streets
+new-year	new year
+newcastleupontyne	newcastle-upon-tyne
+newengland	new-england
+newhampshire	new-hampshire
+newjersey	new-jersey
+newly-acquired	newly acquired
+newly-arrived	newly arrived
+newly-created	newly created
+newly-discovered	newly discovered
+newly-elected	newly elected
+newly-formed	newly formed
+newly-invented	newly invented
+newly-made	newly made
+newly-raised	newly raised
+neworleans	new-orleans
+newyork	new-york
+newzealand	new-zealand
+next-door	next door
+nick-name	nickname
+nick-named	nicknamed
+nick-names	nicknames
+night-breeze	night breeze
+night-cap	nightcap
+night-caps	nightcaps
+night-fall	nightfall
+night-gown	nightgown
+night-mare	nightmare
+night-scene	night scene
+night-time	nighttime
+night-watch	night watch
+night-wind	night wind
+nine-pence	nine pence
+nine-pins	ninepins
+nine-pounder	nine pounder
+nine-pounders	nine pounders
+ninetenths	nine-tenths
+ninety-five	ninety five
+ninety-four	ninety four
+ninety-one	ninety one
+ninety-seven	ninety seven
+ninety-three	ninety three
+ninetyeight	ninety-eight
+ninetynine	ninety-nine
+ninetysix	ninety-six
+ninetytwo	ninety-two
+nitro-muriatic	nitro muriatic
+noble-minded	noble minded
+non-age	nonage
+non-appearance	nonappearance
+non-attendance	non attendance
+non-commissioned	noncommissioned
+non-compliance	noncompliance
+non-conformist	nonconformist
+non-conformists	nonconformists
+non-conformity	nonconformity
+non-descript	nondescript
+non-entity	nonentity
+non-existence	nonexistence
+non-importation	non importation
+non-intermittent	non intermittent
+non-juror	nonjuror
+non-jurors	nonjurors
+non-payment	nonpayment
+non-performance	nonperformance
+non-production	nonproduction
+non-residence	nonresidence
+non-resident	nonresident
+non-resistance	nonresistance
+nonintercourse	non-intercourse
+nonresidents	nonresidents
+noon-day	noonday
+noon-tide	noontide
+nor-general	nor general
+north-cote	northcote
+north-east	northeast
+north-easterly	northeasterly
+north-eastern	northeastern
+north-easternmost	north easternmost
+north-eastward	northeastward
+north-end	north end
+north-north-east	north northeast
+north-north-west	north northwest
+north-northeast	north northeast
+north-northwest	north northwest
+north-west	northwest
+north-westerly	northwesterly
+north-western	northwestern
+north-westward	northwestward
+note-book	notebook
+now-a-days	nowadays
+now-adays	nowadays
+nowa-days	nowadays
+nut-brown	nutbrown
+nut-browne	nutbrown
+nutbrowne	nutbrown
+nymph-like	nymphlike
+o'er-night	overnight
+o'er-ran	overran
+o'er-rate	overrate
+o'er-rul'd	overruled
+o'er-ruling	overruling
+o'er-run	overrun
+o'ernight	overnight
+o'erran	overran
+o'errate	overrate
+o'errul'd	overruled
+o'erruling	overruling
+o'errun	overrun
+oak-leaves	oak leaves
+oak-tree	oak tree
+oak-trees	oak trees
+oat-cake	oatcake
+object-glass	object glass
+object-glasses	object glasses
+oblong-ovate	oblong ovate
+odd-looking	odd looking
+oeildeboeuf	oeil-de-boeuf
+of-the	of the
+off-hand	offhand
+off-shore	offshore
+office-holders	office holders
+oft-repeated	oft repeated
+oft-times	ofttimes
+oil-cloth	oilcloth
+oil-gas	oil gas
+oil-lamp	oil lamp
+oil-painting	oil painting
+old-fashion'd	old-fashioned
+oldfashion'd	old-fashioned
+oldfashioned	old-fashioned
+olive-branch	olive branch
+olive-green	olive green
+olive-grounds	olive grounds
+olive-trees	olive trees
+on-the	on the
+one-and-twenty	one and twenty
+one-eighth	one eighth
+one-eyed	one eyed
+one-fifth	one fifth
+one-fourth	one fourth
+one-half	one half
+one-horse	one horse
+one-hundredth	one hundredth
+one-ninth	one ninth
+one-pound	one pound
+one-quarter	one quarter
+one-seventh	one seventh
+one-sixteenth	one sixteenth
+one-sixth	one sixth
+one-tenth	one tenth
+one-third	one third
+one-thirtieth	one thirtieth
+one-twelfth	one twelfth
+one-twentieth	one twentieth
+only-begotten	only begotten
+open-hearted	open hearted
+opera-glass	opera glass
+operahouse	opera-house
+opium-eater	opium eater
+orange-coloured	orange coloured
+orange-tree	orange tree
+orange-trees	orange trees
+ordinary-sized	ordinary sized
+orphan-houses	orphan houses
+orphanhouse	orphan-house
+our-selves	ourselves
+out-buildings	outbuildings
+out-burgesses	out burgesses
+out-door	outdoor
+out-doors	outdoors
+out-going	outgoing
+out-goings	outgoings
+out-house	outhouse
+out-houses	outhouses
+out-lying	outlying
+out-of-door	out of door
+out-of-doors	out of doors
+out-posts	outposts
+out-works	outworks
+outward-bound	outward bound
+ovate-conic	ovate conic
+over-against	over against
+over-exertion	overexertion
+over-head	overhead
+over-land	overland
+over-loaded	overloaded
+over-night	overnight
+over-peopled	overpeopled
+over-ran	overran
+over-rate	overrate
+over-rated	overrated
+over-reach	overreach
+over-rul'd	overruled
+over-ruled	overruled
+over-ruling	overruling
+over-run	overrun
+over-weeping	over weeping
+overrul'd	overruled
+oyster-shells	oyster shells
+pack-horses	packhorses
+packet-boat	packet boat
+paddle-wheels	paddle wheels
+pains-taking	painstaking
+painting-room	painting room
+paleo-kastro	paleokastro
+paleo-panaghia	paleopanaghia
+palm-branch	palm branch
+palm-branches	palm branches
+palm-leaves	palm leaves
+palm-tree	palm tree
+palm-trees	palm trees
+palm-wine	palm wine
+panic-struck	panic struck
+paper-money	paper money
+par-tout	partout
+parish-clerk	parish clerk
+parish-officers	parish officers
+parliament-house	parliament house
+parsonage-house	parsonage house
+parsonage-houses	parsonage houses
+party-feeling	party feeling
+party-spirit	party spirit
+party-writers	party writers
+pass-word	password
+passage-money	passage money
+passer-by	passer by
+passers-by	passers by
+passion-flower	passionflower
+pastry-cook	pastry cook
+pasture-land	pastureland
+patch-work	patchwork
+pater-noster-row	paternoster-row
+paternosterrow	paternoster-row
+path-way	pathway
+patron-saint	patron saint
+paving-stones	paving stones
+pay-office	pay office
+paymaster-general	paymaster general
+peace-maker	peacemaker
+peace-makers	peacemakers
+peace-offering	peace offering
+peace-officer	peace officer
+peace-officers	peace officers
+pear-tree	pear tree
+pear-trees	pear trees
+peepul-tree	peepul tree
+peepul-trees	peepul trees
+peice-meal	piecemeal
+peicemeal	piecemeal
+pell-mell	pellmell
+pen-knife	penknife
+pent-house	penthouse
+pent-up	pent up
+people's-friend	people friend
+people'sfriend	people friend
+pepper-corn	peppercorn
+per-cent	percent
+per-centage	percentage
+per-cents	percents
+perch-bolt	perch bolt
+permanent-session	permanent session
+perth-shire	perthshire
+petitmaitre	petit-maitre
+peut-ere	peut-etre
+peut-etre	peut etre
+peutere	peut-etre
+physician-general	physician general
+piano-forte	pianoforte
+pic-nic	picnic
+pick-axe	pickaxe
+pick-axes	pickaxes
+picture-gallery	picture gallery
+pie-crust	piecrust
+piece-meal	piecemeal
+pierre-point	pierrepoint
+pill-boxes	pillboxes
+pilot-boat	pilot boat
+pin-hole	pinhole
+pine-apple	pineapple
+pine-apples	pineapples
+pine-forest	pine forest
+pine-forests	pine forests
+pine-tree	pine tree
+pine-trees	pine trees
+pink-ney	pinkney
+pipe-clay	pipeclay
+pistol-shot	pistol shot
+pit-coal	pit coal
+plane-tree	plane tree
+plane-trees	plane trees
+plano-convex	plano convex
+plant-like	plantlike
+plaque-mine	plaquemine
+plate-armour	plate armour
+plate-glass	plate glass
+play-bill	playbill
+play-bills	playbills
+play-fellow	playfellow
+play-ground	playground
+play-house	playhouse
+play-houses	playhouses
+pleasure-boats	pleasure boats
+pleasure-garden	pleasure garden
+pleasure-ground	pleasure ground
+pleasure-grounds	pleasure grounds
+plough-boy	ploughboy
+plum-pudding	plum pudding
+plumb-line	plumb line
+pocket-book	pocketbook
+pocket-books	pocketbooks
+pocket-handkerchief	pocket handkerchief
+pocket-handkerchiefs	pocket handkerchiefs
+pocket-knife	pocketknife
+pocket-money	pocket money
+point-blank	pointblank
+poison-fangs	poison fangs
+polar-ice	polar ice
+pole-star	polestar
+police-office	police office
+police-officer	police officer
+police-officers	police officers
+poll-tax	poll tax
+poly-olbion	polyolbion
+poor-house	poorhouse
+poor-houses	poorhouses
+poor-law	poor law
+poor-laws	poor laws
+poor-rate	poor rate
+poor-rates	poor rates
+pop-gun	popgun
+port-folio	portfolio
+port-holes	portholes
+port-prince	port prince
+port-reeve	port reeve
+portauprince	port-au-prince
+portrait-painter	portrait painter
+portrait-painting	portrait painting
+post-boy	postboy
+post-boys	postboys
+post-chaises	post chaises
+post-diluvial	postdiluvial
+post-diluvian	postdiluvian
+post-horses	post horses
+post-house	post house
+post-master	postmaster
+post-office	postoffice
+post-offices	postoffices
+post-roads	post roads
+post-town	post town
+postcaptain	post-captain
+postchaise	post-chaise
+postmaster-general	postmaster general
+pot-herbs	potherbs
+pot-house	pothouse
+potash-sulphate	potash sulphate
+poultry-yard	poultry yard
+powder-magazine	powder magazine
+power-looms	power looms
+prae-eminence	preeminence
+prae-existing	preexisting
+praeeminence	preeminence
+praeexisting	preexisting
+praise-worthy	praiseworthy
+prayer-book	prayer book
+prayer-books	prayer books
+pre-conceived	preconceived
+pre-eminence	preeminence
+pre-eminent	preeminent
+pre-eminently	preeminently
+pre-emption	preemption
+pre-existence	preexistence
+pre-existent	preexistent
+pre-existing	preexisting
+pre-occupied	preoccupied
+pre-supposes	presupposes
+pre-the	pre the
+presence-chamber	presence chamber
+press-work	press work
+press-yard	press yard
+preston-pans	prestonpans
+prime-minister	prime minister
+prince-regent	prince regent
+printing-ink	printing ink
+printing-office	printing office
+printing-offices	printing offices
+printing-press	printing press
+printing-presses	printing presses
+prison-doors	prison doors
+prisonhouse	prison-house
+privy-chamber	privy chamber
+privy-councillor	privy councillor
+privy-councillors	privy councillors
+privy-counsellors	privy counsellors
+privy-purse	privy purse
+privy-seal	privy seal
+privycouncil	privy-council
+privycounsellor	privy-counsellor
+prize-money	prize money
+pro-legs	prolegs
+procureur-general	procureur general
+procèsverbal	procès-verbal
+proof-sheet	proof sheet
+proof-sheets	proof sheets
+property-tax	property tax
+proud-fate	proud fate
+provision-grounds	provision grounds
+provost-marshal	provost marshal
+public-houses	public houses
+public-opinion	public opinion
+publichouse	public-house
+publichouses	public-houses
+publick-house	public-house
+publick-houses	public-houses
+publick-spirited	public-spirited
+publickhouse	public-house
+publickhouses	public-houses
+publickspirited	public-spirited
+publicspirited	public-spirited
+pudding-stone	pudding stone
+pumice-stone	pumice stone
+pumice-stones	pumice stones
+punch-bowl	punch bowl
+puppet-show	puppet show
+purchase-money	purchase money
+purplish-brown	purplish brown
+pye-crust	piecrust
+pyecrust	piecrust
+quarter-deck	quarterdeck
+quarter-dollar	quarter dollar
+quarter-master	quartermaster
+quarter-masters	quartermasters
+quarter-sessions	quarter sessions
+quarter-staff	quarterstaff
+quartermastergeneral	quarter-master-general
+quartz-rock	quartz rock
+queen-mother	queen mother
+quick-lime	quicklime
+quick-quick	quick quick
+quick-sighted	quick sighted
+quit-rent	quit rent
+quit-rents	quit rents
+ra-morn	ra morn
+race-course	racecourse
+race-horse	racehorse
+race-horses	racehorses
+rail-road	railroad
+rail-roads	railroads
+rail-way	railway
+rain-deer	reindeer
+rain-drops	raindrops
+rain-water	rainwater
+raindeer	reindeer
+rattle-snake	rattlesnake
+raw-material	raw material
+re-act	react
+re-admitted	readmitted
+re-agents	reagents
+re-appear	reappear
+re-appearance	reappearance
+re-appeared	reappeared
+re-appearing	reappearing
+re-appears	reappears
+re-appointed	reappointed
+re-appointment	reappointment
+re-assembled	reassembled
+re-assembling	reassembling
+re-assert	reassert
+re-asserted	reasserted
+re-assume	reassume
+re-assured	reassured
+re-capture	recapture
+re-captured	recaptured
+re-commenced	recommenced
+re-consider	reconsider
+re-consider'd	reconsidered
+re-considered	reconsidered
+re-crossed	recrossed
+re-eccho'd	reechoed
+re-ecchoed	reechoed
+re-echo'd	reechoed
+re-echoed	reechoed
+re-elected	reelected
+re-election	reelection
+re-embarked	reembarked
+re-enacted	reenacted
+re-ent'ring	reentering
+re-enter	reenter
+re-enter'd	reentered
+re-entered	reentered
+re-entering	reentering
+re-establish	reestablish
+re-establish'd	reestablished
+re-established	reestablished
+re-establishing	reestablishing
+re-establishment	reestablishment
+re-examination	re examination
+re-exported	re exported
+re-form	reform
+re-modelled	remodelled
+re-modelling	remodelling
+re-open	reopen
+re-opened	reopened
+re-organization	reorganization
+re-organized	reorganized
+re-printed	reprinted
+re-production	reproduction
+re-published	republished
+re-r	rer
+re-the	re the
+re-union	reunion
+re-unite	reunite
+re-united	reunited
+re-visited	revisited
+reading-book	reading book
+reading-desk	reading desk
+reading-room	reading room
+ready-made	ready made
+ready-money	ready money
+rear-admiral	rear admiral
+rear-guard	rearguard
+receivergeneral	receiver-general
+reconsider'd	reconsidered
+rectorstreet	rector-street
+red-blooded	red blooded
+red-breast	redbreast
+red-brick	redbrick
+red-brown	red brown
+red-coat	redcoat
+red-coats	redcoats
+red-coloured	red coloured
+red-cross	red cross
+red-deer	red deer
+red-hot	red hot
+reddish-brown	reddish brown
+reeccho'd	reechoed
+reecchoed	reechoed
+reecho'd	reechoed
+reent'ring	reentering
+reenter'd	reentered
+reestablish'd	reestablished
+register-ships	register ships
+rein-deer	reindeer
+remainder-man	remainderman
+rent-charge	rent charge
+respectable-looking	respectable looking
+resting-places	resting places
+restingplace	resting-place
+rhode-island	rhode island
+rice-fields	rice fields
+rice-grounds	rice grounds
+rig-ht	right
+right-about	right about
+right-angled	right angled
+right-hand	right hand
+right-hands	right hands
+right-side	right side
+river-like	river like
+river-side	riverside
+road-side	roadside
+road-way	roadway
+rock-salt	rock salt
+rock-shells	rock shells
+rolling-fire	rolling fire
+rook-wood	rookwood
+root-and-branch	root and branch
+rose-bud	rosebud
+rose-buds	rosebuds
+rose-colour	rose colour
+rose-coloured	rose coloured
+rose-leaf	rose leaf
+rose-leaves	rose leaves
+rose-tree	rose tree
+rose-trees	rose trees
+rose-water	rosewater
+roth-say	rothsay
+round-about	roundabout
+round-backed	round backed
+round-headed	roundheaded
+round-house	roundhouse
+round-topped	round topped
+row-boat	rowboat
+royalsociety	royal-society
+run-a-way	runaway
+run-away	runaway
+rush-worth	rushworth
+rye-house	rye house
+s^-c	s^c
+sa-bran	sabran
+sabbath-day	sabbath day
+saddle-bags	saddlebags
+saddle-bow	saddlebow
+saddle-horses	saddle horses
+safe-conduct	safe conduct
+safety-valve	safety valve
+sail-maker	sailmaker
+saint-like	saintlike
+saintantoine	saint-antoine
+sal-ammoniac	sal ammoniac
+salt-cellar	saltcellar
+salt-fish	saltfish
+salt-pans	salt pans
+salt-springs	salt springs
+salt-water	saltwater
+salt-works	saltworks
+sand-bank	sandbank
+sand-banks	sandbanks
+sand-bar	sand bar
+sand-bath	sand bath
+sand-baths	sand baths
+sand-flies	sand flies
+sand-hill	sandhill
+sand-hills	sand hills
+sand-stone	sandstone
+sandal-wood	sandalwood
+sang-froid	sangfroid
+sans-culottes	sansculottes
+sanssouci	sans-souci
+saw-dust	sawdust
+saw-flies	saw flies
+saw-fly	saw fly
+saw-mill	sawmill
+saw-mills	sawmills
+saw-pit	sawpit
+scaling-ladders	scaling ladders
+scalping-knife	scalping knife
+scape-goat	scapegoat
+scare-crow	scarecrow
+scene-painter	scene painter
+scholar-like	scholar like
+schole-master	schoolmaster
+scholemaster	schoolmaster
+school-board	school board
+school-books	schoolbooks
+school-boy	schoolboy
+school-boys	schoolboys
+school-fellow	schoolfellow
+school-fellows	schoolfellows
+school-house	schoolhouse
+school-houses	schoolhouses
+school-master	schoolmaster
+school-masters	schoolmasters
+school-mistress	schoolmistress
+school-room	schoolroom
+school-rooms	schoolrooms
+schoole-master	schoolmaster
+schoolemaster	schoolmaster
+scurvy-grass	scurvy grass
+sea-bathing	sea bathing
+sea-bird	sea bird
+sea-birds	seabirds
+sea-board	seaboard
+sea-boat	sea boat
+sea-breeze	sea breeze
+sea-breezes	sea breezes
+sea-cliff	sea cliff
+sea-cliffs	sea cliffs
+sea-coast	seacoast
+sea-coasts	seacoasts
+sea-eggs	sea eggs
+sea-elephant	sea elephant
+sea-faring	seafaring
+sea-fight	sea fight
+sea-fights	sea fights
+sea-fowl	seafowl
+sea-fowls	seafowl
+sea-green	seagreen
+sea-gull	seagull
+sea-gulls	seagulls
+sea-horse	seahorse
+sea-ice	sea ice
+sea-otter	sea otter
+sea-port	seaport
+sea-ports	seaports
+sea-sand	sea sand
+sea-shells	seashells
+sea-shore	seashore
+sea-shores	seashores
+sea-sick	seasick
+sea-sickness	seasickness
+sea-side	seaside
+sea-trout	sea trout
+sea-urchin	sea urchin
+sea-urchins	sea urchins
+sea-ward	seaward
+sea-water	seawater
+sea-weed	seaweed
+sea-weeds	seaweeds
+sea-worthy	seaworthy
+seabeach	sea-beach
+seafowls	seafowl
+seahorses	sea-horses
+seal-fishery	seal fishery
+seal-oil	seal oil
+seal-skin	sealskin
+seal-skins	seal skins
+sealing-vessel	sealing vessel
+sealingwax	sealing-wax
+second-hand	secondhand
+second-sight	second sight
+secondrate	second-rate
+sedan-chair	sedan chair
+see-lands	see lands
+see-saw	seesaw
+seed-time	seedtime
+seed-vessels	seed vessels
+self-approbation	self approbation
+self-command	self command
+self-complacency	self complacency
+self-conceit	self conceit
+self-confidence	self confidence
+self-control	self control
+self-destruction	self destruction
+self-destructive	self destructive
+self-devoted	self devoted
+self-devotion	self devotion
+self-esteem	self esteem
+self-examination	self examination
+self-gratification	self gratification
+self-immolation	self immolation
+self-indulgence	self indulgence
+self-int'rest	self-interest
+self-possessed	self possessed
+self-reproach	self reproach
+self-repulsive	self repulsive
+self-respect	self respect
+self-sacrifice	self sacrifice
+self-same	selfsame
+self-sufficiency	self sufficiency
+self-taught	self taught
+self-willed	self willed
+selfdefence	self-defence
+selfdenial	self-denial
+selfdenying	self-denying
+selfevident	self-evident
+selfgovernment	self-government
+selfimportance	self-importance
+selfint'rest	self-interest
+selfinterest	self-interest
+selflove	self-love
+selfpossession	self-possession
+selfpreservation	self-preservation
+selfregarding	self-regarding
+semi-circle	semicircle
+semi-circular	semicircular
+semi-cylindrical	semicylindrical
+semi-diameter	semidiameter
+semi-fluid	semifluid
+semi-lunar	semilunar
+semi-transparent	semitransparent
+semi-vitreous	semi vitreous
+semicircular-headed	semicircular headed
+senate-house	senate house
+sergeant-major	sergeant major
+serjeants-at-mace	serjeants at mace
+servant-maid	servant maid
+servant-maids	servant maids
+serving-brethren	serving brethren
+serving-man	serving man
+serving-men	serving men
+sessions-house	sessions house
+set-off	set off
+set-out	set out
+set-to	set to
+setting-in	setting in
+seven-eighths	seven eighths
+seven-pence	seven pence
+seventy-eight	seventy eight
+seventy-one	seventy one
+seventy-second	seventy second
+seventy-seven	seventy seven
+seventyfive	seventy-five
+seventyfour	seventy-four
+seventynine	seventy-nine
+seventysix	seventy-six
+seventythree	seventy-three
+seventytwo	seventy-two
+sey-mour	seymour
+sey-ton	seyton
+sharp-edged	sharp edged
+sharp-pointed	sharp pointed
+sharp-shooters	sharpshooters
+shawl-wool	shawl wool
+sheep-skin	sheepskin
+sheep-skins	sheepskins
+sheep-walks	sheep walks
+sheet-anchor	sheet anchor
+shell-fish	shellfish
+shell-limestone	shell limestone
+shepherd-boy	shepherd boy
+ship-board	shipboard
+ship-builder	shipbuilder
+ship-builders	shipbuilders
+ship-building	shipbuilding
+ship-loads	ship loads
+ship-owners	ship owners
+ship-timber	ship timber
+ship-worm	shipworm
+shipmoney	ship-money
+shoal-water	shoal water
+shoe-buckles	shoe buckles
+shop-keeper	shopkeeper
+shop-keeper's	shopkeeper
+shop-keepers	shopkeepers
+shop-windows	shop windows
+shopkeeper's	shopkeeper
+short-hand	shorthand
+short-liv'd	short-lived
+short-sighted	shortsighted
+short-sightedness	shortsightedness
+shortliv'd	short-lived
+shortlived	short-lived
+shoulder-blade	shoulder blade
+shrew-mouse	shrewmouse
+sic-like	suchlike
+sick-bay	sick bay
+sick-bed	sickbed
+sick-house	sick house
+sick-list	sick list
+sick-room	sickroom
+siclike	suchlike
+sid-mouth	sidmouth
+side-aisle	side aisle
+side-arms	side arms
+side-board	sideboard
+side-long	sidelong
+side-table	side table
+sight-seeing	sightseeing
+sign-post	signpost
+signet-ring	signet ring
+silk-worm	silkworm
+silk-worms	silkworms
+silver-gilt	silver gilt
+silver-sticks	silver sticks
+simple-hearted	simple hearted
+singing-master	singing master
+single-handed	single handed
+single-minded	singleminded
+singlestick	single-stick
+sinking-fund	sinking fund
+sister-inlaw	sister-in-law
+sisterinlaw	sister-in-law
+sitting-room	sitting room
+six-and-thirty	six and thirty
+six-and-twenty	six and twenty
+six-inch	six inch
+six-pence	sixpence
+six-pounder	six pounder
+six-pounders	six pounders
+six-sided	six sided
+sixty-nine	sixty nine
+sixty-one	sixty one
+sixtyeight	sixty-eight
+sixtyfive	sixty-five
+sixtyfour	sixty-four
+sixtyseven	sixty-seven
+sixtysix	sixty-six
+sixtythree	sixty-three
+sixtytwo	sixty-two
+sketch-book	sketchbook
+sky-blue	sky blue
+sky-lark	skylark
+sky-light	skylight
+sky-lights	skylights
+slateclay	slate-clay
+slaughter-house	slaughterhouse
+slaughter-houses	slaughterhouses
+slave-carrying	slave carrying
+slave-chain	slave chain
+slave-dealers	slave dealers
+slave-holder	slaveholder
+slave-holders	slaveholders
+slave-market	slave market
+slave-masters	slave masters
+slave-merchants	slave merchants
+slave-owner	slave owner
+slave-owners	slave owners
+slave-trade	slave trade
+slave-traders	slave traders
+slaveholding	slave-holding
+sledge-hammer	sledgehammer
+sleeping-place	sleeping place
+sleeping-room	sleeping room
+sloop-of-war	sloop of war
+slow-moving	slow moving
+small-clothes	smallclothes
+small-pox	smallpox
+small-sized	small sized
+smelling-bottle	smelling bottle
+smoke-dried	smoke dried
+snake-like	snakelike
+snow-ball	snowball
+snow-birds	snow birds
+snow-blindness	snow blindness
+snow-bunting	snow bunting
+snow-covered	snow covered
+snow-drift	snowdrift
+snow-drop	snowdrop
+snow-drops	snowdrops
+snow-hut	snow hut
+snow-line	snow line
+snow-shoes	snowshoes
+snow-storm	snowstorm
+snowwhite	snow-white
+snuff-box	snuffbox
+snuff-boxes	snuff boxes
+socalled	so-called
+soda-alum	soda alum
+soda-water	soda water
+soldier-like	soldierlike
+solicitorgeneral	solicitor-general
+sollicitor-general	solicitor-general
+sollicitorgeneral	solicitor-general
+somerset-shire	somersetshire
+sonin-law	son-in-law
+soninlaw	son-in-law
+sore-throat	sore throat
+soso	so-so
+sou-bah	soubah
+sounding-board	sounding board
+south-east	southeast
+south-easterly	southeasterly
+south-eastern	southeastern
+south-eastward	southeastward
+south-side	south side
+south-south-east	south southeast
+south-south-west	south southwest
+south-west	southwest
+south-westerly	southwesterly
+south-western	southwestern
+south-westward	southwestward
+southsea	south-sea
+spear-heads	spear heads
+spell-bound	spellbound
+spinning-wheel	spinning wheel
+spirit-lamp	spirit lamp
+spirit-stirring	spirit stirring
+spitz-bergen	spitzbergen
+spring-tide	springtide
+spring-tides	spring tides
+spring-time	springtime
+spruce-fir	spruce fir
+spunging-house	spunging house
+stable-door	stable door
+stable-yard	stable yard
+stag-hound	stag hound
+stag-hounds	staghounds
+stage-box	stage box
+stage-coach	stagecoach
+stage-coaches	stage coaches
+stage-manager	stage manager
+stage-plays	stage plays
+stair-case	staircase
+stair-cases	staircases
+stamp-duties	stamp duties
+stamp-duty	stamp duty
+stand-still	standstill
+standard-bearer	standardbearer
+star-fish	starfish
+star-light	starlight
+star-like	starlike
+star-lit	starlit
+starchamber	star-chamber
+starting-back	starting back
+starting-post	starting post
+state-affairs	state affairs
+state-house	statehouse
+state-necessity	state necessity
+state-paper	state paper
+state-papers	state papers
+state-policy	state policy
+state-prisoner	state prisoner
+state-rooms	staterooms
+statesgeneral	states-general
+statesman-like	statesmanlike
+statue-like	statue like
+statute-book	statute book
+statute-law	statute law
+steam-boat	steamboat
+steam-boats	steamboats
+steam-carriages	steam carriages
+steam-engine	steam engine
+steam-engines	steam engines
+steam-packet	steam packet
+steam-vessel	steam vessel
+steam-vessels	steam vessels
+steampower	steam-power
+steampowered	steam-powered
+steep-to	steep to
+step-daughter	stepdaughter
+step-father	stepfather
+step-mother	stepmother
+stepping-stone	steppingstone
+stepping-stones	steppingstones
+sternpost	stern-post
+still-born	stillborn
+stilling-fleet	stillingfleet
+stock-bridge	stockbridge
+stock-broker	stockbroker
+stone-cutting	stonecutting
+stone-mason	stonemason
+stone-walls	stonewalls
+stone-work	stonework
+stop-cock	stopcock
+stop-cocks	stopcocks
+stopping-place	stopping place
+store-house	storehouse
+store-houses	storehouses
+store-keeper	storekeeper
+store-room	storeroom
+store-rooms	store rooms
+store-ship	store ship
+store-ships	store ships
+story-teller	storyteller
+straight-forward	straightforward
+straight-grained	straight grained
+strange-looking	strange looking
+street-door	street door
+strong-hold	stronghold
+strong-holds	strongholds
+strongly-marked	strongly marked
+studding-sail	studding sail
+studding-sails	studding sails
+study-rooms	study rooms
+stumbling-blocks	stumbling blocks
+sub-apennine	subapennine
+sub-class	subclass
+sub-committee	subcommittee
+sub-divided	subdivided
+sub-division	subdivision
+sub-divisions	subdivisions
+sub-families	subfamilies
+sub-family	subfamily
+sub-genera	subgenera
+sub-genus	subgenus
+sub-kingdom	sub kingdom
+sub-marine	submarine
+sub-section	subsection
+subject-matter	subject matter
+such-a-one	such a one
+such-like	suchlike
+sugar-candy	sugar candy
+sugar-cane	sugarcane
+sugar-canes	sugar canes
+sugar-growing	sugar growing
+sugar-house	sugar house
+sugar-loaf	sugar loaf
+sugar-mill	sugar mill
+sugar-mills	sugar mills
+sugar-plums	sugar plums
+sugar-works	sugar works
+sum-total	sum total
+summer-house	summerhouse
+summer-houses	summerhouses
+summer-time	summertime
+sun-beam	sunbeam
+sun-beams	sunbeams
+sun-bright	sun bright
+sun-burnt	sunburnt
+sun-dial	sundial
+sun-down	sundown
+sun-dyal	sundial
+sun-fish	sunfish
+sun-light	sunlight
+sun-lit	sunlit
+sun-rise	sunrise
+sun-set	sunset
+sun-sett	sunset
+sun-shine	sunshine
+sundyal	sundial
+sunsett	sunset
+sup-the	sup the
+super-human	superhuman
+super-molecule	super molecule
+supper-table	supper table
+supper-time	supper time
+sur-tout	sur tout
+sure-footed	sure footed
+surgeon-general	surgeon general
+surplice-fees	surplice fees
+surveyorgeneral	surveyor-general
+swallow-tailed	swallow tailed
+swan-like	swanlike
+sweet-scented	sweet scented
+sword-bearer	swordbearer
+sword-case	sword case
+t-he	the
+table-book	table book
+table-cloth	tablecloth
+table-land	tableland
+table-lands	tablelands
+tail-feathers	tail feathers
+tallow-chandler	tallow chandler
+tally-ho	tallyho
+tap-room	tap room
+tape-worm	tapeworm
+task-master	taskmaster
+task-masters	taskmasters
+task-work	task work
+tavern-keeper	tavern keeper
+tax-gatherer	tax gatherer
+tax-gatherers	tax gatherers
+tax-payers	taxpayers
+te-cum-seh	tecumseh
+tea-kettle	teakettle
+tea-pot	teapot
+tea-spoonful	teaspoonful
+tea-spoons	teaspoons
+tea-table	tea table
+tear-drop	teardrop
+tear-drops	teardrops
+tehuel-het	tehuelhet
+teign-mouth	teignmouth
+tell-tale	telltale
+ten-fold	tenfold
+ten-pence	ten pence
+ten-pound	ten pound
+tender-hearted	tenderhearted
+tennis-court	tennis court
+tenor-singer	tenor singer
+terra-cotta	terra cotta
+terror-struck	terror struck
+teteastute	tete-astute
+teteatete	tete-a-tete
+tetes-a-tetes	tete-a-tete
+tetesatetes	tete-a-tete
+text-book	textbook
+text-books	textbooks
+th-e	the
+the-	the
+their-selves	theirselves
+thick-set	thickset
+thick-slaty	thick slaty
+thickly-wooded	thickly wooded
+thigh-bone	thighbone
+thin-slaty	thin slaty
+thinly-peopled	thinly peopled
+thirdrate	third-rate
+thirteen-pence	thirteen pence
+thirty-eighth	thirty eighth
+thirty-first	thirty first
+thirty-fourth	thirty fourth
+thirty-sixth	thirty sixth
+thirty-third	thirty third
+thirtyeight	thirty-eight
+thirtyfive	thirty-five
+thirtyfour	thirty-four
+thirtynine	thirty-nine
+thirtyone	thirty-one
+thirtyseven	thirty-seven
+thirtysix	thirty-six
+thirtythree	thirty-three
+thirtytwo	thirty-two
+thistle-wood	thistlewood
+thorough-bass	thorough bass
+thorough-bred	thoroughbred
+thorough-going	thoroughgoing
+thorough-pac'd	thoroughpaced
+thorough-paced	thoroughpaced
+thoroughpac'd	thoroughpaced
+thousand-fold	thousandfold
+thread-bare	threadbare
+thread-like	threadlike
+three-and-twenty	three and twenty
+three-decker	three decker
+three-eighths	three eighths
+three-fifths	three fifths
+three-fold	threefold
+three-fourths	three fourths
+three-pence	threepence
+three-pounder	three pounder
+three-pounders	three pounders
+three-quarter	three quarter
+three-quarters	three quarters
+three-score	threescore
+three-square	three square
+three-tenths	three tenths
+threshing-floor	threshing floor
+throwing-stick	throwing stick
+thunder-cloud	thundercloud
+thunder-clouds	thunder clouds
+thunder-showers	thunder showers
+thunder-storm	thunderstorm
+thunder-storms	thunderstorms
+thur-low	thurlow
+thur-tell	thurtell
+thy-self	thyself
+tide-race	tide race
+tide-wave	tide wave
+tie-wig	tie wig
+tiger-moth	tiger moth
+tile-beard	tilebeard
+timber-trees	timber trees
+time-piece	timepiece
+time-serving	timeserving
+tinder-box	tinderbox
+tip-toe	tiptoe
+tip-top	tiptop
+title-deeds	title deeds
+title-pages	title pages
+titlepage	title-page
+tln-ee	tlnee
+tlu-ee	tluee
+to-be	to be
+to-day	today
+to-days	to days
+to-mor-row	tomorrow
+to-morow	tomorrow
+to-morrow	tomorrow
+to-night	tonight
+to-sorrow	to sorrow
+to-the	to the
+tobacco-pipe	tobacco pipe
+tobacco-pipes	tobacco pipes
+tog-ether	together
+toll-bar	tollbar
+tomb-stone	tombstone
+tomb-stones	tombstones
+tomo-chichi	tomochichi
+tomorow	tomorrow
+tooth-ach	toothache
+tooth-ache	toothache
+tooth-ake	toothache
+tooth-like	tooth like
+toothach	toothache
+toothake	toothache
+top-gallant	topgallant
+top-mast	topmast
+top-masts	topmasts
+top-sail	topsail
+top-sails	topsails
+torch-bearer	torchbearer
+torch-light	torchlight
+tortoise-shell	tortoiseshell
+touch-hole	touchhole
+tow-line	tow line
+tower-hill	towerhill
+town's-people	townspeople
+town'speople	townspeople
+town-clerk	town clerk
+town-council	town council
+town-hall	townhall
+town-house	townhouse
+town-major	town major
+towns-people	townspeople
+trade-wind	trade wind
+trade-winds	trade winds
+trades-people	tradespeople
+tragi-comedy	tragicomedy
+train-bands	train bands
+train-oil	train oil
+trans-atlantic	transatlantic
+transverse-quadrate	transverse quadrate
+trap-door	trapdoor
+trap-formation	trap formation
+trap-rocks	trap rocks
+tread-mill	treadmill
+treasury-bench	treasury bench
+treatymaking	treaty-making
+tree-ferns	tree ferns
+tree-nails	tree nails
+tri-coloured	tri coloured
+trimbuk-jee	trimbukjee
+trou-bridge	troubridge
+true-born	trueborn
+true-hearted	truehearted
+true-love	true love
+trust-worthy	trustworthy
+tulip-tree	tulip tree
+tumble-down	tumbledown
+turkey-cock	turkey cock
+turnpike-gate	turnpike gate
+turnpike-road	turnpike road
+turnup	turn-up
+turtle-dove	turtledove
+twelve-month	twelvemonth
+twelve-pounder	twelve pounder
+twelve-pounders	twelve pounders
+twenty-thousand	twenty thousand
+twentyeight	twenty-eight
+twentyeighth	twenty-eighth
+twentyfifth	twenty-fifth
+twentyfirst	twenty-first
+twentyfive	twenty-five
+twentyfour	twenty-four
+twentyfourth	twenty-fourth
+twentynine	twenty-nine
+twentyninth	twenty-ninth
+twentyone	twenty-one
+twentysecond	twenty-second
+twentyseven	twenty-seven
+twentyseventh	twenty-seventh
+twentysix	twenty-six
+twentysixth	twenty-sixth
+twentythird	twenty-third
+twentythree	twenty-three
+twentytwo	twenty-two
+two-and-thirty	two and thirty
+two-and-twenty	two and twenty
+two-day	two day
+two-fifths	two fifths
+two-fold	twofold
+two-pair	two pair
+two-pence	twopence
+two-penny	twopenny
+two-pound	two pound
+two-story	two story
+two-tenths	two tenths
+two-third	two third
+two-thirds	two thirds
+two-wheeled	two wheeled
+two-winged	two winged
+tête-a-tête	tete-a-tete
+tête-a-têtes	tete-a-tete
+tête-à-tête	tete-a-tete
+têteatête	tete-a-tete
+têteatêtes	tete-a-tete
+têteàtête	tete-a-tete
+un-the	un the
+uncalled-for	uncalled for
+under-current	undercurrent
+under-graduate	undergraduate
+under-graduates	undergraduates
+under-ground	underground
+under-jaw	under jaw
+under-lip	underlip
+under-rated	underrated
+under-secretary	undersecretary
+under-sheriff	undersheriff
+under-tone	undertone
+unheard-of	unheard of
+unhop'd-for	unhoped-for
+unhop'dfor	unhoped-for
+unhopedfor	unhoped-for
+unionjack	union-jack
+unitedstates	united states
+unlook'd-for	unlooked-for
+unlook'dfor	unlooked-for
+unlookedfor	unlooked-for
+unlookt-for	unlooked-for
+unlooktfor	unlooked-for
+up-hill	uphill
+up-stairs	upstairs
+upper-jaw	upper jaw
+vain-glorious	vainglorious
+vain-glory	vainglory
+vantage-ground	vantage ground
+vaux-hall	vauxhall
+vei-y	very
+veiy	very
+vesper-bell	vesper bell
+vicar-choral	vicar choral
+vicargeneral	vicar-general
+vicars-choral	vicars choral
+vice-admiralty	vice admiralty
+vice-chamberlain	vice chamberlain
+vice-regal	viceregal
+vice-royalty	viceroyalty
+vice-treasurer	vice treasurer
+viceadmiral	vice-admiral
+vicechancellor	vice-chancellor
+viceconsul	vice-consul
+vicepresident	vice-president
+victualling-office	victualling office
+village-like	village like
+vis-animal	vis animal
+vlakho-ianni	vlakhoianni
+vvater-side	waterside
+vvaterside	waterside
+vvest-indies	west-indies
+vvestindies	west-indies
+w-as	was
+w-ere	were
+wa-s	was
+waiting-maid	waiting maid
+waiting-maids	waiting maids
+waiting-room	waiting room
+waiting-woman	waiting woman
+walking-staff	walking staff
+walking-stick	walking stick
+walking-sticks	walking sticks
+walnut-tree	walnut tree
+walrus-flesh	walrus flesh
+war-canoes	war canoes
+war-cry	war cry
+war-dance	war dance
+war-god	war god
+war-horse	warhorse
+war-horses	war horses
+war-minister	war minister
+war-office	war office
+war-ship	warship
+war-song	war song
+war-whoop	war whoop
+ward-motes	wardmotes
+warm-hearted	warmhearted
+warmblooded	warm-blooded
+warming-pan	warming pan
+wash-house	washhouse
+washing-ton	washington
+watch-dog	watchdog
+watch-fires	watch fires
+watch-glass	watch glass
+watch-glasses	watch glasses
+watch-tow'r	watchtower
+watch-tower	watchtower
+watch-word	watchword
+watchhouse	watch-house
+watchtow'r	watchtower
+water-bath	water bath
+water-beetles	water beetles
+water-carriage	water carriage
+water-carrier	water carrier
+water-casks	water casks
+water-colors	watercolours
+water-colour	watercolour
+water-colours	watercolours
+water-course	watercourse
+water-courses	watercourses
+water-cresses	watercresses
+water-fall	waterfall
+water-falls	waterfalls
+water-fowl	waterfowl
+water-gate	watergate
+water-house	waterhouse
+water-line	water line
+water-logged	waterlogged
+water-mark	watermark
+water-mill	water mill
+water-proof	waterproof
+water-rat	water rat
+water-rats	water rats
+water-side	waterside
+water-spout	waterspout
+water-tight	watertight
+water-wheel	water wheel
+water-works	waterworks
+water-worn	waterworn
+watercolors	watercolours
+watering-places	watering places
+wateringplace	watering-place
+waterpower	water-power
+waterpowered	water-powered
+wave-like	wave like
+wax-work	waxwork
+way-faring	wayfaring
+way-laid	waylaid
+way-lay	waylay
+way-laying	waylaying
+way-side	wayside
+way-worn	wayworn
+weather-beaten	weatherbeaten
+weather-cock	weathercock
+weather-side	weather side
+web-footed	webfooted
+wedding-day	wedding day
+wedding-ring	wedding ring
+wedge-shaped	wedge shaped
+week-day	weekday
+week-days	weekdays
+well-a-day	well a day
+well-affected	well affected
+well-appointed	well appointed
+well-armed	well armed
+well-arranged	well arranged
+well-authenticated	well authenticated
+well-beaten	well beaten
+well-behaved	well behaved
+well-beloved	well beloved
+well-born	wellborn
+well-built	well built
+well-chosen	well chosen
+well-clothed	well clothed
+well-composed	well composed
+well-concerted	well concerted
+well-conditioned	well conditioned
+well-conducted	well conducted
+well-constituted	well constituted
+well-constructed	well constructed
+well-contrived	well contrived
+well-cultivated	well cultivated
+well-defined	well defined
+well-deserved	well deserved
+well-digested	well digested
+well-directed	well directed
+well-disciplined	well disciplined
+well-disposed	well disposed
+well-doing	well doing
+well-dressed	well dressed
+well-earned	well earned
+well-educated	well educated
+well-endowed	well endowed
+well-established	well established
+well-executed	well executed
+well-fed	well fed
+well-filled	well filled
+well-flavoured	well flavoured
+well-formed	well formed
+well-founded	well founded
+well-furnished	well furnished
+well-governed	well governed
+well-grounded	well grounded
+well-grown	well grown
+well-informed	well informed
+well-instructed	well instructed
+well-intentioned	well intentioned
+well-judged	well judged
+well-looking	well looking
+well-made	well made
+well-managed	well managed
+well-manned	well manned
+well-mannered	well mannered
+well-marked	well marked
+well-meant	well meant
+well-merited	well merited
+well-mounted	well mounted
+well-nigh	well nigh
+well-ordered	well ordered
+well-peopled	well peopled
+well-pleased	well pleased
+well-prepared	well prepared
+well-preserved	well preserved
+well-proportioned	well proportioned
+well-regulated	well regulated
+well-remembered	well remembered
+well-rounded	well rounded
+well-selected	well selected
+well-settled	well settled
+well-shaped	well shaped
+well-sheltered	well sheltered
+well-spent	well spent
+well-spoken	well spoken
+well-stored	well stored
+well-supported	well supported
+well-taught	well taught
+well-tempered	well tempered
+well-timed	well timed
+well-trained	well trained
+well-tried	well tried
+well-trimmed	well trimmed
+well-turned	well turned
+well-watered	well watered
+well-wisher	well wisher
+well-wishers	wellwishers
+well-wooded	well wooded
+well-worn	well worn
+well-written	well written
+well-wrought	well wrought
+wellbeing	well-being
+wellbred	well-bred
+wellknown	well-known
+wellmeaning	well-meaning
+welltodo	well-to-do
+west-country	west country
+west-end	west end
+west-front	west front
+west-north-west	west northwest
+west-northwest	west northwest
+west-south-west	west southwest
+west-southwest	west southwest
+westindia	west-india
+westindies	west-indies
+whale-boat	whaleboat
+whale-boats	whale boats
+whale-bone	whalebone
+whale-fins	whale fins
+whale-fisher	whale fisher
+whale-fishery	whale fishery
+whale-fishing	whale fishing
+whale-line	whale line
+nnw	north northwest
+n.n.w	north northwest
+nne	north northeast
+n.n.e	north northeast
+ssw	south southwest
+s.s.w	south southwest
+sse	south southeast
+s.s.w	south southeast
+s.s.e	south southeast
+ese	east southeast
+e.s.e	east southeast
+ene	east northeast
+e.n.e	east northeast
+wnw	west northwest
+w.n.w	west northwest
+wsw	west southwest
+w.s.w	west southwest
+in't	in it
+on't	on it
+for't	for it
+t'other	the other
+is't	is it
+d'ye	do ye

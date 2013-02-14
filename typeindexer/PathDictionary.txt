@@ -1,0 +1,4 @@
+datapath	/projects/ichass/usesofscale/nonserials/
+metadatapath	/projects/ichass/usesofscale/hathimeta/
+dictionarypath	/projects/ichass/usesofscale/dictionaries/
+outputpath	/projects/ichass/usesofscale/ocr/

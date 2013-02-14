@@ -1,0 +1,4 @@
+datapath	/Volumes/obelisk/zipped/non_serials/
+metadatapath	/Users/tunderwood/Dropbox/Hathi/HathiMeta/
+dictionarypath	/Users/tunderwood/Dropbox/Hathi/typeindex/dictionaries/
+outputpath	/Users/tunderwood/Dropbox/PythonScripts/
