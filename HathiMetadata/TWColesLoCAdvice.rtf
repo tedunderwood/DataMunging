@@ -1,0 +1,145 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf360
+{\fonttbl\f0\fnil\fcharset0 Calibri;\f1\froman\fcharset0 Times-Roman;\f2\fnil\fcharset0 LucidaGrande;
+\f3\froman\fcharset0 TimesNewRomanPSMT;\f4\fmodern\fcharset0 CourierNewPSMT;}
+{\colortbl;\red255\green255\blue255;\red21\green54\blue107;\red0\green0\blue237;}
+\margl1440\margr1440\vieww12200\viewh10640\viewkind0
+\deftab720
+\pard\pardeftab720\sa240\ql\qnatural
+
+\f0\fs30 \cf2 To: Ted\
+From Timothy W. Cole\
+2/10/12\
+\
+One of my meetings got cancelled, so I had a few more minutes than I thought. Here's an illustration of a URL that works with the Library of Congress SRU service:
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 \'a0
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa240\ql\qnatural
+{\field{\*\fldinst{HYPERLINK "http://z3950.loc.gov:7090/voyager?version=1.1&operation=searchRetrieve&query=dc.title=%22four%20million%22%20and%20dc.creator=%22henry,%20o.%22%20and%20dc.date=1906&maximumRecords=1&recordSchema=dc"}}{\fldrslt \cf3 \ul \ulc3 http://z3950.loc.gov:7090/voyager?version=1.1&operation=searchRetrieve&query=dc.title=%22four%20million%22%20and%20dc.creator=%22henry,%20o.%22%20and%20dc.date=1906&maximumRecords=1&recordSchema=dc}}\
+\'a0\
+\pard\pardeftab720\sa240\ql\qnatural
+
+\f0\fs30 \cf2 Or, without the ugly URL-escaping:
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 \'a0
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa240\ql\qnatural
+{\field{\*\fldinst{HYPERLINK "http://z3950.loc.gov:7090/voyager?version=1.1&operation=searchRetrieve&query=dc.title=%22four%20million%22%20and%20dc.creator=%22henry,%20o.%22%20and%20dc.date=1906&maximumRecords=1&recordSchema=dc"}}{\fldrslt \cf3 \ul \ulc3 http://z3950.loc.gov:7090/voyager?version=1.1&operation=searchRetrieve&query=dc.title="four million" and dc.creator="henry, o." and dc.date=1906&maximumRecords=1&recordSchema=dc}} \'a0\
+\pard\pardeftab720\sa240\ql\qnatural
+
+\f0\fs30 \cf2 \'a0
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 This looks for and retrieves the first match in the Library of Congress catalog on:
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa240\ql\qnatural
+
+\f2\fs30 \cf2 \'b7
+\f3\fs18 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs30 Title = "Four Million" and
+\f1\fs24 \cf0 \
+
+\f2\fs30 \cf2 \'b7
+\f3\fs18 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs30 Author = "Henry, O." and
+\f1\fs24 \cf0 \
+
+\f2\fs30 \cf2 \'b7
+\f3\fs18 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 
+\f0\fs30 Publication date = 1906
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa240\ql\qnatural
+
+\f0\fs30 \cf2 \'a0
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 The query specifies Dublin Core format (XML) for the return, which should be relatively easy to parse. If you need more precise structure, you can leave off the recordSchema argument and get full MARC record. For MARCXML, publication information is in data field 260, subfield a is place, subfield b is publisher name, subfield c is date of publication, e.g.:
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 \'a0
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa240\ql\qnatural
+
+\f4\fs26 \cf0 <datafield\'a0tag="260"\'a0ind1="\'a0"\'a0ind2="\'a0">
+\f1\fs24 \
+
+\f4\fs26 \'a0 <subfield\'a0code="a">New York :</subfield>
+\f1\fs24 \
+
+\f4\fs26 \'a0 <subfield\'a0code="b">McClure, Phillips & Co.,</subfield>
+\f1\fs24 \
+
+\f4\fs26 \'a0 <subfield\'a0code="c">1906.</subfield>
+\f1\fs24 \
+
+\f4\fs26 </datafield>
+\f1\fs24 \
+\pard\pardeftab720\sa240\ql\qnatural
+
+\f0\fs30 \cf2 \'a0
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 The maximumRecords=1 avoids the problem of having to do another round trip to specify which records in the result list you need, but it means you're at the mercy of the system as regards which record you get.
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 \'a0
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 If no matches, you'll get a response like:
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 \'a0
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa240\ql\qnatural
+
+\f4\fs26 \cf0 <zs:searchRetrieveResponse\'a0xmlns:zs="{\field{\*\fldinst{HYPERLINK "http://www.loc.gov/zing/srw/"}}{\fldrslt \cf3 \ul \ulc3 http://www.loc.gov/zing/srw/}}">
+\f1\fs24 \
+
+\f4\fs26 <zs:version>1.1</zs:version>
+\f1\fs24 \
+
+\f4\fs26 <zs:numberOfRecords>0</zs:numberOfRecords>
+\f1\fs24 \
+
+\f4\fs26 </zs:searchRetrieveResponse>
+\f1\fs24 \
+\pard\pardeftab720\sa240\ql\qnatural
+
+\f0\fs30 \cf2 \'a0
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 If you are looking for a particular publication year 0 hits can happen more frequently than you might thing even with a collection as large as the Library of Congress collection. Even LC doesn't have all editions of a popular work. Additionally some older catalog records have poor date information that doesn't get indexed properly.
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 \'a0
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 Anyway, let me know if you need\'a0 more information or examples. Tom Habing and I could put together more examples if that would be helpful. This is just the tip of the iceberg, but I assume you're looking for the minimum required. A few more simple examples available here:
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 \'a0
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa240\ql\qnatural
+{\field{\*\fldinst{HYPERLINK "http://www.loc.gov/standards/sru/simple.html"}}{\fldrslt \cf3 \ul \ulc3 http://www.loc.gov/standards/sru/simple.html}}\
+\pard\pardeftab720\sa240\ql\qnatural
+
+\f0\fs30 \cf2 \'a0
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 Thanks,
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 \'a0
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 \'a0
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 Tim Cole
+\f1\fs24 \cf0 \
+
+\f0\fs30 \cf2 University of Illinois at UC
+\f1\fs24 \cf0 \
+}
