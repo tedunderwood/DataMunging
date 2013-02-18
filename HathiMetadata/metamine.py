@@ -1,13 +1,14 @@
-## TODO: Run on small subset (leave Ted's pst root filter in place) to examine the various
-## date irregularities & to make sure enumcron identification works. Once everything works
-## on the subset, open up to the full ~450,000 records.
+## thirdmetamine.py
+##
+## Differs from newmetamine.py in parsing the 970 "original format" field to get
+## clues about whether it's a biography. I also deleted the datedump utility.
 
 import xml.dom.minidom
 import json
 import glob
 import os
 
-outfile = 'metatable.txt'
+outfile = 'thirdmetatable.txt'
 centuries = {'17','18','19'}
 
 def numcount(string):
@@ -315,7 +316,7 @@ if len(glob.glob('datedump.txt')) > 0:
     os.remove('datedump.txt')
 
 print("Getting list of JSON files to be processed...")
-books = glob.glob('jsons/*.json')
+books = glob.glob('/Users/tunderwood/Dropbox/jsons/*/*.json')
 ##books = ['jsons/mdp.39015066692198.json','jsons/mdp.39015074635734.json','jsons/mdp.39015025882450.json','jsons/hvd.hxp5y7.json','jsons/wu.89038972626.json','jsons/nyp.33433076093255.json','jsons/uva.x030805679.json']
 print("List complete.")
 
@@ -326,9 +327,14 @@ for filename in books:
 ##       continue
  
     count += 1
-    HTid = filename[6:-5]
+    pathparts = filename.split('/')
+    HTid = pathparts[-1]
+    # that gets rid of the directory parts of the path
+    HTid = HTid[:-5]
+    # that cuts the .json off
     HTid = HTid.replace('-','/')
-    print(str(count) + ":", "Preparing",HTid,"for writing to",outfile)
+    if (count % 100) == 99:
+        print(str(count) + ":", "Preparing",HTid,"for writing to",outfile)
     
     with open(filename,encoding='utf-8') as file:
         x = file.read()
@@ -351,6 +357,11 @@ for filename in books:
     imprint = '<blank>'
     enumcron = '<blank>'
     subjstr = '<blank>'
+    if 'titles' in records[recordid]:
+        longertitle = records[recordid]['titles'][0]
+        longertitle = longertitle.rstrip('/ ')
+    else:
+        longertitle = ""
     subjset = set()
  
     datafields = marc.getElementsByTagName('datafield')
@@ -392,6 +403,11 @@ for filename in books:
                         subjterms = extract_subfields(field)
                         for term in subjterms:
                             subjset.add(term.rstrip('.,'))
+                    elif attribute.value == '970':
+                        subjterms = extract_subfields(field)
+                        if 'Biography' in subjterms:
+                            subjset.add('IsBiography')
+                        
     
     if len(subjset) > 0:
         subjstr = str()
@@ -402,9 +418,9 @@ for filename in books:
     if date.startswith('<'):
         with open('errorlog.txt',mode='a',encoding='utf-8') as file:
             file.write(HTid + '\t' + date + '\t***' + imprint + '\t###' + enumcron + '\n')
-            
-    with open('datedump.txt',mode='a',encoding='utf-8') as file:
-        file.write(date + '\t' + enumcron + '\n')
+
+    if len(longertitle) > len(title):
+        title = longertitle
 
     writestring = HTid + '\t' + recordid + '\t' + LOCnum + '\t' + author + '\t' + title + '\t' + imprint + '\t' + date + '\t' + enumcron + '\t'+ subjstr + '\n'
 
