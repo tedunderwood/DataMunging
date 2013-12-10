@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 '''
 OCRnormalizer 0.1
 
@@ -61,6 +62,8 @@ def main():
     import sys
     import os
 
+    print(sys.version)
+
     # DEFINE CONSTANTS.
     delim = '\t'
     debug = False
@@ -102,7 +105,7 @@ def main():
         return user
 
     # Ask the user to tell us how to find files to process.
-    print("****************** CorrectOCR 1.0 ******************")
+    print("****************** CorrectOCR 0.1 ******************")
     print()
     print("Do you want the full spiel (explanations, caveats, etc.)")
     user = prompt("y/n : ", ["y", "n"])
