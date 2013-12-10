@@ -1,6 +1,12 @@
 # DataMunging
 
-This repo contains scripts (mostly in Python) for wrangling data and metadata drawn from HathiTrust.
+This repo contains scripts (mostly in Python) for correcting OCR
+and wrangling metadata drawn from HathiTrust.
+
+###OCRnormalizer
+In particular, the folder OCRnormalizer contains scripts that correct and normalize OCR versions of English books published after 1700. They address the notorious "long S" problem, rejoin words broken across a linebreak, standarize word division rules, and normalize spelling to modern British practice.
+
+
 
 For instance, if you've got metadata from Hathi as a bunch of separate .json files (one per volume) but would prefer to have that as a single .tsv table, the script in /HathiMetadata will do that.
 
