@@ -1,3 +1,5 @@
+# DataMunging
+
 This repo contains scripts (mostly in Python) for wrangling data and metadata drawn from HathiTrust.
 
 For instance, if you've got metadata from Hathi as a bunch of separate .json files (one per volume) but would prefer to have that as a single .tsv table, the script in /HathiMetadata will do that.

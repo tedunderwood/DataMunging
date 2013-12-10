@@ -1,7 +1,0 @@
-datapath	/Users/tunderwood/Hathi/
-metadatapath	/Users/tunderwood/Dropbox/PythonScripts/contextual/meta/
-dictionarypath	/Users/tunderwood/Dropbox/Hathi/typeindex/dictionaries/
-outputpath	/Users/tunderwood/Dropbox/PythonScripts/volcorrector/output/
-contextrulepath	/Users/tunderwood/Dropbox/PythonScripts/contextual/rules/
-volumerulepath	/Users/tunderwood/Dropbox/PythonScripts/volcorrector/rules/
-slicepath	/Users/tunderwood/Dropbox/PythonScripts/combined/slices/

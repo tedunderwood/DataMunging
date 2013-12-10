@@ -1,6 +1,6 @@
 ## CONTEXT.py
 
-'''Contextual spellchecker. On being imported, it loads rulesets.
+'''Contextual spellchecker.
    The function as_stream reduces a file to a tokenstream and tests
    to see whether this is a long-s file needing correction. (Ideally
    you should only run it on pre-1830 files that might fall into that
@@ -8,77 +8,78 @@
    Then the function "catch_ambiguities" can be called for a specific file.
 '''
 
-# IMPORTS.
+import os
 
-import FileCabinet
+def importrules(rulepath):
+    '''
+    This function creates global variables that can be used by the rest of the
+    module.
+    '''
 
-pathdictionary = FileCabinet.loadpathdictionary()
-rulepath = pathdictionary['contextrulepath']
+    global delim, punctuationset, flipslipper, felecterrors, selecttruths, Context, AmbiguousPairs, AmbiguousTriggers, logvals
+    
+    delim = '\t'
+    punctuationset = {'.', ',', '?', '!', ';', ')'}
+    # There's a reason why we don't include left paren. See 'catch_ambiguities.'
 
-# CONSTANTS.
+    flipslipper = ['flip', 'flips', 'flipped', 'flipping', 'flay', 'flays', 'flayed', "flay'd"]
+    # The triadic problems flip - slip - ship and flay - slay - stay require special treatment.                                          ')
 
-delim = '\t'
-punctuationset = {'.', ',', '?', '!', ';', ')'}
-# There's a reason why we don't include left paren. See 'catch_ambiguities.'
+    felecterrors = ['fee', 'fea', 'fay', 'fays', 'fame', 'fell', 'funk', 'fold', 'haft', 'fat', 'fix', 'chafe', 'loft']
+    selecttruths = ['see', 'sea', 'say', 'says', 'same', 'sell', 'sunk', 'sold', 'hast', 'sat', 'six', 'chase', 'lost']
+    # Of course, either set could be valid. But I expect the second to be more common.
+    # The comparison is used as a test.
 
-flipslipper = ['flip', 'flips', 'flipped', 'flipping', 'flay', 'flays', 'flayed', "flay'd"]
-# The triadic problems flip - slip - ship and flay - slay - stay require special treatment.                                          ')
+    # RULESETS.
+                
+    Context = {}
+    FileString = os.path.join(rulepath, 'DisambigTwograms.txt')
+    with open(FileString, encoding='utf=8') as file:
+        filelines = file.readlines()
 
-felecterrors = ['fee', 'fea', 'fay', 'fays', 'fame', 'fell', 'funk', 'fold', 'haft', 'fat', 'fix', 'chafe', 'loft']
-selecttruths = ['see', 'sea', 'say', 'says', 'same', 'sell', 'sunk', 'sold', 'hast', 'sat', 'six', 'chase', 'lost']
-# Of course, either set could be valid. But I expect the second to be more common.
-# The comparison is used as a test.
+    for line in filelines:
+        line = line.rstrip()
+        LineParts = line.split(delim)
+        Context[LineParts[0]] = int(LineParts[1])
 
-# RULESETS.
-            
-Context = {}
-FileString = rulepath + 'DisambigTwograms.txt'
-with open(FileString, encoding='utf=8') as file:
-    filelines = file.readlines()
+    del filelines
 
-for line in filelines:
-    line = line.rstrip()
-    LineParts = line.split(delim)
-    Context[LineParts[0]] = int(LineParts[1])
+    AmbiguousPairs = []
+    AmbiguousTriggers = set()
+    FileString = os.path.join(rulepath, 'AmbiguousPairs.txt')
 
-del filelines
+    with open(FileString, mode='r', encoding='utf-8') as file:
+        FileLines = file.readlines()
 
-AmbiguousPairs = []
-AmbiguousTriggers = set()
-FileString = rulepath + 'AmbiguousPairs.txt'
+    for Line in FileLines:
+        Line = Line.rstrip()
+        LineParts = Line.split(delim)
+        LineTuple = (LineParts[0], LineParts[1])
+        AmbiguousPairs.append(LineTuple)
+        for i in range(0,2):
+            if "f" in LineParts[i]:
+                AmbiguousTriggers.add(LineParts[i])
+            # We only add the words that contain "f" to the set that triggers
+            # an investigation. Their "s" equivalents will be in AmbiguousPairs
+            # but not the AmbiguousTriggers set. After all, we never correct
+            # from the "s" version to the "f" version.
 
-with open(FileString, mode='r', encoding='utf-8') as file:
-    FileLines = file.readlines()
+    del FileLines
+    AmbiguousTriggers.add('fad')
 
-for Line in FileLines:
-    Line = Line.rstrip()
-    LineParts = Line.split(delim)
-    LineTuple = (LineParts[0], LineParts[1])
-    AmbiguousPairs.append(LineTuple)
-    for i in range(0,2):
-        if "f" in LineParts[i]:
-            AmbiguousTriggers.add(LineParts[i])
-        # We only add the words that contain "f" to the set that triggers
-        # an investigation. Their "s" equivalents will be in AmbiguousPairs
-        # but not the AmbiguousTriggers set. After all, we never correct
-        # from the "s" version to the "f" version.
+    # The word 'fad' doesn't exist before 1825, and I'm only running this script on early texts.
 
-del FileLines
-AmbiguousTriggers.add('fad')
+    with open(os.path.join(rulepath, 'logvalues.tsv'), encoding='utf-8') as file:
+        filelines = file.readlines()
 
-# The word 'fad' doesn't exist before 1825, and I'm only running this script on early texts.
+    logvals = dict()
+    for line in filelines:
+        line = line.rstrip()
+        parts = line.split(delim)
+        logvals[parts[0]] = float(parts[1])
 
-with open(rulepath + 'logvalues.tsv', encoding='utf-8') as file:
-    filelines = file.readlines()
-
-logvals = dict()
-for line in filelines:
-    line = line.rstrip()
-    parts = line.split(delim)
-    logvals[parts[0]] = float(parts[1])
-
-# The purpose of the logvalues file is to give me some Bayesian guidance on the frequency of
-# words.
+    # The purpose of the logvalues file is to give me some Bayesian guidance on the frequency of
+    # words.
 
 # Functions
 
@@ -272,8 +273,9 @@ def catch_ambiguities(tokenlist, verbose = False):
             separatedlist.append(token)
 
     del tokenlist
+    tokenlist = separatedlist
 
-    for indexnum, origtoken in enumerate(separatedlist):
+    for indexnum, origtoken in enumerate(tokenlist):
         # TEI markup and single characters, including newline characters, should
         # pass through unchanged, except for punctuation characters, which get magnetically
         # attracted to the previous word.
