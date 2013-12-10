@@ -10,6 +10,21 @@
 import os
 from zipfile import ZipFile
 
+def clearpath(rootpath, suffix):
+    '''Joins two parts to create a filepath and then checks
+    to make sure it doesn't yet exist.'''
+
+    firstpath = os.path.join(rootpath, suffix)
+    
+    if os.path.exists(firstpath):
+        for i in range(2, 20):
+            newpath = firstpath + "_" + str(i)
+            if not os.path.exists(newpath):
+                firstpath = newpath
+                break
+
+    return firstpath
+
 def recursivefilegetter(filepath, suffix):
     '''
     Recursively walks a directory and all its subdirectories

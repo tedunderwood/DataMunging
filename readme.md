@@ -14,7 +14,7 @@ The script will ask you where your files are located and what format they're in.
 
 You can also select only certain files within a pairtree structure by providing pairtree identifiers.
 
-The script writes a cleaned version of the text file (with the suffix clean.txt) to the original folder location. With very minimal editing, it could also write a wordcounts file (version 0.2 will probably include that feature).
+The script writes a cleaned version of the text file (with the suffix clean.txt) to the original folder location. If requested, it will also write a tab-separated file that contains wordcounts for each volume. On completion it writes three kinds of logs: a list of files not found or otherwise anomalous, a list of files thought to contain long-s, and a tab-separated table listing the percentage of words recognized before and after correction in each file.
 
 ### /HathiMetadata
 

@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+## Written in Python 3.2.
+
 '''
 OCRnormalizer 0.1
 
@@ -61,8 +62,6 @@ def main():
     import Context
     import sys
     import os
-
-    print(sys.version)
 
     # DEFINE CONSTANTS.
     delim = '\t'
@@ -137,12 +136,10 @@ def main():
     user = prompt("Which option do you prefer (1 or 2)? ", ["1", "2"])
     
     if user == "1":
-        print('\n')
         rootpath = input("Path to the folder that contains source files: ")
         filelist = FileUtils.recursivefilegetter(rootpath, suffix)
  
     else:
-        print('\n')
         print("I expect the pairtree identifiers to be listed one per line,")
         print("and to be the only item on a line.")  
         filepath = input("Path to the file that contains pairtree identifiers: ")
@@ -161,7 +158,35 @@ def main():
             filelist.append(filename)
 
     print("\nI identified", len(filelist), "files in that location.")
-    print("Now proceeding to process them.\n")
+
+    print("\nI can just write clean text files (with suffix clean.txt)")
+    print("or I can also write tab-separated files that count the words")
+    print("in each file after correction.")
+    user = prompt("1) Text only or 2) text-plus-wordcounts? (1 or 2): ", ["1", "2"])
+    if user == "1":
+        wordcountflag = False
+    else:
+        wordcountflag = True
+    
+    print("Now proceeding to process the files.\n")
+
+    def subtract_counts (token, adict, tosubtract):
+        '''Adjusts a dictionary by subtracting tosubtract instances of token.'''
+        if token in adict:
+            adict[token] = adict[token] - tosubtract
+            if adict[token] < 0:
+                del adict[token]
+            elif adict[token] < 1:
+                del adict[token]
+        return adict
+
+    def add_counts (token, adict, toadd):
+        '''Adjusts a dictionary by adding toadd instances of token.'''
+        if token in adict:
+            adict[token] = adict[token] + toadd
+        else:
+            adict[token] = toadd
+        return adict
 
     # Here's where we BEGIN THE ACTUAL CORRECTION OF FILES.
     
@@ -217,6 +242,10 @@ def main():
 
         errors = 1
         truths = 1
+
+        totaladded = 0
+        totaldeleted = 0
+        
         # Initialized to 1 as a Laplacian correction.
         
         for word in felecterrors:
@@ -234,7 +263,18 @@ def main():
         else:
             longSfiles.append(filename)
             deleted, added, corrected, changedphrases, unchanged = Context.catch_ambiguities(correct_tokens, debug)
-            # "deleted" and "added" are not used in this script
+
+            ## Adjust wordcounts to reflect contextual spellchecking.
+
+            if wordcountflag:
+                
+                for word, count in deleted.items():
+                    masterdict = subtract_counts(word, masterdict, count)
+                    totaldeleted = totaldeleted + count
+
+                for word, count in added.items():
+                    masterdict = add_counts(word, masterdict, count)
+                    totaladded = totaladded + count
 
         # Write corrected file.
  
@@ -252,26 +292,59 @@ def main():
                 lasttoken = token
 
         print(outfilename)
+
+        ## If we're also writing wordcount files, we need to write the .tsv file.
+
+        if wordcountflag:
+                        
+            outlist = sorted(masterdict.items(), key = lambda x: x[1], reverse = True)
+            
+            outfilename = outfilename[ :-10] + ".vol.tsv"
+            totalwordsinvol = 0
+            
+            with open(outfilename, mode = 'w', encoding = 'utf-8') as file:
+                for item in outlist:
+                    outline = item[0] + delim + str(item[1]) + '\n'
+                    file.write(outline)
+                    totalwordsinvol += item[1]
+
+            print(outfilename)
+
+        metatuple = (outfilename, str(totalwordsinvol), str(pre_matched), str(pre_english), str(post_matched),
+                         str(post_english), str(totaladded), str(totaldeleted))
+        processedmeta.append(metatuple)
+            
         count += 1
-        if count > 10:
+        if count > 200:
             break
                 
     # END ITERATION ACROSS FILES.
     
     # Write the errorlog and list of long S files.
-    errorpath = os.path.join(rootpath, "processingerrors.txt")
-    longSpath = os.path.join(rootpath, "longSfiles.txt")
+    errorpath = FileUtils.clearpath(rootpath, "processingerrors.txt")
+    longSpath = FileUtils.clearpath(rootpath, "longSfiles.txt")
+    metapath = FileUtils.clearpath(rootpath, "processing_metadata.tsv")
     
     if len(errorlog) > 0:
         with open(errorpath, mode = 'w', encoding = 'utf-8') as file:
             for line in errorlog:
                 file.write(line + '\n')
+        print("Writing", errorpath)
 
     if len(longSfiles) > 0:
         with open(longSpath, mode = 'w', encoding = 'utf-8') as file:
             for line in longSfiles:
                 file.write(line + '\n')
+        print("Writing", longSpath)
 
+    if len(processedmeta) > 0:
+        with open(metapath, mode = 'w', encoding = 'utf8') as file:
+            file.write('filename\twordinvol\toriginallyindict\toriginallyenglish\tindictpostcorrection\tenglishpostcorrection\taddedbycontextmodule\tdeletedbycontextmodule\n')
+            for atuple in processedmeta:
+                outline = '\t'.join(atuple) + '\n'
+                file.write(outline)
+        print("Writing", metapath)
+         
     # Done.
 
 if __name__ == "__main__":
