@@ -16,6 +16,10 @@ You can also select only certain files within a pairtree structure by providing 
 
 The script writes a cleaned version of the text file (with the suffix clean.txt) to the original folder location. If requested, it will also write a tab-separated file that contains wordcounts for each volume. On completion it writes three kinds of logs: a list of files not found or otherwise anomalous, a list of files thought to contain long-s, and a tab-separated table listing the percentage of words recognized before and after correction in each file.
 
+### /pagefeatures
+
+This folder contains a new-and-improved version of OCRnormalizer that I am currently only using locally. Whereas in OCRnormalizer I've made token efforts to generalize the scripts so that they could run on any machine, these scripts are very specifically adapted to my local work environment. They produce normalized versions of files that are a little cleaner than OCRnormalizer 0.1, specifically by preserving punctuation in places where OCRnormalizer will change or remove it. But they're also designed to output "page features" for a page-level classification workflow that is probably only relevant to me. TODO: merge this branch back into OCRnormalizer so the improvements I've made can be incorporated into a (slightly) more public-facing resource.
+
 ### /HathiMetadata
 
 Contains scripts designed to extract tabular metadata from the file of xml MARC records that Hathi provides to accompany their data, or from .jsons extracted from the bibliographic API.
