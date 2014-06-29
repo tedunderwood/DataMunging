@@ -1,5 +1,5 @@
 '''Revised third-generation OCR normalizer.
-    This was rewritten heavily in fall 2013 to ensure that it keeps 
+    This was rewritten heavily in fall 2013 to ensure that it keeps
     punctuation. It was then adjusted in Spring 2014 to use the original
     HathiTrust zipfiles instead of text files as a source.
 
@@ -36,7 +36,7 @@ import os, sys
 from zipfile import ZipFile
 
 testrun = True
-# Setting this flag to "true" allows me to run the script on a local machine instead of 
+# Setting this flag to "true" allows me to run the script on a local machine instead of
 # the campus cluster.
 
 # DEFINE CONSTANTS.
@@ -77,35 +77,52 @@ def clean_pairtree(htid):
     return cleanname
 
 # LOAD PATHS.
-slicename = sys.argv[1]
+
 
 ## We assume the slice name has been passed in as an argument.
+slicename = sys.argv[1]
+
+# This is most important when running on the cluster, where files are stored in a pairtree
+# structure and the only way to know which files we're processing is to list HTIDS in a
+# "slice" file defining a slice of the collection.
+
+# When we're running on a local machine, I usually just group files to be processed in a
+# directory, and create a list of files to process by listing files in that directory.
+# However, it's still necessary to have a slicename and slicepath, because these get
+# used to generate a path for an errorlog and list of long S files.
 
 if not testrun:
     pathdictionary = FileCabinet.loadpathdictionary('/home/tunder/python/normalize/PathDictionary.txt')
 if testrun:
-    pathdictionary = FileCabinet.loadpathdictionary('/Users/tunderwood/Dropbox/PythonScripts/workflow/PathDictionary copy.txt')
+    pathdictionary = FileCabinet.loadpathdictionary('/Users/tunder/Dropbox/PythonScripts/workflow/PathDictionary.txt')
 
 datapath = pathdictionary['datapath']
-slicepath = pathdictionary['slicepath'] + slicename + '.txt'
 metadatapath = pathdictionary['metadatapath']
 metaoutpath = pathdictionary['metaoutpath']
 outpath = pathdictionary['outpath']
 # only relevant if testrun == True
 
+slicepath = pathdictionary['slicepath'] + slicename + '.txt'
 errorpath = pathdictionary['slicepath'] + slicename + 'errorlog.txt'
 longSpath = pathdictionary['slicepath'] + slicename + 'longS.txt'
-       
-with open(slicepath, encoding="utf-8") as file:
-    HTIDlist = file.readlines()
 
 HTIDs = set()
 
-for thisID in HTIDlist:
-    thisID = thisID.rstrip()
-    HTIDs.add(thisID)
+if testrun:
+    filelist = os.listdir(datapath)
+    for afilename in filelist:
+        if not (afilename.startswith(".") or afilename.startswith("_")):
+            HTIDs.add(afilename)
 
-del HTIDlist
+else:
+    with open(slicepath, encoding="utf-8") as file:
+        HTIDlist = file.readlines()
+
+    for thisID in HTIDlist:
+        thisID = thisID.rstrip()
+        HTIDs.add(thisID)
+
+    del HTIDlist
 
 ## discard bad volume IDs
 
@@ -147,7 +164,7 @@ def read_zip(filepath):
                     datafile = zf.open(member, mode='r')
                     linelist = [x.decode(encoding="UTF-8") for x in datafile.readlines()]
                     pagelist.append((page, linelist))
-                    
+
         pagelist.sort()
         pagecount = len(pagelist)
         if pagecount > 0:
@@ -155,7 +172,7 @@ def read_zip(filepath):
             pagelist = [x[1] for x in pagelist]
         else:
             successflag = "missing file"
-     
+
     except IOError as e:
         successflag = "missing file"
 
@@ -204,8 +221,8 @@ print(len(HTIDs))
 progressctr = 0
 
 for thisID in HTIDs:
-    
-    progressctr += 1    
+
+    progressctr += 1
     if not testrun:
         filepath, postfix = FileCabinet.pairtreepath(thisID, datapath)
         filename = filepath + postfix + '/' + postfix + ".zip"
@@ -216,7 +233,7 @@ for thisID in HTIDs:
         pagelist, successflag = read_zip(filename)
     else:
         pagelist, successflag = read_txt(filename)
-    
+
     if successflag == "missing file":
         print(thisID + " is missing.")
         errorlog.append(thisID + '\t' + "missing")
@@ -225,11 +242,11 @@ for thisID in HTIDs:
         print(thisID + " has a pagination problem.")
         errorlog.append(thisID + '\t' + "paginationerror")
         continue
-        
+
     tokens, pre_matched, pre_english, pagedata = NormalizeVolume.as_stream(pagelist, verbose=debug)
 
     tokencount = len(tokens)
-    
+
     if len(tokens) < 10:
         print(thisID, "has only tokencount", len(tokens))
         errorlog.append(thisID + '\t' + 'short')
@@ -255,7 +272,7 @@ for thisID in HTIDs:
     errors = 1
     truths = 1
     # Initialized to 1 as a Laplacian correction.
-    
+
     for word in felecterrors:
         errors = errors + masterdict.get(word, 0)
     for word in selecttruths:
@@ -279,16 +296,23 @@ for thisID in HTIDs:
         correct_tokens, pages, post_matched, post_english = NormalizeVolume.correct_stream(corrected, verbose = debug)
 
         corrected = correct_tokens
-        
+
 
     # Write corrected file.
     cleanHTID = clean_pairtree(thisID)
 
     if testrun:
-        outfilename = outpath + slicename + "/" + cleanHTID + ".txt"
+        if cleanHTID.endswith(".clean.txt"):
+            outHTID = cleanHTID.replace(".clean.txt", "")
+        elif cleanHTID.endswith(".txt"):
+            outHTID = cleanHTID.replace(".txt", "norm.txt")
+        else:
+            outHTID = cleanHTID + ".norm.txt"
+
+        outfilename = outpath + "texts/" + outHTID
     else:
         outfilename = filepath + postfix + '/' + postfix + ".norm.txt"
-    
+
     with open(outfilename, mode = 'w', encoding = 'utf-8') as file:
         for token in corrected:
             if token != '\n' and token != "“" and not (token.startswith('<') and token.endswith('>')):
@@ -301,7 +325,14 @@ for thisID in HTIDs:
     totalwordsinvol = 0
 
     if testrun:
-        outfilename = outpath + slicename + "/" + cleanHTID + ".pg.tsv"
+        if cleanHTID.endswith(".clean.txt"):
+            outHTID = cleanHTID.replace(".clean.txt", ".pg.tsv")
+        elif cleanHTID.endswith(".txt"):
+            outHTID = cleanHTID.replace(".txt", ".pg.tsv")
+        else:
+            outHTID = cleanHTID + ".pg.tsv"
+
+        outfilename = outpath + "pagefeatures/" + outHTID
     else:
         outfilename = filepath + postfix + '/' + postfix + ".pg.tsv"
 
@@ -318,8 +349,9 @@ for thisID in HTIDs:
 
             structural_features = pagedata[index]
             for feature, count in structural_features.items():
-                outline = str(index) + '\t' + feature + '\t' + str(count) + '\n'
-                file.write(outline)
+                if count > 0 or feature == "#lines":
+                    outline = str(index) + '\t' + feature + '\t' + str(count) + '\n'
+                    file.write(outline)
 
     metatuple = (thisID, str(totalwordsinvol), str(pre_matched), str(pre_english), str(post_matched), str(post_english))
     processedmeta.append(metatuple)

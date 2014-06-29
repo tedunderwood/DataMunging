@@ -14,8 +14,10 @@ Punctuation = '.,():-—;"!?•$%@“”#<>+=/[]*^\'{}_■~\\|«»©&~`£·'
 mosteraser = str.maketrans('', '', Punctuation)
 
 punctuple = ('.', ',', '?', '!', ';', '"', '“', '”', ':', '--', '—', ')', '(', "'", "`", "[", "]", "{", "}")
-specialfeatures = {"arabic1digit", "arabic2digit", "arabic3digit", "arabic4digit", "arabic5+digit", "romannumeral", "personalname"}
+punctnohyphen = ['.', ',', '?', '!', ';', '"', '“', '”', ':', ')', '(', "'", "`", "[", "]", "{", "}"]
+specialfeatures = {"arabicprice", "arabic1digit", "arabic2digit", "arabic3digit", "arabic4digit", "arabic5+digit", "romannumeral", "personalname"}
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+honorifics = ["Sir", "Mr", "Mr.", "Miss", "Mrs", "Mrs.", "Lord", "Lady", "Prince", "King"]
 
 delim = '\t'
 foundcounter = 0
@@ -94,7 +96,7 @@ for line in filelines:
         StripWord = Word.replace("-", "")
         hyphenrules[StripWord] = Corr
         ## That's so that we split "tigermoth" as well as "tiger-moth" into "tiger moth."
-        
+
     if "-" in Word:
         StripWord = Word.replace("-", "")
         StripCorr = Corr.replace(" ", "")
@@ -107,7 +109,7 @@ for line in filelines:
 fuserules = dict()
 with open(rulepath + 'FusingRules.txt', encoding = 'utf-8') as file:
     filelines = file.readlines()
-    
+
 for Line in filelines:
     Line = Line.rstrip()
     LineParts = Line.split(delim)
@@ -119,7 +121,7 @@ for Line in filelines:
 syncoperules = dict()
 with open(rulepath + 'SyncopeRules.txt', encoding = 'utf-8') as file:
     filelines = file.readlines()
-    
+
 for line in filelines:
     line = line.rstrip()
     fields = line.split(delim)
@@ -128,7 +130,7 @@ for line in filelines:
 variants = dict()
 with open(rulepath + 'VariantSpellings.txt', encoding = 'utf-8') as file:
     filelines = file.readlines()
-    
+
 for line in filelines:
     line = line.rstrip()
     fields = line.split(delim)
@@ -146,7 +148,7 @@ def increment_dict(anitem, adictionary):
 
 def commasplit(matchobj):
     '''Function that we're going to use below to process regexes.'''
-    astring = matchobj.group(0) 
+    astring = matchobj.group(0)
     astring = astring.replace(',', ', ')
     return astring
 
@@ -160,7 +162,7 @@ def as_stream(pagelist, verbose = False):
     and the max number of repeats for an alphabetically-adjacent
     pair of letters (not case-sensitive).'''
 
-    global lexicon, mosteraser, alphabet
+    global lexicon, mosteraser, alphabet, punctnohyphen, personalnames, honorifics
 
     linelist = list()
     firstpage = True
@@ -173,8 +175,18 @@ def as_stream(pagelist, verbose = False):
             linelist.append('<pb>')
 
         linecounter = 0
-        textcounter = 0
         capcounter = 0
+        commas = 0
+        periods = 0
+        exclamationpoints = 0
+        questionmarks = 0
+        quotations = 0
+        endwpunct = 0
+        endwnumeral = 0
+        startwname = 0
+        startwrubric = 0
+        sequentialcaps = 0
+        lastcap = "|"
         initial_dict = dict()
 
         for line in page:
@@ -187,10 +199,40 @@ def as_stream(pagelist, verbose = False):
             linelist.append(line)
             linecounter += 1
             if len(strippedline) > 0:
-                textcounter += 1
-                increment_dict(strippedline[0].lower(), initial_dict)    
+                increment_dict(strippedline[0].lower(), initial_dict)
+                commas += strippedline.count(",")
+                periods += strippedline.count(".")
+                quotations += strippedline.count('"')
+                quotations += strippedline.count('”')
+                quotations += strippedline.count('“')
+                exclamationpoints += strippedline.count("!")
+                questionmarks += strippedline.count("?")
+                lastchar = strippedline[-1]
+
+                if lastchar in punctnohyphen:
+                    endwpunct += 1
+
+                if lastchar.isdigit():
+                    endwnumeral += 1
+                elif len(strippedline) > 1:
+                    nexttolastchar = strippedline[-2]
+                    if nexttolastchar.isdigit():
+                        endwnumeral += 1
+
                 if strippedline[0].isalpha() and strippedline[0].isupper():
                     capcounter += 1
+                    if strippedline[0] >= lastcap:
+                        sequentialcaps += 1
+                    lastcap = strippedline[0]
+
+                firstword = strippedline.split()[0]
+                if len(firstword) > 0:
+                    if ((firstword not in lexicon) or firstword in personalnames or firstword in honorifics):
+                        startwname += 1
+
+                    if firstword.endswith(".") and firstword[0].isupper():
+                        startwrubric += 1
+
 
         maxinitial = 0
         maxpair = 0
@@ -209,10 +251,9 @@ def as_stream(pagelist, verbose = False):
                 maxpair = thispair
             lastcount = thiscount
 
-        structural_features = {"#lines": linecounter, "#textlines": textcounter, "#caplines": capcounter,
-                                "#maxinitial": maxinitial, "#maxpair": maxpair}
+        structural_features = {"#lines": linecounter, "#caplines": capcounter, "#maxinitial": maxinitial, "#maxpair": maxpair, "#commas": commas, "#periods": periods, "#exclamationpoints": exclamationpoints, "#questionmarks": questionmarks, "#quotations": quotations, "#endwpunct": endwpunct, "#endwnumeral": endwnumeral, "#startwrubric": startwrubric, "#startwname": startwname, "#sequentialcaps": sequentialcaps}
         pagedata.append(structural_features)
-    
+
     tokens = list()
     for line in linelist:
         if len(line) < 1:
@@ -225,7 +266,7 @@ def as_stream(pagelist, verbose = False):
             tokens.append(line)
             tokens.append('\n')
             continue
-        
+
         line = line.replace('”', '” ')
         line = line.replace(':', ': ')
         line = line.replace(';', '; ')
@@ -253,7 +294,7 @@ def as_stream(pagelist, verbose = False):
         #             followedbyspace = True
         #             nextindex = line.find('"', nextindex+1, len(line))
         #         else:
-        #             if nextindex > 0 and line[nextindex - 1] == " ": 
+        #             if nextindex > 0 and line[nextindex - 1] == " ":
         #                 line = line[0:nextindex] + '“ ' + line[nextindex+1:]
         #                 nextindex = line.find('"', nextindex+2, len(line))
         #                 ## Okay, this is a teensy bit baroque. I know that correct_stream
@@ -270,8 +311,8 @@ def as_stream(pagelist, verbose = False):
         #                 nextindex = line.find('"', nextindex+2, len(line))
         #                 ## If not preceded by a space, this is ambiguous, and I leave
         #                 ## the character ambiguous.
-                    
-        
+
+
         lineparts = line.split()
         tokens.extend(lineparts)
         tokens.append('\n')
@@ -281,7 +322,7 @@ def as_stream(pagelist, verbose = False):
     allcounter = 0
 
     tokencount = len(tokens)
-    
+
     for i in range(0, tokencount):
         token = tokens[i].lower()
         if token in lexicon:
@@ -310,7 +351,7 @@ def as_stream(pagelist, verbose = False):
                     allcounter += 1
         else:
             allcounter += 1
-            
+
     if allcounter > 0:
         percentfound = counter / allcounter
         percentenglish = englishcounter / allcounter
@@ -374,12 +415,23 @@ def mostly_numeric(astring):
         return False
 
 def arabic_digits(astring):
+    pricecodes = ["$", "£", "¢"]
     counter = 0
     for c in astring:
         if c.isdigit():
             counter += 1
+
+    priceflag = False
+    for code in pricecodes:
+        if astring.count(code) > 0:
+            priceflag = True
+    if astring.endswith("s") or astring.endswith("d"):
+        priceflag = True
+
     if len(astring) < 1 or counter/len(astring) < .4:
         return "none"
+    elif priceflag == True:
+        return "arabicprice"
     elif counter < 2:
         return "arabic1digit"
     elif counter < 3:
@@ -416,7 +468,7 @@ def logandreset(astring, caseflag, possessive, prefix, suffix):
     Note that it does so only after logging the word, which means that
     possessive inflections are not registered in our wordcount.
     That's my only gesture toward lemmatization.'''
-    
+
     global pagedict, lexicon, syncoperules, variants, foundcounter, englishcounter, personalnames, placenames
 
     # In this version of logandreset, tokens that belong to certain special classes are represented
@@ -454,7 +506,7 @@ def logandreset(astring, caseflag, possessive, prefix, suffix):
             # count personal names as things found but not english.
             # do this only id not in lexicon to avoid doublecounting with
             # with if statement above
-            foundcounter += 1    
+            foundcounter += 1
     elif caseflag == "title" and len(astring) > 4 and astring not in lexicon:
         logstring = "propernoun"
         # This is a long titlecased word not present
@@ -464,7 +516,7 @@ def logandreset(astring, caseflag, possessive, prefix, suffix):
         pagedict[logstring] += 1
     else:
         pagedict[logstring] = 1
-    
+
     if caseflag == "lower":
         astring = astring.lower()
     elif caseflag == "upper":
@@ -489,7 +541,7 @@ def logandreset(astring, caseflag, possessive, prefix, suffix):
         astring = prefix + astring
 
     return astring
-        
+
 
 def correct_stream(tokens, verbose = False):
     global lexicon, hyphenrules, fuserules, syncoperules, variants, correctionrules, romannumerals, pagedict, foundcounter, englishcounter, personalnames, placenames
@@ -506,7 +558,7 @@ def correct_stream(tokens, verbose = False):
     paratext = 0
 
     for i in range(0, streamlen):
-        
+
         thisword = tokens[i]
         if len(thisword) < 1:
             continue
@@ -592,7 +644,7 @@ def correct_stream(tokens, verbose = False):
             continue
 
         # Is this part of a phrase that needs fusing?
-            
+
         if is_word(thisword) and is_word(nextword):
             fusetuple = (thislower, nextlower)
             if fusetuple in fuserules:
@@ -613,7 +665,7 @@ def correct_stream(tokens, verbose = False):
             corrected.append(thisword)
             continue
 
-        ## At this point we know that thisword doesn't match lexicon. 
+        ## At this point we know that thisword doesn't match lexicon.
         ## Maybe it's a word fragment
         ## that needs to be joined to nextword, after erasure of hyphens, etc.
 
@@ -674,10 +726,10 @@ def correct_stream(tokens, verbose = False):
 
         if thiscorr in hyphenrules:
             thiscorr = hyphenrules[thiscorr]
-            
+
         ## Maybe the correction is multiple words. That's a split that could have happened as a result
         ## of correctionrules or hyphenrules.
-            
+
         if " " in thiscorr:
             theseparts = thiscorr.split()
             for j in range(0, len(theseparts)):
@@ -686,7 +738,7 @@ def correct_stream(tokens, verbose = False):
                     partcase = thiscase
                 else:
                     partcase = "lower"
-                    
+
                 newtoken = logandreset(part, partcase, False, "", "")
                 if j == (len(theseparts) - 1):
                     newtoken = newtoken + thissuffix
@@ -717,7 +769,7 @@ def correct_stream(tokens, verbose = False):
                     partcase = thiscase
                 else:
                     partcase = "lower"
-                 
+
                 newtoken = logandreset(part, partcase, False, "", "")
 
                 if j == (len(theseparts) - 1):
@@ -751,7 +803,7 @@ def correct_stream(tokens, verbose = False):
             ## matches the dictionary. Variant spellings will be normalized in the
             ## logandreset function.
             continue
-    
+
     pages.append(pagedict)
     # Because the last page also needs to be appended.
 
@@ -771,11 +823,11 @@ def correct_stream(tokens, verbose = False):
     # plus a list of page dictionaries, plus a count of words that matched, and the
     # number of those words that were english.
 
-        
 
-            
-                
-                
-            
-            
-    
+
+
+
+
+
+
+
