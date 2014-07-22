@@ -105,6 +105,7 @@ outpath = pathdictionary['outpath']
 slicepath = pathdictionary['slicepath'] + slicename + '.txt'
 errorpath = pathdictionary['slicepath'] + slicename + 'errorlog.txt'
 longSpath = pathdictionary['slicepath'] + slicename + 'longS.txt'
+headeroutpath = outpath + "headers.txt"
 
 HTIDs = set()
 
@@ -186,6 +187,7 @@ def read_txt(filepath):
 
         page = list()
         for line in filelines:
+
             if line.startswith("<pb>"):
                 pagelist.append(page)
                 page = list()
@@ -243,7 +245,17 @@ for thisID in HTIDs:
         errorlog.append(thisID + '\t' + "paginationerror")
         continue
 
-    tokens, pre_matched, pre_english, pagedata = NormalizeVolume.as_stream(pagelist, verbose=debug)
+    tokens, pre_matched, pre_english, pagedata, headerlist = NormalizeVolume.as_stream(pagelist, verbose=debug)
+
+    if pre_english < 0.6:
+        print(thisID + " is suspicious.")
+
+    with open(headeroutpath, mode="a", encoding="utf-8") as f:
+        for astream in headerlist:
+            if len(astream) > 0:
+                outline = " ".join([x for x in astream])
+                f.write(outline + '\n')
+        f.write("------------------\n")
 
     tokencount = len(tokens)
 
@@ -297,6 +309,20 @@ for thisID in HTIDs:
 
         corrected = correct_tokens
 
+    # If we are upvoting tokens in the header, they need to be added here.
+
+    for index, page in enumerate(pages):
+        thispageheader = headerlist[index]
+        header_tokens, header_pages, dummy1, dummy2 = NormalizeVolume.correct_stream(thispageheader, verbose = debug)
+        headerdict = header_pages[0]
+        for key, value in headerdict.items():
+            if key == "romannumeral" or key.startswith("arabic"):
+                continue
+                # because we don't really want to upvote page numbers
+            elif key in page:
+                page[key] += 2
+                # a fixed increment no matter how many times the word occurs in the
+                # header
 
     # Write corrected file.
     cleanHTID = clean_pairtree(thisID)
@@ -304,6 +330,8 @@ for thisID in HTIDs:
     if testrun:
         if cleanHTID.endswith(".clean.txt"):
             outHTID = cleanHTID.replace(".clean.txt", "")
+        elif cleanHTID.endswith("norm.txt"):
+            outHTID = cleanHTID.replace("norm.txt", ".norm.txt")
         elif cleanHTID.endswith(".txt"):
             outHTID = cleanHTID.replace(".txt", "norm.txt")
         else:
@@ -327,6 +355,8 @@ for thisID in HTIDs:
     if testrun:
         if cleanHTID.endswith(".clean.txt"):
             outHTID = cleanHTID.replace(".clean.txt", ".pg.tsv")
+        elif cleanHTID.endswith("norm.txt"):
+            outHTID = cleanHTID.replace("norm.txt", ".pg.tsv")
         elif cleanHTID.endswith(".txt"):
             outHTID = cleanHTID.replace(".txt", ".pg.tsv")
         else:
@@ -337,7 +367,15 @@ for thisID in HTIDs:
         outfilename = filepath + postfix + '/' + postfix + ".pg.tsv"
 
     with open(outfilename, mode = 'w', encoding = 'utf-8') as file:
+        numberofpages = len(pages)
         for index, page in enumerate(pages):
+
+            # This is a shameful hack that should be deleted later.
+            if "estimated" in page and "percentage" in page and (index + 3) > numberofpages:
+                continue
+            if "untypical" in page and (index +2) > numberofpages:
+                continue
+
             for feature, count in page.items():
                 outline = str(index) + '\t' + feature + '\t' + str(count) + '\n'
                 # pagenumber, featurename, featurecount
@@ -349,7 +387,7 @@ for thisID in HTIDs:
 
             structural_features = pagedata[index]
             for feature, count in structural_features.items():
-                if count > 0 or feature == "#lines":
+                if count > 0 or feature == "#textlines":
                     outline = str(index) + '\t' + feature + '\t' + str(count) + '\n'
                     file.write(outline)
 

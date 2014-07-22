@@ -1,4 +1,6 @@
 import re
+import math
+import HeaderFinder
 
 ## The following lines generate a translation map that zaps all
 ## non-alphanumeric characters in a token.
@@ -17,7 +19,7 @@ punctuple = ('.', ',', '?', '!', ';', '"', '“', '”', ':', '--', '—', ')', 
 punctnohyphen = ['.', ',', '?', '!', ';', '"', '“', '”', ':', ')', '(', "'", "`", "[", "]", "{", "}"]
 specialfeatures = {"arabicprice", "arabic1digit", "arabic2digit", "arabic3digit", "arabic4digit", "arabic5+digit", "romannumeral", "personalname"}
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-honorifics = ["Sir", "Mr", "Mr.", "Miss", "Mrs", "Mrs.", "Lord", "Lady", "Prince", "King"]
+honorifics = ["sir", "mr", "m", "miss", "mrs", "lord", "lady", "prince", "king", "queen"]
 
 delim = '\t'
 foundcounter = 0
@@ -152,6 +154,18 @@ def commasplit(matchobj):
     astring = astring.replace(',', ', ')
     return astring
 
+def standarddev(alist):
+    if len(alist) < 1:
+        return 0
+
+    mean = sum(alist) / len(alist)
+    squareddifferences = 0
+    for anitem in alist:
+        squareddifferences += (anitem - mean) * (anitem - mean)
+    variance = squareddifferences / len(alist)
+    stdev = math.sqrt(variance)
+    return stdev
+
 def as_stream(pagelist, verbose = False):
     '''Converts a list of pages to a list of tokens
     Linebreaks are represented as separate tokens.
@@ -162,7 +176,9 @@ def as_stream(pagelist, verbose = False):
     and the max number of repeats for an alphabetically-adjacent
     pair of letters (not case-sensitive).'''
 
-    global lexicon, mosteraser, alphabet, punctnohyphen, personalnames, honorifics
+    global lexicon, mosteraser, alphabet, punctnohyphen, personalnames, honorifics, romannumerals
+
+    headerlist = HeaderFinder.find_headers(pagelist, romannumerals)
 
     linelist = list()
     firstpage = True
@@ -175,6 +191,7 @@ def as_stream(pagelist, verbose = False):
             linelist.append('<pb>')
 
         linecounter = 0
+        textlinecounter = 0
         capcounter = 0
         commas = 0
         periods = 0
@@ -186,8 +203,10 @@ def as_stream(pagelist, verbose = False):
         startwname = 0
         startwrubric = 0
         sequentialcaps = 0
+        thisalphabeticrun = 0
         lastcap = "|"
         initial_dict = dict()
+        lengths = list()
 
         for line in page:
             strippedline = line.strip()
@@ -198,7 +217,11 @@ def as_stream(pagelist, verbose = False):
                 # I'm willing to live with the exceptions.
             linelist.append(line)
             linecounter += 1
+
             if len(strippedline) > 0:
+                lengths.append(len(strippedline))
+                if len(strippedline) > 1:
+                    textlinecounter += 1
                 increment_dict(strippedline[0].lower(), initial_dict)
                 commas += strippedline.count(",")
                 periods += strippedline.count(".")
@@ -219,18 +242,31 @@ def as_stream(pagelist, verbose = False):
                     if nexttolastchar.isdigit():
                         endwnumeral += 1
 
+                # Here what we're doing is counting the longest sequence
+                # of line-initial uppercase letters that are in alphabetic
+                # order
                 if strippedline[0].isalpha() and strippedline[0].isupper():
                     capcounter += 1
+
                     if strippedline[0] >= lastcap:
-                        sequentialcaps += 1
+                        thisalphabeticrun += 1
+                        if thisalphabeticrun > sequentialcaps:
+                            sequentialcaps = thisalphabeticrun
+                    else:
+                        thisalphabeticrun = 0
+
                     lastcap = strippedline[0]
 
                 firstword = strippedline.split()[0]
-                if len(firstword) > 0:
-                    if ((firstword not in lexicon) or firstword in personalnames or firstword in honorifics):
+
+                if len(firstword) > 0 and firstword[0].isupper():
+                    prefix, strippedword, suffix = strip_punctuation(firstword)
+                    firstwordlower = strippedword.lower()
+
+                    if (firstwordlower not in lexicon) or (firstwordlower in personalnames) or (firstwordlower in honorifics):
                         startwname += 1
 
-                    if firstword.endswith(".") and firstword[0].isupper():
+                    if firstword.endswith("."):
                         startwrubric += 1
 
 
@@ -251,7 +287,8 @@ def as_stream(pagelist, verbose = False):
                 maxpair = thispair
             lastcount = thiscount
 
-        structural_features = {"#lines": linecounter, "#caplines": capcounter, "#maxinitial": maxinitial, "#maxpair": maxpair, "#commas": commas, "#periods": periods, "#exclamationpoints": exclamationpoints, "#questionmarks": questionmarks, "#quotations": quotations, "#endwpunct": endwpunct, "#endwnumeral": endwnumeral, "#startwrubric": startwrubric, "#startwname": startwname, "#sequentialcaps": sequentialcaps}
+        stdev = int(standarddev(lengths) * 100)
+        structural_features = {"#lines": linecounter, "#textlines": textlinecounter, "#caplines": capcounter, "#maxinitial": maxinitial, "#maxpair": maxpair, "#commas": commas, "#periods": periods, "#exclamationpoints": exclamationpoints, "#questionmarks": questionmarks, "#quotations": quotations, "#endwpunct": endwpunct, "#endwnumeral": endwnumeral, "#startwrubric": startwrubric, "#startwname": startwname, "#sequentialcaps": sequentialcaps, "#stdev": stdev}
         pagedata.append(structural_features)
 
     tokens = list()
@@ -359,7 +396,7 @@ def as_stream(pagelist, verbose = False):
         percentfound = 0
         percentenglish = 0
 
-    return tokens, percentfound, percentenglish, pagedata
+    return tokens, percentfound, percentenglish, pagedata, headerlist
 
 def strip_punctuation(astring):
     global punctuple
