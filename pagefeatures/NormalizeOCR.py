@@ -194,10 +194,13 @@ def read_txt(filepath):
             else:
                 page.append(line)
 
-        # You might assume that we would now need pagelist.append(page)
-        # To catch the final page. But in practice the text files we are
-        # likely to ingest have a <pb> at the bottom of *every* page,
-        # even the last one. So no final append is needed.
+        pagelist.append(page)
+
+        # This turned out to be false:
+                # You might assume that we would now need pagelist.append(page)
+                # To catch the final page. But in practice the text files we are
+                # likely to ingest have a <pb> at the bottom of *every* page,
+                # even the last one. So no final append is needed.
 
         successflag = "success"
 
@@ -255,7 +258,7 @@ for thisID in HTIDs:
             if len(astream) > 0:
                 outline = " ".join([x for x in astream])
                 f.write(outline + '\n')
-        f.write("------------------\n")
+        f.write("--------- " + thisID + " ---------\n")
 
     tokencount = len(tokens)
 
