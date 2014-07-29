@@ -32,10 +32,12 @@
 import FileCabinet
 import NormalizeVolume
 import Context
+import PhraseCounter
+import json
 import os, sys
 from zipfile import ZipFile
 
-testrun = True
+testrun = False
 # Setting this flag to "true" allows me to run the script on a local machine instead of
 # the campus cluster.
 
@@ -47,7 +49,7 @@ selecttruths = ['see', 'sea', 'say', 'says', 'same', 'sell', 'sunk', 'sold', 'ha
 # Of course, either set could be valid. But I expect the second to be more common.
 # The comparison is used as a test.
 
-# Define a useful function
+# Define a useful function or two.
 
 def subtract_counts (token, adict, tosubtract):
     global errorlog, thisID
@@ -76,8 +78,17 @@ def clean_pairtree(htid):
     cleanname = prefix + "." + postfix
     return cleanname
 
-# LOAD PATHS.
+def dirty_pairtree(htid):
+    period = htid.find('.')
+    prefix = htid[0:period]
+    postfix = htid[(period+1): ]
+    if '=' in postfix:
+        postfix = postfix.replace('+',':')
+        postfix = postfix.replace('=','/')
+    dirtyname = prefix + "." + postfix
+    return dirtyname
 
+# LOAD PATHS.
 
 ## We assume the slice name has been passed in as an argument.
 slicename = sys.argv[1]
@@ -105,7 +116,9 @@ outpath = pathdictionary['outpath']
 slicepath = pathdictionary['slicepath'] + slicename + '.txt'
 errorpath = pathdictionary['slicepath'] + slicename + 'errorlog.txt'
 longSpath = pathdictionary['slicepath'] + slicename + 'longS.txt'
-headeroutpath = outpath + "headers.txt"
+phrasecountpath = longSpath = pathdictionary['slicepath'] + slicename + 'phrasecount.json'
+headeroutpath = pathdictionary['slicepath'] + slicename + "headers.txt"
+genremapdir = "/projects/ichass/usesofscale/pagemaps/" + slicename + "/"
 
 HTIDs = set()
 
@@ -135,6 +148,19 @@ for line in filelines:
     line = line.split(delim)
     if line[0] in HTIDs:
         HTIDs.discard(line[0])
+
+# read in special-purpose london phrase list
+
+with open("/home/tunder/python/normalize/london_places.txt", encoding="utf-8") as f:
+    filelines = f.readlines()
+phraselist = [x.strip() for x in filelines]
+phraseset = PhraseCounter.normalize_phraseset(phraselist)
+
+# Read the largest list of features we might use for page classification.
+
+with open("/home/tunder/python/normalize/mergedvocabulary.txt", encoding = "utf-8") as f:
+    filelines = f.readlines()
+pagevocabset = set([x.strip() for x in filelines])
 
 # We define two different IO functions, for zip files and regular text files.
 # The decision between them is defined by the extension on the filename;
@@ -209,6 +235,30 @@ def read_txt(filepath):
 
     return pagelist, successflag
 
+def get_map(genremappath):
+    global errorlog
+    genremap = dict()
+
+    try:
+        with open(genremappath, encoding="utf-8") as f:
+            filelines = f.readlines()
+        ctr = 0
+        for line in filelines:
+            fields = line.split('\t')
+            genre = fields[2]
+            pageid = fields[0]
+            pagenum = int(pageid.rpartition(',')[2])
+            # That takes the part after the last comma in page id.
+            # For instance "yale.39002098631915,85" => 85.
+            genremap[pagenum] = genre
+            if pagenum != ctr:
+                print("Anomalous sequence in " + genremappath)
+            ctr += 1
+    except:
+        print("Failure to read genremap in " + genremappath)
+        errorlog.append(thisID + '\t' + " genre map failure.")
+
+    return genremap
 
 processedmeta = list()
 errorlog = list()
@@ -224,6 +274,7 @@ if not os.path.isfile(metaoutpath):
         f.write("volID\ttotalwords\tprematched\tpreenglish\tpostmatched\tpostenglish\n")
 print(len(HTIDs))
 progressctr = 0
+phrasecount = dict()
 
 for thisID in HTIDs:
 
@@ -248,10 +299,20 @@ for thisID in HTIDs:
         errorlog.append(thisID + '\t' + "paginationerror")
         continue
 
+    genremappath = genremapdir + clean_pairtree(thisID) + ".predict"
+
+    genremap = get_map(genremappath)
+
     tokens, pre_matched, pre_english, pagedata, headerlist = NormalizeVolume.as_stream(pagelist, verbose=debug)
 
     if pre_english < 0.6:
         print(thisID + " is suspicious.")
+        errorlog.append(thisID + '\t' + "not english")
+    else:
+        if len(genremap) > 0:
+            genreset = set(genremap.values())
+            thisvoldict = PhraseCounter.count_phrases(tokens, genremap, phraseset, genreset)
+            phrasecount[thisID] = thisvoldict
 
     with open(headeroutpath, mode="a", encoding="utf-8") as f:
         for astream in headerlist:
@@ -373,16 +434,16 @@ for thisID in HTIDs:
         numberofpages = len(pages)
         for index, page in enumerate(pages):
 
-            # This is a shameful hack that should be deleted later.
-            if "estimated" in page and "percentage" in page and (index + 3) > numberofpages:
-                continue
-            if "untypical" in page and (index +2) > numberofpages:
-                continue
+            otherfeatures = 0
 
             for feature, count in page.items():
-                outline = str(index) + '\t' + feature + '\t' + str(count) + '\n'
-                # pagenumber, featurename, featurecount
-                file.write(outline)
+                if feature in pagevocabset:
+                    outline = str(index) + '\t' + feature + '\t' + str(count) + '\n'
+                    # pagenumber, featurename, featurecount
+                    file.write(outline)
+                else:
+                    otherfeatures += count
+
                 if not feature.startswith("#"):
                     totalwordsinvol += count
                 # This is because there are structural features like #allcapswords
@@ -393,6 +454,10 @@ for thisID in HTIDs:
                 if count > 0 or feature == "#textlines":
                     outline = str(index) + '\t' + feature + '\t' + str(count) + '\n'
                     file.write(outline)
+
+            if otherfeatures > 0:
+                outline = str(index) + '\t' + "wordNotInVocab" + '\t' + str(otherfeatures) + '\n'
+                file.write(outline)
 
     metatuple = (thisID, str(totalwordsinvol), str(pre_matched), str(pre_english), str(post_matched), str(post_english))
     processedmeta.append(metatuple)
@@ -424,6 +489,11 @@ if len(longSfiles) > 0:
     with open(longSpath, mode = 'w', encoding = 'utf-8') as file:
         for line in longSfiles:
             file.write(line + '\n')
+
+with open(phrasecountpath, mode="w", encoding = "utf-8") as file:
+    j = json.dumps(phrasecount)
+    file.write(j)
+
 
 # Done.
 

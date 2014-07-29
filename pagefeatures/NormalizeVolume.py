@@ -180,6 +180,13 @@ def as_stream(pagelist, verbose = False):
 
     headerlist = HeaderFinder.find_headers(pagelist, romannumerals)
 
+    if len(headerlist) != len(pagelist):
+        print("Headerlist: " + str(len(headerlist)))
+        print("Pagelist: " + str(len(pagelist)))
+        headerlist = [[]] * len(pagelist)
+    # These lengths ought to match up; if they don't, skip the whole header
+    # process while flagging the problem.
+
     linelist = list()
     firstpage = True
     pagedata = list()
