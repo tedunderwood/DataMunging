@@ -36,8 +36,9 @@ import PhraseCounter
 import json
 import os, sys, time
 from zipfile import ZipFile
+from multiprocessing import Pool
 
-testrun = True
+testrun = False
 # Setting this flag to "true" allows me to run the script on a local machine instead of
 # the campus cluster.
 
@@ -48,45 +49,6 @@ felecterrors = ['fee', 'fea', 'fay', 'fays', 'fame', 'fell', 'funk', 'fold', 'ha
 selecttruths = ['see', 'sea', 'say', 'says', 'same', 'sell', 'sunk', 'sold', 'hast', 'sat', 'six', 'chase', 'lost']
 # Of course, either set could be valid. But I expect the second to be more common.
 # The comparison is used as a test.
-
-# Define a useful function or two.
-
-def subtract_counts (token, adict, tosubtract):
-    global errorlog, thisID
-    if token in adict:
-        adict[token] = adict[token] - tosubtract
-        if adict[token] < 0:
-            del adict[token]
-        elif adict[token] < 1:
-            del adict[token]
-    return adict
-
-def add_counts (token, adict, toadd):
-    if token in adict:
-        adict[token] = adict[token] + toadd
-    else:
-        adict[token] = toadd
-    return adict
-
-def clean_pairtree(htid):
-    period = htid.find('.')
-    prefix = htid[0:period]
-    postfix = htid[(period+1): ]
-    if ':' in postfix:
-        postfix = postfix.replace(':','+')
-        postfix = postfix.replace('/','=')
-    cleanname = prefix + "." + postfix
-    return cleanname
-
-def dirty_pairtree(htid):
-    period = htid.find('.')
-    prefix = htid[0:period]
-    postfix = htid[(period+1): ]
-    if '=' in postfix:
-        postfix = postfix.replace('+',':')
-        postfix = postfix.replace('=','/')
-    dirtyname = prefix + "." + postfix
-    return dirtyname
 
 # LOAD PATHS.
 
@@ -125,35 +87,6 @@ if testrun:
 else:
     genremapdir = "/projects/ichass/usesofscale/pagemaps/" + slicename + "/"
 
-HTIDs = set()
-
-if testrun:
-    filelist = os.listdir(datapath)
-    for afilename in filelist:
-        if not (afilename.startswith(".") or afilename.startswith("_")):
-            HTIDs.add(afilename)
-
-else:
-    with open(slicepath, encoding="utf-8") as file:
-        HTIDlist = file.readlines()
-
-    for thisID in HTIDlist:
-        thisID = thisID.rstrip()
-        HTIDs.add(thisID)
-
-    del HTIDlist
-
-## discard bad volume IDs
-
-with open(metadatapath + "badIDs.txt", encoding = 'utf-8') as file:
-    filelines = file.readlines()
-
-for line in filelines:
-    line = line.rstrip()
-    line = line.split(delim)
-    if line[0] in HTIDs:
-        HTIDs.discard(line[0])
-
 # read in special-purpose london phrase list
 
 if testrun:
@@ -174,6 +107,126 @@ else:
 with open(mergedvocabpath, encoding = "utf-8") as f:
     filelines = f.readlines()
 pagevocabset = set([x.strip() for x in filelines])
+
+##
+## MAIN FUNCTION:
+##
+
+def main():
+    global testrun, datapath, slicepath, metadatapath, current_working,  metaoutpath, mergedvocabpath, errorpath, phrasecountpath
+
+    if testrun:
+        filelist = os.listdir(datapath)
+        HTIDs = set()
+        for afilename in filelist:
+            if not (afilename.startswith(".") or afilename.startswith("_")):
+                HTIDs.add(afilename)
+
+    else:
+        with open(slicepath, encoding="utf-8") as file:
+            HTIDlist = file.readlines()
+
+        HTIDs = set([x.rstrip() for x in HTIDlist])
+        del HTIDlist
+
+    ## discard bad volume IDs
+
+    with open(metadatapath + "badIDs.txt", encoding = 'utf-8') as file:
+        filelines = file.readlines()
+
+    for line in filelines:
+        line = line.rstrip()
+        line = line.split(delim)
+        if line[0] in HTIDs:
+            HTIDs.discard(line[0])
+
+    if not os.path.isfile(metaoutpath):
+        with open(metaoutpath, 'w', encoding = 'utf-8') as f:
+            f.write("volID\ttotalwords\tprematched\tpreenglish\tpostmatched\tpostenglish\n")
+
+    print(len(HTIDs))
+
+    pool = Pool(processes = 12)
+    res = pool.map_async(process_a_file, HTIDs)
+
+    # After all files are processed, write metadata, errorlog, and counts of phrases.
+    res.wait()
+    resultlist = res.get()
+
+    processedmeta = list()
+    errorlog = list()
+    phrasecount = dict()
+
+    for file_dict in resultlist:
+        processedmeta.append(file_dict["metadata"])
+        errorlog.extend(file_dict["errors"])
+        htid = file_dict["htid"]
+        phrasecount[htid] = file_dict["phrasecounts"]
+
+    # Metadata.
+
+    with open(metaoutpath, mode = 'a', encoding = 'utf-8') as file:
+        for metatuple in processedmeta:
+            outlist = [x for x in metatuple]
+            outline = delim.join(outlist) + '\n'
+            file.write(outline)
+
+    # Write the errorlog.
+
+    if len(errorlog) > 0:
+        with open(errorpath, mode = 'w', encoding = 'utf-8') as file:
+            for line in errorlog:
+                file.write(line + '\n')
+
+    # Write phrase counts.
+
+    with open(phrasecountpath, mode="w", encoding = "utf-8") as file:
+        j = json.dumps(phrasecount)
+        file.write(j)
+
+    print("Done.")
+    pool.close()
+    pool.join()
+
+    # Done.
+
+# FUNCTIONS.
+
+def subtract_counts (token, adict, tosubtract):
+    if token in adict:
+        adict[token] = adict[token] - tosubtract
+        if adict[token] < 0:
+            del adict[token]
+        elif adict[token] < 1:
+            del adict[token]
+    return adict
+
+def add_counts (token, adict, toadd):
+    if token in adict:
+        adict[token] = adict[token] + toadd
+    else:
+        adict[token] = toadd
+    return adict
+
+def clean_pairtree(htid):
+    period = htid.find('.')
+    prefix = htid[0:period]
+    postfix = htid[(period+1): ]
+    if ':' in postfix:
+        postfix = postfix.replace(':','+')
+        postfix = postfix.replace('/','=')
+    cleanname = prefix + "." + postfix
+    return cleanname
+
+def dirty_pairtree(htid):
+    period = htid.find('.')
+    prefix = htid[0:period]
+    postfix = htid[(period+1): ]
+    if '=' in postfix:
+        postfix = postfix.replace('+',':')
+        postfix = postfix.replace('=','/')
+    dirtyname = prefix + "." + postfix
+    return dirtyname
 
 # We define two different IO functions, for zip files and regular text files.
 # The decision between them is defined by the extension on the filename;
@@ -249,7 +302,7 @@ def read_txt(filepath):
     return pagelist, successflag
 
 def get_map(genremappath):
-    global errorlog
+    errormsg = ""
     genremap = dict()
 
     try:
@@ -269,41 +322,34 @@ def get_map(genremappath):
             ctr += 1
     except:
         print("Failure to read genremap in " + genremappath)
-        errorlog.append(thisID + '\t' + " genre map failure.")
+        errormsg = thisID + '\t' + " genre map failure."
 
-    return genremap
+    return genremap, errormsg
 
-processedmeta = list()
-errorlog = list()
-longSfiles = list()
-totaladded = dict()
-totaldeleted = dict()
+# Workhorse function.
 
-# If the metadatafile doesn't exist yet,
-# write header.
+def process_a_file(thisID):
+    global testrun, pairtreepath, datapath, genremapdir, felecterrors, selecttruths, debug, phraseset, pagevocabset
 
-if not os.path.isfile(metaoutpath):
-    with open(metaoutpath, 'w', encoding = 'utf-8') as f:
-        f.write("volID\ttotalwords\tprematched\tpreenglish\tpostmatched\tpostenglish\n")
-print(len(HTIDs))
-progressctr = 0
-phrasecount = dict()
-
-start_time = time.time()
-
-for thisID in HTIDs:
+    perfileerrorlog = list()
+    return_dict = dict()
+    return_dict["htid"] = thisID
+    return_dict["metadata"] = (thisID, "0", "0", "0", "0", "0")
+    return_dict["errors"] = []
+    return_dict["phrasecounts"] = dict()
 
     if testrun:
         cleanID = clean_pairtree(thisID.replace("norm.txt", ""))
     else:
         cleanID = clean_pairtree(thisID)
 
-    progressctr += 1
     if not testrun:
         filepath, postfix = FileCabinet.pairtreepath(thisID, datapath)
         filename = filepath + postfix + '/' + postfix + ".zip"
     else:
         filename = datapath + thisID
+
+    # ACTUALLY READ THE FILE.
 
     if filename.endswith('.zip'):
         pagelist, successflag = read_zip(filename)
@@ -312,42 +358,39 @@ for thisID in HTIDs:
 
     if successflag == "missing file":
         print(thisID + " is missing.")
-        errorlog.append(thisID + '\t' + "missing")
-        continue
+        perfileerrorlog.append(thisID + '\t' + "missing")
+        return_dict["errors"] = perfileerrorlog
+        return return_dict
+
     elif successflag == "pagination error":
         print(thisID + " has a pagination problem.")
-        errorlog.append(thisID + '\t' + "paginationerror")
-        continue
+        perfileerrorlog.append(thisID + '\t' + "paginationerror")
+        return_dict["errors"] = perfileerrorlog
+        return return_dict
 
     genremappath = genremapdir + cleanID + ".predict"
-
-    genremap = get_map(genremappath)
+    genremap, errormsg = get_map(genremappath)
+    if len(errormsg) > 0:
+        perfileerrorlog.append(errormsg)
 
     tokens, pre_matched, pre_english, pagedata, headerlist = NormalizeVolume.as_stream(pagelist, verbose=debug)
 
     if pre_english < 0.6:
         print(thisID + " is suspicious.")
-        errorlog.append(thisID + '\t' + "not english")
+        perfileerrorlog.append(thisID + '\t' + "not english")
+        phrasesinthisvol = dict()
     else:
         if len(genremap) > 0:
             genreset = set(genremap.values())
-            thisvoldict = PhraseCounter.count_phrases(tokens, genremap, phraseset, genreset, cleanID)
-            phrasecount[thisID] = thisvoldict
-
-    # with open(headeroutpath, mode="a", encoding="utf-8") as f:
-    #     for astream in headerlist:
-    #         if len(astream) > 0:
-    #             outline = " ".join([x for x in astream])
-    #             f.write(outline + '\n')
-    #     f.write("--------- " + thisID + " ---------\n")
-    #
-    # === commented out because we don't really need to write these ===
+            phrasesinthisvol = PhraseCounter.count_phrases(tokens, genremap, phraseset, genreset, cleanID)
+        else:
+            phrasesinthisvol = dict()
 
     tokencount = len(tokens)
 
     if len(tokens) < 10:
         print(thisID, "has only tokencount", len(tokens))
-        errorlog.append(thisID + '\t' + 'short')
+        perfileerrorlog.append(thisID + '\t' + 'short')
 
     correct_tokens, pages, post_matched, post_english = NormalizeVolume.correct_stream(tokens, verbose = debug)
 
@@ -386,7 +429,6 @@ for thisID in HTIDs:
         deleted = dict()
         added = dict()
     else:
-        longSfiles.append(thisID)
         deleted, added, corrected, changedphrases, unchanged = Context.catch_ambiguities(correct_tokens, debug)
         # okay, this is crazy and not efficient to run, but it's easy to write and there are a small number
         # of these files -- so I'm going to count the new contextually-corrected tokens by re-running them
@@ -405,6 +447,7 @@ for thisID in HTIDs:
             if key == "romannumeral" or key.startswith("arabic"):
                 continue
                 # because we don't really want to upvote page numbers
+
             elif key in page:
                 page[key] += 2
                 # a fixed increment no matter how many times the word occurs in the
@@ -434,7 +477,7 @@ for thisID in HTIDs:
             file.write(token)
 
     if len(pages) != len(pagedata):
-        print("Discrepancy between page data and page metadata!")
+        perfileerrorlog.append("Discrepancy between page data and page metadata in \t" + thisID)
 
     totalwordsinvol = 0
 
@@ -482,41 +525,16 @@ for thisID in HTIDs:
                 file.write(outline)
 
     metatuple = (thisID, str(totalwordsinvol), str(pre_matched), str(pre_english), str(post_matched), str(post_english))
-    processedmeta.append(metatuple)
 
-    if len(processedmeta) > 99:
-        with open(metaoutpath, mode = 'a', encoding = 'utf-8') as file:
-            for metatuple in processedmeta:
-                outlist = [x for x in metatuple]
-                outline = delim.join(outlist) + '\n'
-                file.write(outline)
-        processedmeta = list()
+    return_dict["metadata"] = metatuple
+    return_dict["errors"] = perfileerrorlog
+    return_dict["phrasecounts"] = phrasesinthisvol
 
-# After all iterations, write anything left in processedmeta.
+    return return_dict
 
-with open(metaoutpath, mode = 'a', encoding = 'utf-8') as file:
-    for metatuple in processedmeta:
-        outlist = [x for x in metatuple]
-        outline = delim.join(outlist) + '\n'
-        file.write(outline)
-
-# Write the errorlog and list of long S files.
-
-if len(errorlog) > 0:
-    with open(errorpath, mode = 'w', encoding = 'utf-8') as file:
-        for line in errorlog:
-            file.write(line + '\n')
-
-if len(longSfiles) > 0:
-    with open(longSpath, mode = 'w', encoding = 'utf-8') as file:
-        for line in longSfiles:
-            file.write(line + '\n')
-
-with open(phrasecountpath, mode="w", encoding = "utf-8") as file:
-    j = json.dumps(phrasecount)
-    file.write(j)
-
-print("Time elapsed: " + str(time.time() - start_time))
-# Done.
+if __name__ == "__main__":
+    start_time = time.time()
+    main()
+    print("Time elapsed: " + str(time.time() - start_time))
 
 
