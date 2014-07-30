@@ -314,12 +314,14 @@ for thisID in HTIDs:
             thisvoldict = PhraseCounter.count_phrases(tokens, genremap, phraseset, genreset)
             phrasecount[thisID] = thisvoldict
 
-    with open(headeroutpath, mode="a", encoding="utf-8") as f:
-        for astream in headerlist:
-            if len(astream) > 0:
-                outline = " ".join([x for x in astream])
-                f.write(outline + '\n')
-        f.write("--------- " + thisID + " ---------\n")
+    # with open(headeroutpath, mode="a", encoding="utf-8") as f:
+    #     for astream in headerlist:
+    #         if len(astream) > 0:
+    #             outline = " ".join([x for x in astream])
+    #             f.write(outline + '\n')
+    #     f.write("--------- " + thisID + " ---------\n")
+    #
+    # === commented out because we don't really need to write these ===
 
     tokencount = len(tokens)
 
