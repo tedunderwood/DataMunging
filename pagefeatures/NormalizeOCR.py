@@ -37,7 +37,7 @@ import json
 import os, sys
 from zipfile import ZipFile
 
-testrun = False
+testrun = True
 # Setting this flag to "true" allows me to run the script on a local machine instead of
 # the campus cluster.
 
@@ -92,6 +92,7 @@ def dirty_pairtree(htid):
 
 ## We assume the slice name has been passed in as an argument.
 slicename = sys.argv[1]
+current_working = os.getcwd()
 
 # This is most important when running on the cluster, where files are stored in a pairtree
 # structure and the only way to know which files we're processing is to list HTIDS in a
@@ -118,7 +119,11 @@ errorpath = pathdictionary['slicepath'] + slicename + 'errorlog.txt'
 longSpath = pathdictionary['slicepath'] + slicename + 'longS.txt'
 phrasecountpath = longSpath = pathdictionary['slicepath'] + slicename + 'phrasecount.json'
 headeroutpath = pathdictionary['slicepath'] + slicename + "headers.txt"
-genremapdir = "/projects/ichass/usesofscale/pagemaps/" + slicename + "/"
+
+if testrun:
+    genremapdir = "/Volumes/TARDIS/output/newlog1/"
+else:
+    genremapdir = "/projects/ichass/usesofscale/pagemaps/" + slicename + "/"
 
 HTIDs = set()
 
@@ -151,14 +156,22 @@ for line in filelines:
 
 # read in special-purpose london phrase list
 
-with open("/home/tunder/python/normalize/london_places.txt", encoding="utf-8") as f:
+if testrun:
+    londonpath = current_working + "/london_places.txt"
+else:
+    londonpath = "/home/tunder/python/normalize/london_places.txt"
+with open(londonpath, encoding="utf-8") as f:
     filelines = f.readlines()
 phraselist = [x.strip() for x in filelines]
 phraseset = PhraseCounter.normalize_phraseset(phraselist)
 
 # Read the largest list of features we might use for page classification.
 
-with open("/home/tunder/python/normalize/mergedvocabulary.txt", encoding = "utf-8") as f:
+if testrun:
+    mergedvocabpath = current_working + "/mergedvocabulary.txt"
+else:
+    mergedvocabpath = "/home/tunder/python/normalize/london_places.txt"
+with open(mergedvocabpath, encoding = "utf-8") as f:
     filelines = f.readlines()
 pagevocabset = set([x.strip() for x in filelines])
 
@@ -278,6 +291,11 @@ phrasecount = dict()
 
 for thisID in HTIDs:
 
+    if testrun:
+        cleanID = clean_pairtree(thisID.replace("norm.txt", ""))
+    else:
+        cleanID = clean_pairtree(thisID)
+
     progressctr += 1
     if not testrun:
         filepath, postfix = FileCabinet.pairtreepath(thisID, datapath)
@@ -299,7 +317,7 @@ for thisID in HTIDs:
         errorlog.append(thisID + '\t' + "paginationerror")
         continue
 
-    genremappath = genremapdir + clean_pairtree(thisID) + ".predict"
+    genremappath = genremapdir + cleanID + ".predict"
 
     genremap = get_map(genremappath)
 
@@ -311,7 +329,7 @@ for thisID in HTIDs:
     else:
         if len(genremap) > 0:
             genreset = set(genremap.values())
-            thisvoldict = PhraseCounter.count_phrases(tokens, genremap, phraseset, genreset)
+            thisvoldict = PhraseCounter.count_phrases(tokens, genremap, phraseset, genreset, cleanID)
             phrasecount[thisID] = thisvoldict
 
     # with open(headeroutpath, mode="a", encoding="utf-8") as f:

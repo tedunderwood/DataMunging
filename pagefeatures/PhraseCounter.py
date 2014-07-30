@@ -27,7 +27,7 @@ def strip_trailing_punctuation(astring):
 
     return astring
 
-def count_phrases(tokenstream, genremap, phraseset, genreset):
+def count_phrases(tokenstream, genremap, phraseset, genreset, cleanID):
 	'''Counts specified phrases in a tokenstream and assigns them to
 	the genre code associated with the appropriate page.
 	'''
@@ -49,7 +49,13 @@ def count_phrases(tokenstream, genremap, phraseset, genreset):
 			page += 1
 			continue
 
-		genre = genremap[page]
+		if token == "\n":
+			continue
+
+		if page in genremap:
+			genre = genremap[page]
+		else:
+			print("Pagination error in genremap " + cleanID + ": page " + str(page) + " but maplen " + str(len(genremap)))
 
 		# Now we're going to consider possible phrases ending with this token,
 		# and decide whether they need to be checked against our list of
@@ -87,7 +93,8 @@ def count_phrases(tokenstream, genremap, phraseset, genreset):
 
 		for potentialmatch in possiblematches:
 			if potentialmatch in phraseset:
-				addmatch(genre, potentialmatch, matchdict)
+				print(potentialmatch)
+				addmatch(potentialmatch, genre, matchdict)
 				break
 				# Because we don't want to count more than one match at this position.
 
