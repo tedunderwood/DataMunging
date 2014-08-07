@@ -32,13 +32,13 @@
 import FileCabinet
 import NormalizeVolume
 import Context
-import PhraseCounter
 import json
 import os, sys, time
 from zipfile import ZipFile
 from multiprocessing import Pool
+import SonicScrewdriver as utils
 
-testrun = False
+testrun = True
 # Setting this flag to "true" allows me to run the script on a local machine instead of
 # the campus cluster.
 
@@ -79,7 +79,6 @@ outpath = pathdictionary['outpath']
 slicepath = pathdictionary['slicepath'] + slicename + '.txt'
 errorpath = pathdictionary['slicepath'] + slicename + 'errorlog.txt'
 longSpath = pathdictionary['slicepath'] + slicename + 'longS.txt'
-phrasecountpath = longSpath = pathdictionary['slicepath'] + slicename + 'phrasecount.json'
 headeroutpath = pathdictionary['slicepath'] + slicename + "headers.txt"
 
 if testrun:
@@ -89,14 +88,14 @@ else:
 
 # read in special-purpose london phrase list
 
-if testrun:
-    londonpath = current_working + "/london_places.txt"
-else:
-    londonpath = "/home/tunder/python/normalize/london_places.txt"
-with open(londonpath, encoding="utf-8") as f:
-    filelines = f.readlines()
-phraselist = [x.strip() for x in filelines]
-phraseset = PhraseCounter.normalize_phraseset(phraselist)
+# if testrun:
+#     londonpath = current_working + "/london_places.txt"
+# else:
+#     londonpath = "/home/tunder/python/normalize/london_places.txt"
+# with open(londonpath, encoding="utf-8") as f:
+#     filelines = f.readlines()
+# phraselist = [x.strip() for x in filelines]
+# phraseset = PhraseCounter.normalize_phraseset(phraselist)
 
 # Read the largest list of features we might use for page classification.
 
@@ -113,7 +112,7 @@ pagevocabset = set([x.strip() for x in filelines])
 ##
 
 def main():
-    global testrun, datapath, slicepath, metadatapath, current_working,  metaoutpath, mergedvocabpath, errorpath, phrasecountpath
+    global testrun, datapath, slicepath, metadatapath, current_working,  metaoutpath, errorpath, pagevocabset
 
     if testrun:
         filelist = os.listdir(datapath)
@@ -146,8 +145,23 @@ def main():
 
     print(len(HTIDs))
 
+    # Let's get some metadata to create metadata features.
+
+    if testrun:
+        rowindices, columns, metadata = utils.readtsv("/Users/tunder/Dropbox/PythonScripts/hathimeta/ExtractedMetadata.tsv")
+    else:
+        rowindices, columns, metadata = utils.readtsv("/projects/ichass/usesofscale/hathimeta/ExtractedMetadata.tsv")
+
+    metadata_clues = list()
+    for aHTID in HTIDs:
+        evidence = get_metadata_evidence(aHTID, rowindices, columns, metadata)
+        metadata_clues.append(evidence)
+
+    assert len(HTIDs) == len(metadata_clues)
+    file_tuples = zip(HTIDs, metadata_clues)
+
     pool = Pool(processes = 12)
-    res = pool.map_async(process_a_file, HTIDs)
+    res = pool.map_async(process_a_file, file_tuples)
 
     # After all files are processed, write metadata, errorlog, and counts of phrases.
     res.wait()
@@ -161,7 +175,6 @@ def main():
         processedmeta.append(file_dict["metadata"])
         errorlog.extend(file_dict["errors"])
         htid = file_dict["htid"]
-        phrasecount[htid] = file_dict["phrasecounts"]
 
     # Metadata.
 
@@ -180,9 +193,9 @@ def main():
 
     # Write phrase counts.
 
-    with open(phrasecountpath, mode="w", encoding = "utf-8") as file:
-        j = json.dumps(phrasecount)
-        file.write(j)
+    # with open(phrasecountpath, mode="w", encoding = "utf-8") as file:
+    #     j = json.dumps(phrasecount)
+    #     file.write(j)
 
     print("Done.")
     pool.close()
@@ -326,10 +339,61 @@ def get_map(thisID, genremappath):
 
     return genremap, errormsg
 
+def keywithmaxval(dictionary):
+    maxval = 0
+    maxkey = ""
+
+    for key, value in dictionary.items():
+        if value > maxval:
+            maxval = value
+            maxkey = key
+
+    return maxkey
+
+def get_metadata_evidence(htid, rowindices, columns, metadata):
+    '''Reads metadata about this volume and uses it to decide what metadata-level features should be assigned.'''
+
+    metadata_evidence = dict()
+
+    metadata_evidence["drama"] = False
+    metadata_evidence["poetry"] = False
+    metadata_evidence["biography"] = False
+    metadata_evidence["fiction"] = False
+
+    htid = utils.pairtreelabel(htid)
+    # convert the clean pairtree filename into a dirty pairtree label for metadata matching
+
+    if htid not in rowindices:
+        # We have no metadata for this volume.
+        return metadata_evidence
+
+    else:
+        genrestring = metadata["genres"][htid]
+        genreinfo = genrestring.split(";")
+        # It's a semicolon-delimited list of items.
+
+        for info in genreinfo:
+
+            if info == "Biography" or info == "Autobiography":
+                metadata_evidence["biography"] = True
+
+            if info == "Fiction" or info == "Novel":
+                metadata_evidence["fiction"] = True
+
+            if (info == "Poetry" or info == "Poems"):
+                metadata_evidence["poetry"] = True
+
+            if (info == "Drama" or info == "Tragedies" or info == "Comedies"):
+                metadata_evidence["drama"] = True
+
+    return metadata_evidence
+
 # Workhorse function.
 
-def process_a_file(thisID):
+def process_a_file(file_tuple):
     global testrun, pairtreepath, datapath, genremapdir, felecterrors, selecttruths, debug, phraseset, pagevocabset
+
+    thisID, metadata_evidence = file_tuple
 
     perfileerrorlog = list()
     return_dict = dict()
@@ -376,15 +440,7 @@ def process_a_file(thisID):
     tokens, pre_matched, pre_english, pagedata, headerlist = NormalizeVolume.as_stream(pagelist, verbose=debug)
 
     if pre_english < 0.6:
-        print(thisID + " is suspicious.")
         perfileerrorlog.append(thisID + '\t' + "not english")
-        phrasesinthisvol = dict()
-    else:
-        if len(genremap) > 0:
-            genreset = set(genremap.values())
-            phrasesinthisvol = PhraseCounter.count_phrases(tokens, genremap, phraseset, genreset, cleanID)
-        else:
-            phrasesinthisvol = dict()
 
     tokencount = len(tokens)
 
@@ -496,13 +552,26 @@ def process_a_file(thisID):
         outfilename = filepath + postfix + '/' + postfix + ".pg.tsv"
 
     with open(outfilename, mode = 'w', encoding = 'utf-8') as file:
+
+        if metadata_evidence["biography"]:
+            file.write("-1\t#metaBiography\t0\n")
+
+        if metadata_evidence["drama"]:
+            file.write("-1\t#metaDrama\t0\n")
+
+        if metadata_evidence["fiction"]:
+            file.write("-1\t#metaFiction\t0\n")
+
+        if metadata_evidence["poetry"]:
+            file.write("-1\t#metaPoetry\t0\n")
+
         numberofpages = len(pages)
         for index, page in enumerate(pages):
 
             otherfeatures = 0
 
             for feature, count in page.items():
-                if feature in pagevocabset:
+                if feature in pagevocabset or feature.startswith("#"):
                     outline = str(index) + '\t' + feature + '\t' + str(count) + '\n'
                     # pagenumber, featurename, featurecount
                     file.write(outline)
@@ -528,7 +597,6 @@ def process_a_file(thisID):
 
     return_dict["metadata"] = metatuple
     return_dict["errors"] = perfileerrorlog
-    return_dict["phrasecounts"] = phrasesinthisvol
 
     return return_dict
 
