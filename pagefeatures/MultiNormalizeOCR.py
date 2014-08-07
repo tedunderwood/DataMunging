@@ -103,7 +103,7 @@ phraseset = PhraseCounter.normalize_phraseset(phraselist)
 if testrun:
     mergedvocabpath = current_working + "/mergedvocabulary.txt"
 else:
-    mergedvocabpath = "/home/tunder/python/normalize/london_places.txt"
+    mergedvocabpath = "/home/tunder/python/normalize/mergedvocabulary.txt"
 with open(mergedvocabpath, encoding = "utf-8") as f:
     filelines = f.readlines()
 pagevocabset = set([x.strip() for x in filelines])
@@ -301,7 +301,7 @@ def read_txt(filepath):
 
     return pagelist, successflag
 
-def get_map(genremappath):
+def get_map(thisID, genremappath):
     errormsg = ""
     genremap = dict()
 
@@ -369,7 +369,7 @@ def process_a_file(thisID):
         return return_dict
 
     genremappath = genremapdir + cleanID + ".predict"
-    genremap, errormsg = get_map(genremappath)
+    genremap, errormsg = get_map(cleanID, genremappath)
     if len(errormsg) > 0:
         perfileerrorlog.append(errormsg)
 
