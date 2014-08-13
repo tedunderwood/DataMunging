@@ -495,10 +495,11 @@ def process_a_file(file_tuple):
 			if key in meaningfulheaders:
 				if key in page:
 					page[key] += 2
+					# a fixed increment no matter how many times the word occurs in the
+					# header
 				else:
-					print("Word in headerdict but not main page. Error.")
-				# a fixed increment no matter how many times the word occurs in the
-				# header
+					page[key] = 2
+					print("Word " + key + " in headerdict for " + thisID + " at " + str(index) + " but not main page.")
 
 	# Write corrected file.
 	cleanHTID = clean_pairtree(thisID)
