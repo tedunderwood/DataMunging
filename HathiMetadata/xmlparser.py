@@ -94,6 +94,27 @@ def numcount(string):
             count += 1
     return count
 
+def startswithdate(string):
+    length = len(string)
+    digits = numcount(string)
+
+    if length > 3:
+        firstfour = numcount(string[0:4])
+        if firstfour > 3:
+            startsright = True
+        else:
+            startsright = False
+    else:
+        startsright = False
+
+    if not startsright:
+        return False
+    elif digits / length > 0.5:
+        # should also be mostly numeric
+        return True
+    else:
+        return False
+
 def extract_subfields(node):
 
     if not node.hasChildNodes():
@@ -607,12 +628,26 @@ def parsemarc(marc):
         ## fixed manually.
 
         if alternatedate.isnumeric() and ('unparsed' in date or 'blank' in date):
-            date == alternatedate
-            print('Date replacement ', date, '==>', alternatedate)
+            # print('Date replacement ', date, '==>', alternatedate)
+            # Canceled the print statement because there are too many of these
+            # when you're dealing with serials.
+            date = alternatedate
         elif alternatedate.isnumeric() and 'estimate' in date and not "--" in date:
             if not "00" in alternatedate:
-                date == alternatedate
                 print('Date replacement ', date, '==>', alternatedate)
+                date = alternatedate
+
+
+    if materialtype.startswith("ser") and numcount(date) < 4 and numcount(enumcron) > 4:
+        enumparts = enumcron.split(" ")
+        if len(enumparts) > 1:
+            lastpart = enumparts[-1]
+            lastpart = lastpart.replace("(", "")
+            lastpart = lastpart.replace(")", "")
+
+            if startswithdate(lastpart):
+                print('Serial date replacement ', date, '==>', lastpart)
+                date = lastpart
 
     return HTid, recordid, author, title, date, LOCnum, imprint, enumcron, OCLC, subjset, genreset, materialtype
 
