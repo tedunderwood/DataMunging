@@ -122,7 +122,7 @@ def extract_subfields(node):
 
 def datefinder(subfields):
     date = '<blank>'
- 
+
     ## If subfields has data in it, check each field for a date.
     if len(subfields) > 0:
         for entry in subfields:
@@ -144,13 +144,13 @@ def datefinder(subfields):
             fixed = fixed.replace(']',' ')
             fixed = fixed.replace('(','')
             fixed = fixed.replace(')','')
-            
+
             ## If there looks like a date but there are extra spaces, remove them
             if len(fixed) == 6 and fixed[:2] in centuries and fixed.replace(' ','').isnumeric():
                 date = fixed.replace(' ','')
             elif len(fixed) == 5 and fixed[:2] in centuries and fixed.replace(' ','').isnumeric():
                 date = fixed.replace(' ','')
-            
+
             ## Check to see if there is a date in the string.  If so, make sure it's not a range.  If it's a range
             ## then send the range off to be checked.
             if len(fixed) >= 4 and fixed[:4].isnumeric() and fixed[:2] in centuries:
@@ -163,7 +163,7 @@ def datefinder(subfields):
                 if len(fixed) >= 9 and fixed[-5] == '-':
                     date = cleanrange(fixed)
                 break
-                                
+
         ## Check to see if date is an estimate before returning.  If it appears to be an estimate, return the
         ## date wrapped in an error code.  If date doesn't seem to at least have a partial date, then
         ## return it with an unparsed error code.
@@ -193,7 +193,7 @@ def datefinder(subfields):
         ## If the date found isn't an estimate or partial, return it as normal.
         else:
             return date
-        
+
     ## If subfields is empty, return default date value (blank code).  This will also catch any 1800s
     ## that are not found to be estimates.
     return date
@@ -204,28 +204,28 @@ def cleanrange(date):
     date = date.strip()
     baddash = {'-0-','-1-','-2-','-3-','-4-','-5-','-6-','-7-','-8-','-9-'}
     fix = str()
-    
+
     date = date.replace(',',' ')
-    
+
     dashcount = 0
-    
+
     for char in date:
         if char == '-':
             dashcount += 1
-            
+
     if dashcount > 1:
         for error in baddash:
             if error in date:
                 fix = error
         if fix != str():
             date = date.replace(fix,'-')
-    
+
     if len(date) >= 9 and date[:4].isnumeric() and date[-4:].isnumeric() and date[4] == '-' and date[5] == ' ':
         date = date[:5] + date[-4:]
     elif len(date) >= 9 and date[:4].isnumeric() and date[-4:].isnumeric() and date[4] == ' ' and date[5] == '-':
         date = date[:4] + date[-5:]
-    
-    
+
+
     ## If there are 5 digits in the first set, then there might have been an OCR error.
     ## First, try removing the first digit in case the date got pressed into another number
     ## (which often happens in enumcron dates).  If it's just a case of a repeated digit
@@ -236,7 +236,7 @@ def cleanrange(date):
     elif len(date) >= 5 and date[:5].isnumeric():
         date = '<estimate="' + date + '">'
         return date
-    
+
     ## If there's more than one character with a blank character, its probably an estimate
     if '--' in date or '__' in date or dashcount > 1:
         if len(date) >= 9 and date[:4].isnumeric() and date[4] == '-' and date[5:7] in centuries and date.find(' ') > 8:
@@ -252,13 +252,13 @@ def cleanrange(date):
             date = date[-4:]
         else:
             date = '<estimate="' + date + '">'
-    
+
     ## If date is at or below expected date, check for OCR error and known abbreviations
     elif len(date) <= 9:
         ## Sometimes the last date appears as [84], remove non-numerics for correction
         date = date.replace('[','')
         date = date.replace(']','')
-        ## Determine why length of date range string is less than 9 
+        ## Determine why length of date range string is less than 9
         if len(date) < 7:
             ## If hyphen isn't the 5th value, digits are missing from the leading year
             if len(date) >4 and date[4] != '-':
@@ -279,7 +279,7 @@ def cleanrange(date):
             ## 17 is sometimes incorrectly OCR'd as 11
             if date[:2] == '17' and date[5:7] == '11' and len(date) == 9:
                 date = date[:6] + '7' + date[7:]
-            ## Sometimes the century is not included in the end-date    
+            ## Sometimes the century is not included in the end-date
             elif not date[5:7] in centuries:
                 ## If the century is missing, the years should still be greater
                 ## than the begin-date
@@ -290,7 +290,7 @@ def cleanrange(date):
                 ## Otherwise its probably an error, return unparsed code
                 else:
                     date = '<unparsed="' + date + '">'
-    
+
     ## If date is longer than expected, determine whether its a bad range
     ## or just has some non-numeric characters embedded in it.
     else:
@@ -320,7 +320,7 @@ def cleanrange(date):
             else:
                 date = cleanrange(date)
 
-## Return date with corrections.  If no errors were found, return original date               
+## Return date with corrections.  If no errors were found, return original date
     return date
 
 def croncheck(enumcron,date):
@@ -346,7 +346,7 @@ def croncheck(enumcron,date):
                 if enumcron[i:i+4].isnumeric():
                     temp = enumcron[i:]
                     break
-        
+
         ## Check to see if one of the valid century strings is in enumcron before
         ## proceeding.  If not, then just return the original date.
         for num in centuries:
@@ -355,10 +355,10 @@ def croncheck(enumcron,date):
                 break
             else:
                 valid = False
-                
+
         if not valid:
             return date
-                
+
         temp = datefinder([enumcron])
         ## If the date resolver returns an errorcode, return the original date
         if temp.startswith('<'):
@@ -384,7 +384,7 @@ def subfield_dictionary(field):
     Specifically used right now to distinguish subfields a and c of datafield 974.'''
     subfields = field.getElementsByTagName('subfield')
     codedictionary = dict()
-    
+
     for subfield in subfields:
         subsublist = extract_subfields(subfield)
         atrilist = subfield.attributes
@@ -404,10 +404,10 @@ def parse008(field):
     I'm using information here to do it:
     http://www.loc.gov/marc/bibliographic/bd008b.html
     '''
-    
+
     genres = set()
     date = field[7:11]
-    
+
     audience = field[22]
     if audience == 'b' or audience == 'c' or audience == 'd' or audience == 'j':
         genres.add('Juvenile audience')
@@ -475,8 +475,29 @@ def parse008(field):
         next
     else:
         genres.add("biog?")
-    
-    return date, genres   
+
+    return date, genres
+
+def get_materialtype(leaderstring):
+    ctrlchar = leaderstring[7]
+    materialtype = '<blank>'
+
+    if ctrlchar == 'a' or ctrlchar == 'c' or ctrlchar == 'd':
+        materialtype = "monograph part(s)"
+    if ctrlchar == 'b':
+        materialtype = "serial part"
+    if ctrlchar == 'i':
+        materialtype = "serial integration"
+    if ctrlchar == 'm':
+        materialtype = "monograph"
+        if leaderstring[19] == "a":
+            materialtype = "monograph set"
+        if leaderstring[19] == "b" or leaderstring[19] == "c":
+            materialtype = "monograph part"
+    if ctrlchar == 's':
+        materialtype = "serial"
+
+    return materialtype
 
 def parsemarc(marc):
     HTid = '<blank>'
@@ -488,9 +509,16 @@ def parsemarc(marc):
     imprint = '<blank>'
     enumcron = '<blank>'
     OCLC = '<blank>'
+    materialtype = '<blank>'
     subjset = set()
     genreset = set()
     alternatedate = ""
+
+    leaderfields = marc.getElementsByTagName('leader')
+    leaderfield = leaderfields[0]
+    # There should only be one leader.
+    leader = extract_subfields(leaderfield)[0]
+    materialtype = get_materialtype(leader)
 
     controlfields = marc.getElementsByTagName('controlfield')
     for field in controlfields:
@@ -509,7 +537,7 @@ def parsemarc(marc):
 
         if fieldnumber == "008":
             alternatedate, genreset = parse008(value)
- 
+
     datafields = marc.getElementsByTagName('datafield')
     for field in datafields:
         if field.hasAttributes():
@@ -565,7 +593,7 @@ def parsemarc(marc):
                             controlcode = controlcode.replace('ocn', '')
                             controlcode = controlcode.replace('ocm', '')
                             OCLC = controlcode
-                        
+
 
     if alternatedate != date and alternatedate != "":
 
@@ -579,19 +607,18 @@ def parsemarc(marc):
         ## fixed manually.
 
         if alternatedate.isnumeric() and ('unparsed' in date or 'blank' in date):
-            if not "00" in alternatedate:
-                date == alternatedate
-                print('Date replacement ', date, '==>', alternatedate)
+            date == alternatedate
+            print('Date replacement ', date, '==>', alternatedate)
         elif alternatedate.isnumeric() and 'estimate' in date and not "--" in date:
             if not "00" in alternatedate:
                 date == alternatedate
                 print('Date replacement ', date, '==>', alternatedate)
-        
-    return HTid, recordid, author, title, date, LOCnum, imprint, enumcron, OCLC, subjset, genreset
+
+    return HTid, recordid, author, title, date, LOCnum, imprint, enumcron, OCLC, subjset, genreset, materialtype
 
 ## HERE IS WHERE THE MAIN ROUTINE BEGINS.
 
-writestring = 'HTid\trecordid\tOCLC\tLOCnum\tauthor\timprint\tdate\tenumcron\tsubjects\tgenres\ttitle\n'
+writestring = 'HTid\trecordid\tOCLC\tLOCnum\tauthor\timprint\tdate\tenumcron\tmaterialtype\tsubjects\tgenres\ttitle\n'
 
 with open(outpath, mode='w',encoding='utf-8') as outfile:
     outfile.write(writestring)
@@ -600,21 +627,21 @@ with open(inpath, encoding='utf-8') as file:
     recordstring = ""
     beginflag = False
     counter = 0
-    
+
     for newline in file:
-        
+
         if newline == "<record>\n":
             beginflag = True
-            
+
         if beginflag:
             recordstring = recordstring + newline.strip()
             # Remove whitespace!
-            
+
         if newline == "</record>\n":
             counter += 1
-            
+
             marc = xml.parseString(recordstring)
-            HTid, recordid, author, title, date, LOCnum, imprint, enumcron, OCLC, subjset, genreset = parsemarc(marc)
+            HTid, recordid, author, title, date, LOCnum, imprint, enumcron, OCLC, subjset, genreset, materialtype = parsemarc(marc)
 
             if HTid == '<blank>':
                 print("Blank HTID: " + title)
@@ -636,10 +663,10 @@ with open(inpath, encoding='utf-8') as file:
                         genredictionary[term] += 1
                     else:
                         genredictionary[term] = 1
-                        
+
                 genrestr = genrestr.rstrip(';')
 
-            writestring = HTid + '\t' + recordid + '\t' + OCLC + '\t' + LOCnum + '\t' + author + '\t' + imprint + '\t' + date + '\t' + enumcron + '\t'+ subjstr + '\t' + genrestr  +'\t' + title
+            writestring = HTid + '\t' + recordid + '\t' + OCLC + '\t' + LOCnum + '\t' + author + '\t' + imprint + '\t' + date + '\t' + enumcron + '\t' + materialtype + '\t'+ subjstr + '\t' + genrestr  +'\t' + title
             writestring = writestring.replace('\n', '') + '\n'
 
             with open(outpath, mode='a',encoding='utf-8') as outfile:
