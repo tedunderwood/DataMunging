@@ -622,15 +622,15 @@ def correct_stream(tokens, verbose = False):
             paratext += 1
             continue
 
-        if all_nonalphanumeric(thisword):
-            corrected.append(thisword)
-            continue
-
         ## Notice the sequence here. We don't reset skipflag if we're just skipping newlines or
         ## xml markup.
 
         if skipflag:
             skipflag = False
+            continue
+
+        if all_nonalphanumeric(thisword):
+            corrected.append(thisword)
             continue
 
         # get the next word, ignoring newlines and xml markup
@@ -716,8 +716,12 @@ def correct_stream(tokens, verbose = False):
         thistrim = thisword.translate(mosteraser)
         nexttrim = nextword.translate(mosteraser)
         possiblefusion = thistrim + nexttrim
+        if len(thistrim) < 1 or len(nexttrim) < 1:
+            bothpartsexist = False
+        else:
+            bothpartsexist = True
 
-        if is_word(possiblefusion):
+        if is_word(possiblefusion) and bothpartsexist:
             newtoken = logandreset(possiblefusion, thiscase, nextpossessive, thisprefix, nextsuffix)
             corrected.append(newtoken)
             wordsfused += 1
@@ -725,7 +729,7 @@ def correct_stream(tokens, verbose = False):
             continue
 
         #maybe both parts need to be corrected
-        if possiblefusion.lower() in correctionrules:
+        if possiblefusion.lower() in correctionrules and bothpartsexist:
             thiscorr = correctionrules[possiblefusion.lower()]
             newtoken = logandreset(thiscorr, thiscase, nextpossessive, thisprefix, nextsuffix)
             corrected.append(newtoken)
