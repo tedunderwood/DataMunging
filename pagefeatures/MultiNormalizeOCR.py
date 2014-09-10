@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 '''Revised third-generation OCR normalizer.
 	This was rewritten heavily in fall 2013 to ensure that it keeps
 	punctuation. It was then adjusted in Spring 2014 to use the original
@@ -307,6 +309,10 @@ def read_txt(filepath):
 
 	except IOError as e:
 		successflag = "missing file"
+	except UnicodeDecodeError as e:
+		successflag = "unicode error"
+	except:
+		successflag = "unicode error"
 
 	return pagelist, successflag
 
@@ -429,6 +435,12 @@ def process_a_file(file_tuple):
 		return_dict["errors"] = perfileerrorlog
 		return return_dict
 
+	elif successflag == "unicode error":
+		print(thisID + " can not be decoded by unicode.")
+		perfileerrorlog.append(thisID + '\t' + "unicode error")
+		return_dict["errors"] = perfileerrorlog
+		return return_dict
+
 	tokens, pre_matched, pre_english, pagedata, headerlist = NormalizeVolume.as_stream(pagelist, verbose=debug)
 
 	if pre_english < 0.6:
@@ -487,19 +499,22 @@ def process_a_file(file_tuple):
 
 	# If we are upvoting tokens in the header, they need to be added here.
 
-	for index, page in enumerate(pages):
-		thispageheader = headerlist[index]
-		header_tokens, header_pages, dummy1, dummy2 = NormalizeVolume.correct_stream(thispageheader, verbose = debug)
-		headerdict = header_pages[0]
-		for key, value in headerdict.items():
-			if key in meaningfulheaders:
-				if key in page:
-					page[key] += 2
-					# a fixed increment no matter how many times the word occurs in the
-					# header
-				else:
-					page[key] = 2
-					print("Word " + key + " in headerdict for " + thisID + " at " + str(index) + " but not main page.")
+	if len(pages) != len(headerlist):
+		print(thisID + " fails a routine check of alignment between pages and headers.")
+	else:
+		for index, page in enumerate(pages):
+			thispageheader = headerlist[index]
+			header_tokens, header_pages, dummy1, dummy2 = NormalizeVolume.correct_stream(thispageheader, verbose = debug)
+			headerdict = header_pages[0]
+			for key, value in headerdict.items():
+				if key in meaningfulheaders:
+					if key in page:
+						page[key] += 2
+						# a fixed increment no matter how many times the word occurs in the
+						# header
+					else:
+						page[key] = 2
+						print("Word " + key + " in headerdict for " + thisID + " at " + str(index) + " but not main page.")
 
 	# Write corrected file.
 	cleanHTID = clean_pairtree(thisID)
