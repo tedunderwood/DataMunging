@@ -79,9 +79,7 @@ if user == "no":
     quit()
 
 print("\nOkay, thanks. Will now proceed to unpack the metadata. I'll print")
-print("the number of files I've unpacked every thousand or so, and will also")
-print("inform you when I override a textual date in the publication info with")
-print("a numeric date extracted from controlfield 008.")
+print("the number of files I've unpacked every thousand or so.")
 print('\n')
 
 centuries = {'17','18','19'}
@@ -427,7 +425,10 @@ def parse008(field):
     '''
 
     genres = set()
-    date = field[7:11]
+    datetype = field[6]
+    date1 = field[7:11]
+    date2 = field[11:15]
+    place = field[15:18]
 
     audience = field[22]
     if audience == 'b' or audience == 'c' or audience == 'd' or audience == 'j':
@@ -463,7 +464,7 @@ def parse008(field):
 
     form = field[33]
     if form == '0':
-        genres.add('Not fiction')
+        genres.add('NotFiction')
     elif form == '1':
         genres.add('Fiction')
     elif form == 'd':
@@ -485,19 +486,19 @@ def parse008(field):
     elif form == 's':
         genres.add('Speeches')
     else:
-        genres.add('Unknown')
+        genres.add('UnknownGenre')
 
     biog = field[34]
     if biog == "b" or biog == "c":
         genres.add("Biography")
     elif biog == "a":
         genres.add("Autobiography")
-    elif biog == " ":
-        next
-    else:
-        genres.add("biog?")
+    elif biog == "#":
+        genres.add("NotBiographical")
+    elif biog == "d":
+        genres.add("ContainsBiogMaterial")
 
-    return date, genres
+    return datetype, date1, date2, place, genres
 
 def get_materialtype(leaderstring):
     ctrlchar = leaderstring[7]
@@ -557,7 +558,7 @@ def parsemarc(marc):
             recordid = value.replace("MIU01-", "")
 
         if fieldnumber == "008":
-            alternatedate, genreset = parse008(value)
+            datetype, date1, date2, place, genreset = parse008(value)
 
     datafields = marc.getElementsByTagName('datafield')
     for field in datafields:
@@ -598,7 +599,7 @@ def parsemarc(marc):
                         genreterms = extract_subfields(field)
                         for term in genreterms:
                             if term[0].isupper():
-                                genreset.add(term.rstrip('.,'))
+                                genreset.add(term.rstrip('.,;'))
                     elif attribute.value.isnumeric() and int(attribute.value) >= 600 and int(attribute.value) <= 699:
                         subjterms = extract_subfields(field)
                         for term in subjterms:
@@ -606,7 +607,7 @@ def parsemarc(marc):
                     elif attribute.value == '970':
                         subjterms = extract_subfields(field)
                         if 'Biography' in subjterms:
-                            subjset.add('IsBiography')
+                            subjset.add('IsBiographical')
                     elif attribute.value == '035':
                         controlcode = extract_subfields(field)[0]
                         if '(OCoLC)' in controlcode:
@@ -614,29 +615,6 @@ def parsemarc(marc):
                             controlcode = controlcode.replace('ocn', '')
                             controlcode = controlcode.replace('ocm', '')
                             OCLC = controlcode
-
-
-    if alternatedate != date and alternatedate != "":
-
-        ## There are a couple of situations where we might prefer the date in the controlfield 008
-        ## (named "alternatedate" here) to the date extracted from publication info in datafield 260.
-
-        ## If the date was blank, or unparsed (often a roman numeral) or if it was in the form
-        ## 182-?, we might date the alternate date (1820). Note that we don't guess with 18--? or 19--?
-        ## That's a little too much guessing for my taste. The way I implement this creates an unfair
-        ## bias against works that were actually published in 1800 or 1900, but that can always be
-        ## fixed manually.
-
-        if alternatedate.isnumeric() and ('unparsed' in date or 'blank' in date):
-            # print('Date replacement ', date, '==>', alternatedate)
-            # Canceled the print statement because there are too many of these
-            # when you're dealing with serials.
-            date = alternatedate
-        elif alternatedate.isnumeric() and 'estimate' in date and not "--" in date:
-            if not "00" in alternatedate:
-                print('Date replacement ', date, '==>', alternatedate)
-                date = alternatedate
-
 
     if materialtype.startswith("ser") and numcount(date) < 4 and numcount(enumcron) > 4:
         enumparts = enumcron.split(" ")
@@ -646,14 +624,13 @@ def parsemarc(marc):
             lastpart = lastpart.replace(")", "")
 
             if startswithdate(lastpart):
-                print('Serial date replacement ', date, '==>', lastpart)
                 date = lastpart
 
-    return HTid, recordid, author, title, date, LOCnum, imprint, enumcron, OCLC, subjset, genreset, materialtype
+    return HTid, recordid, author, title, date, LOCnum, imprint, enumcron, OCLC, subjset, genreset, materialtype, datetype, date1, date2, place
 
 ## HERE IS WHERE THE MAIN ROUTINE BEGINS.
 
-writestring = 'HTid\trecordid\tOCLC\tLOCnum\tauthor\timprint\tdate\tenumcron\tmaterialtype\tsubjects\tgenres\ttitle\n'
+writestring = 'HTid\trecordid\tOCLC\tLOCnum\tauthor\timprint\tdatetype\tstartdate\tenddate\ttextdate\tplace\tenumcron\tmaterialtype\tsubjects\tgenres\ttitle\n'
 
 with open(outpath, mode='w',encoding='utf-8') as outfile:
     outfile.write(writestring)
@@ -676,7 +653,7 @@ with open(inpath, encoding='utf-8') as file:
             counter += 1
 
             marc = xml.parseString(recordstring)
-            HTid, recordid, author, title, date, LOCnum, imprint, enumcron, OCLC, subjset, genreset, materialtype = parsemarc(marc)
+            HTid, recordid, author, title, textdate, LOCnum, imprint, enumcron, OCLC, subjset, genreset, materialtype, datetype, date1, date2, place = parsemarc(marc)
 
             if HTid == '<blank>':
                 print("Blank HTID: " + title)
@@ -701,7 +678,7 @@ with open(inpath, encoding='utf-8') as file:
 
                 genrestr = genrestr.rstrip(';')
 
-            writestring = HTid + '\t' + recordid + '\t' + OCLC + '\t' + LOCnum + '\t' + author + '\t' + imprint + '\t' + date + '\t' + enumcron + '\t' + materialtype + '\t'+ subjstr + '\t' + genrestr  +'\t' + title
+            writestring = HTid + '\t' + recordid + '\t' + OCLC + '\t' + LOCnum + '\t' + author + '\t' + imprint + '\t' + datetype + '\t' + date1 + '\t' + date2  + '\t' + textdate + '\t' + place + '\t' + enumcron + '\t' + materialtype + '\t'+ subjstr + '\t' + genrestr  +'\t' + title
             writestring = writestring.replace('\n', '') + '\n'
 
             with open(outpath, mode='a',encoding='utf-8') as outfile:
