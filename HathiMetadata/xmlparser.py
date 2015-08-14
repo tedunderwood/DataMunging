@@ -175,12 +175,12 @@ def datefinder(subfields):
             if len(fixed) >= 4 and fixed[:4].isnumeric() and fixed[:2] in centuries:
                 date = fixed[:4]
                 if len(fixed) >=5 and fixed[4] == '-':
-                    date = cleanrange(fixed)
+                    date = cleanrange(fixed, 0)
                 break
             elif len(fixed) >= 4 and fixed[-4:].isnumeric():
                 date = fixed[-4:]
                 if len(fixed) >= 9 and fixed[-5] == '-':
-                    date = cleanrange(fixed)
+                    date = cleanrange(fixed, 0)
                 break
 
         ## Check to see if date is an estimate before returning.  If it appears to be an estimate, return the
@@ -217,9 +217,12 @@ def datefinder(subfields):
     ## that are not found to be estimates.
     return date
 
-def cleanrange(date):
+def cleanrange(date, recursedepth):
     ## Sometimes removing brackets creates an extra space after the hyphen that causes
     ## the date to be unparsed.  This corrects that error.
+    if recursedepth > 10:
+        return date
+
     date = date.strip()
     baddash = {'-0-','-1-','-2-','-3-','-4-','-5-','-6-','-7-','-8-','-9-'}
     fix = str()
@@ -260,13 +263,13 @@ def cleanrange(date):
     if '--' in date or '__' in date or dashcount > 1:
         if len(date) >= 9 and date[:4].isnumeric() and date[4] == '-' and date[5:7] in centuries and date.find(' ') > 8:
             temp = date.split()
-            date = cleanrange(temp[0])
+            date = cleanrange(temp[0], recursedepth + 1)
         elif len(date) >= 9 and date[:4].isnumeric() and date[4] == '-' and date[5:7] in centuries and date[5:9].isnumeric:
-            date = cleanrange(date[:9])
+            date = cleanrange(date[:9], recursedepth + 1)
         elif len(date) >= 7 and date[:4].isnumeric() and date[4] == '-' and date[5:7].isnumeric():
-            date = cleanrange(date[:7])
+            date = cleanrange(date[:7], recursedepth + 1)
         elif len(date) >= 8 and date[:4].isnumeric() and date[4] == '-' and date[5] == ' ' and date[6:8].isnumeric():
-            date = cleanrange(date[:5] + date[6:])
+            date = cleanrange(date[:5] + date[6:], recursedepth + 1)
         elif len(date) >= 4 and (not date[4].isnumeric()) and date[-4:].isnumeric() and date[-5] == '-' and date[-4:-2] in centuries:
             date = date[-4:]
         else:
@@ -333,11 +336,11 @@ def cleanrange(date):
             latter = numcount(date[x:])
             if x != -1:
                 if latter > former:
-                    date = cleanrange(date[x+1:])
+                    date = cleanrange(date[x+1:], recursedepth + 1)
                 else:
-                    date = cleanrange(date[:x])
+                    date = cleanrange(date[:x], recursedepth + 1)
             else:
-                date = cleanrange(date)
+                date = cleanrange(date, recursedepth + 1)
 
 ## Return date with corrections.  If no errors were found, return original date
     return date
@@ -595,6 +598,8 @@ def parsemarc(marc):
                             HTid = subfields['a']
                         if 'c' in subfields:
                             enumcron = subfields['c']
+                        if 'u' in subfields:
+                            HTid = subfields['u']
                     elif attribute.value == "655" or attribute.value == "155":
                         genreterms = extract_subfields(field)
                         for term in genreterms:
@@ -609,7 +614,12 @@ def parsemarc(marc):
                         if 'Biography' in subjterms:
                             subjset.add('IsBiographical')
                     elif attribute.value == '035':
-                        controlcode = extract_subfields(field)[0]
+                        controlcodes = extract_subfields(field)
+                        if len(controlcodes) > 0:
+                            controlcode = controlcodes[0]
+                        else:
+                            controlcode = ''
+
                         if '(OCoLC)' in controlcode:
                             controlcode = controlcode.replace('(OCoLC)', '')
                             controlcode = controlcode.replace('ocn', '')
@@ -628,6 +638,39 @@ def parsemarc(marc):
 
     return HTid, recordid, author, title, date, LOCnum, imprint, enumcron, OCLC, subjset, genreset, materialtype, datetype, date1, date2, place
 
+def parse_rec_string(recordstring, outpath, genredictionary):
+    marc = xml.parseString(recordstring)
+    HTid, recordid, author, title, textdate, LOCnum, imprint, enumcron, OCLC, subjset, genreset, materialtype, datetype, date1, date2, place = parsemarc(marc)
+
+    if HTid == '<blank>':
+        print("Blank HTID: " + title)
+        return
+
+    subjstr = '<blank>'
+    if len(subjset) > 0:
+        subjstr = str()
+        for term in subjset:
+            subjstr += (term + ';')
+        subjstr = subjstr.rstrip(';')
+
+    genrestr = '<blank>'
+    if len(genreset) > 0:
+        genrestr = str()
+        for term in genreset:
+            genrestr += (term + ';')
+            if term in genredictionary:
+                genredictionary[term] += 1
+            else:
+                genredictionary[term] = 1
+
+        genrestr = genrestr.rstrip(';')
+
+    writestring = HTid + '\t' + recordid + '\t' + OCLC + '\t' + LOCnum + '\t' + author + '\t' + imprint + '\t' + datetype + '\t' + date1 + '\t' + date2  + '\t' + textdate + '\t' + place + '\t' + enumcron + '\t' + materialtype + '\t'+ subjstr + '\t' + genrestr  +'\t' + title
+    writestring = writestring.replace('\n', '') + '\n'
+
+    with open(outpath, mode='a',encoding='utf-8') as outfile:
+        outfile.write(writestring)
+
 ## HERE IS WHERE THE MAIN ROUTINE BEGINS.
 
 writestring = 'HTid\trecordid\tOCLC\tLOCnum\tauthor\timprint\tdatetype\tstartdate\tenddate\ttextdate\tplace\tenumcron\tmaterialtype\tsubjects\tgenres\ttitle\n'
@@ -642,14 +685,42 @@ with open(inpath, encoding='utf-8') as file:
 
     for newline in file:
 
-        if newline == "<record>\n":
+        if len(newline) > 20 and "<record>" in newline:
+            allrecords = newline.split("<record>")
+            for record in allrecords:
+                if len(record) > 25:
+                    counter += 1
+                    record = "<record>\n" + record
+                    parse_rec_string(record, outpath, genredictionary)
+
+            recordstring = ""
+            if counter % 1000 == 1:
+                print(counter)
+            continue
+
+        if newline.startswith("<record>"):
             beginflag = True
 
         if beginflag:
             recordstring = recordstring + newline.strip()
             # Remove whitespace!
 
-        if newline == "</record>\n":
+        if newline.startswith("</record>"):
+            if "</record><record>" in recordstring:
+                allrecords = recordstring.split("</record><record>")
+                for idx, record in enumerate(allrecords):
+                    if not idx == 0:
+                        record = '<record>' + record
+                    if not idx == len(allrecords) - 1:
+                        record = record + '</record>'
+                    counter += 1
+                    parse_rec_string(record, outpath, genredictionary)
+
+                recordstring = ""
+                if counter % 1000 == 1:
+                    print(counter)
+                continue
+
             counter += 1
 
             marc = xml.parseString(recordstring)
