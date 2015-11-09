@@ -310,9 +310,9 @@ def main():
 
             print(outfilename)
 
-        metatuple = (outfilename, str(totalwordsinvol), str(pre_matched), str(pre_english), str(post_matched),
+            metatuple = (outfilename, str(totalwordsinvol), str(pre_matched), str(pre_english), str(post_matched),
                          str(post_english), str(totaladded), str(totaldeleted))
-        processedmeta.append(metatuple)
+            processedmeta.append(metatuple)
             
         count += 1
         if count > 200:
