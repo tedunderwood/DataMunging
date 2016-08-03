@@ -1,33 +1,31 @@
 ### munging HathiTrust metadata
 
-The scripts in this directory extract tabular metadata from the file of xml records that HathiTrust Digital Library provides to accompany their data.
+The scripts in this directory extract tabular metadata from the file of xml records that HathiTrust Digital Library provides to accompany their data. A lot of the scripts here have a lot of work by Michael L. Black somewhere in their genetic history, although it's now somewhat scrambled and fused with other code.
 
-The most up-to-date script here is xmlparser.py. This is based on a script called metamine.py originally written by Mike Black (also included here). Metamine worked with jsons extracted from the bibliographic API; xmlparser works with MARC records in xml format.
+### scrape_json.py
+The most up-to-date script here is scrape_json.py. But this is designed to work with a file that contains the MARC records as jsons, which may not be what you've got.
+
+Improvements over earlier versions include, especially, better handling of the various parts of a title string.
+
+### scrape_marc.py
+is a slightly older version that actually scrapes from Hathi's bibliographic API.
+
+### older versions
+xmlparser.py is based on a script called metamine.py originally written by Mike Black (also included here). Metamine worked with jsons extracted from the bibliographic API; xmlparser works with MARC records in xml format.
 
 The general strategy is to read in the XML, one MARC record at a time, and parse
 the record for basic information which is then written in a tabular form, simpler
 to browse, and simpler for subsequent analytics to parse.
 
-Note that HathiTrust has two different layers of MARC records, one for volumes (items), and
-one for bibliographic "records" (manifestations). This script is designed to deal with
-the volume-level MARC records that Hathi tends to bundle in a meta.tar.gz file. But there is sometimes more
-info available in the record-level MARCs that populate the leaves of a pairtree, and/or
-the MARCs contained in .jsons. This script does not get at all of those sources.
+Note that HathiTrust has two different layers of MARC records, one for volumes (items), and one for bibliographic "records" (manifestations). All the scripts above are designed to deal with the volume-level records.
 
-Large parts of this code are extracted from metamine.py, written by Mike Black (2012);
-it was subsequently adapted by Ted Underwood (2013). Ted was guided by e-mailed advice from Tim Cole.
+### some weird shit you will encounter
 
-There are three main levels of changes between metamine and xmlparser:
+MARC is a format with a long history, and it has some weird corners. Things like genres and dates are encoded in multiple confusing places. They are also often encoded *badly*, not to mince words. 
 
-1) Ingestion of source data is different, because we're dealing with xml rather than
-a folder of .jsons.
+For instance, there is a flag in the header field that's supposed to indicate whether something is fiction. About 60% of the time this has some relation to what you might think it would mean. The rest of the time, it's unreliable. Poetry gets encoded as "fiction"; novels sometimes don't get encoded as fiction.
 
-2) The HathiTrust volume ID and enumcron must be extracted from datafield 974.
-
-3) I've added a function to parse the genre information in controlfield 008.
-I also move the genre terms from datafield 655 to this "genre" list rather than
-treating them as subject terms, as we did before. This means that the genre list
-will contain a combination of terms from two sources.
+My agenda is to get all this information out in a csv where I can scan it visually and figure out what to do with it. Often this means translating binary flags into a phrase like "NotFiction." Place no trust in these genre designations -- at least not until you have traced them back to their source in the 008 header field, and/or surveyed a csv to see how reliable they are in practice. Generally, they aren't.
 
 A couple of notes about specific genre terms in that field.
 
