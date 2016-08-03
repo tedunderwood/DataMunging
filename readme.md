@@ -1,7 +1,15 @@
 # DataMunging
 
 This repo contains scripts (mostly in Python 3) for correcting OCR
-and wrangling metadata drawn from HathiTrust. The scripts in /OCRnormalizer are packaged and ready to run (if you've got Python 3.2 or above).
+and wrangling metadata drawn from HathiTrust. But let's be frank: very little of this is plug-and-play. It's a view inside a messy workshop. Maybe, at best, it's a collection of resources you could cannibalize to build your own workflow. For that reason, I suspect the most useful part of this may be the lexicographic guidelines gathered as /rulesets.
+
+### runningheaders
+Contains a Python script I use to find and/or remove repeated headers. It relies on the existence of page breaks in Hathi file structure, and expects to receive a list of pages.
+
+### dedup
+Just a very simple Python script for deduplication based on metadata. This will not handle multivolume works or situations where you've got 21 vols of _Waverly Novels,_ each of which lacks a separate title but may duplicate e.g. something titled _Ivanhoe_ (and published as three separate volumes!) elsewhere.
+
+For that kind of nightmare, see some Java code I wrote elsewhere [https://github.com/tedunderwood/metadatapredictor/tree/master/src](https://github.com/tedunderwood/metadatapredictor/tree/master/src). But it requires a lot of ad-hoc tuning; once again, probably most useful as a reminder of the problems you will encounter, rather than a portable "tool."
 
 ### /OCRnormalizer 0.1
 OCRnormalizer corrects and normalizes OCR versions of English books published after 1700. It addresses the notorious "long S" problem, rejoins words broken across a linebreak, standarizes word division, and normalizes spelling to modern British practice. 
