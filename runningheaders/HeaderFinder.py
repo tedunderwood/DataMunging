@@ -9,9 +9,13 @@
 # page numbers that may be roman numerals).
 #
 # Once headers are identified, they can be treated in a range of different
-# ways. Here we are not concerned to *separate* the header from the original
-# text but only to identify it so that it can be given extra weight in
-# page classification.
+# ways. The first of these functions is not concerned to *separate* the header
+# from the original text but only to identify it so that it can be given extra
+# weight in page classification. The second function actually removes them.
+
+# In principle, this could all be done for footers as well. I haven't cared, because
+# it wasn't a big problem in the 19c volumes I've worked with so far. That
+# could change!
 
 from difflib import SequenceMatcher
 
