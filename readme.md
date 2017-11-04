@@ -11,6 +11,10 @@ Just a very simple Python script for deduplication based on metadata. This will 
 
 For that kind of nightmare, see some Java code I wrote elsewhere [https://github.com/tedunderwood/metadatapredictor/tree/master/src](https://github.com/tedunderwood/metadatapredictor/tree/master/src). But it requires a lot of ad-hoc tuning; once again, probably most useful as a reminder of the problems you will encounter, rather than a portable "tool."
 
+### new_normalizers
+
+These days I don't actually use the OCR normalizer documented below. I use some slightly streamlined scripts in this folder. I haven't had time to fully document them, but they're shared here in case they're useful.
+
 ### /OCRnormalizer 0.1
 OCRnormalizer corrects and normalizes OCR versions of English books published after 1700. It addresses the notorious "long S" problem, rejoins words broken across a linebreak, standarizes word division, and normalizes spelling to modern British practice. 
 
